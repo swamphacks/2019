@@ -1,13 +1,10 @@
 
 
-
-
 export const firebaseConfig = {
-    apiKey: "AIzaSyA0BcUcu4V8aHT_gM-32BhRcmqji4z-lts",
-    authDomain: "final-project-recording.firebaseapp.com",
-    databaseURL: "https://final-project-recording.firebaseio.com",
-    storageBucket: "final-project-recording.appspot.com",
-    messagingSenderId: "290354329688"
+  apiKey: "AIzaSyB7QatIiqQzHl8D3CUIjnjQTuZKfVp5-T8",
+  authDomain: "angularpractice-6d2ed.firebaseapp.com",
+  databaseURL: "https://angularpractice-6d2ed.firebaseio.com",
+  projectId: "angularpractice-6d2ed",
+  storageBucket: "",
+  messagingSenderId: "163075493656"
 };
-
-
