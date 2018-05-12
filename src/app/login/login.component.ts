@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(formValue.email, formValue.password)
           .subscribe(
-              () => this.router.navigate(['/home']),
+              () => this.router.navigate(['/profile']),
               alert
           );
 

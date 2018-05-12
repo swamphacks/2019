@@ -37,7 +37,7 @@ export class RegisterComponent  {
             .subscribe(
                 () => {
                     alert('User created successfully !');
-                    this.router.navigateByUrl('/home');
+                    this.router.navigateByUrl('/profile');
                 },
                 err => alert(err)
             );
