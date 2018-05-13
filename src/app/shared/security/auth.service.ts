@@ -16,6 +16,15 @@ export class AuthService {
       return this.afAuth;
     }
 
+    getCurrentUserID(): string{
+      if(this.afAuth.auth.currentUser){
+        //if the a user exists
+        return this.afAuth.auth.currentUser.uid;
+      }else{
+        return '';
+      }
+    }
+
     login(email, password){
         return this.afAuth.auth.signInWithEmailAndPassword(email, password);
     }
