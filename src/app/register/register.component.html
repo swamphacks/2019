@@ -1,6 +1,87 @@
-<!-- TODO:Make it look like the old swamphacks page -->
+<body>
 
-<form autocomplete="off" novalidate class="login-form" [formGroup]="form">
+	<div id="animationWindow" class="hide">
+		<div class="loader"></div>
+	</div>
+
+  <div id="layout" class="">
+
+      <div id="menuLogin" class="">
+
+				<div class="pure-menu-heading" href="#">
+					<h1 id="mainheader">swamp<b>hacks IV</b></h1>
+					<!-- <img id="logo" class="" src="img/logoblue.svg"></img> -->
+				</div>
+
+				<div class="hide" id="loginStatusTxt">
+					Please fill in all fields!
+				</div>
+
+				<div class="menu-items-con-login">
+
+					<div class="row log">
+						<form id="loginForm" form autocomplete="off" novalidate class="login-form" [formGroup]="form">
+							<div class="col-md-12 top-margin form-field">
+								<label class="form-lbl" for="email" name="">Email</label>
+								<input class="form-field" id="email" name="email" formControlName="email" type="text" placeholder="" required/>
+							</div>
+
+							<div class="col-md-12 top-margin form-field">
+								<label class="form-lbl" for="password" name="">Password</label>
+								<!-- <i class="fa fa-lock pass-visibility" aria-hidden="true" id="pv1" onclick="showPassPressed(pass1, pv1)"></i> -->
+								<input class="form-field" id="pass1" name="password" formControlName="password"  type="password" placeholder="" required/>
+							</div>
+
+							<div class="col-md-12 top-margin form-field">
+								<label class="form-lbl" for="confirm">Confirm Password</label>
+								<!-- <i class="fa fa-lock pass-visibility" aria-hidden="true" id="pv2" onclick="showPassPressed(pass2, pv2)"></i> -->
+								<input class="form-field" id="pass2" name="confirm" formControlName="confirm" type="password" placeholder="" required/>
+							</div>
+
+							<div class="col-md-12 top-margin">
+								<button class="button green" id="createAccountBtn" (click)="signUp()" [disabled]="!isPasswordMatch()"><a href=""><p class="makeactbtn">Create Account</p></a></button>
+							</div>
+
+						</form>
+
+						<div class="margin-buffer">
+
+							<div class="col-md-12 top-margin">
+								<button class="button txtbtnouter"><a href="login.html"><p class="textbtn">or <b>Sign In</b></p></a></button>
+							</div>
+
+							<div class="col-md-12 descrip-txt login-txt">
+								Create your account with the email you applied with. This form will not let
+								you do otherwise!
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+      </div>
+
+			<div id="login-side">
+				<!-- <img class="clock" src="img/clock.jpg"></img> -->
+				<div class="imgcon">
+					<img class="colorlogo" src="../../assets/img/colorlogo.svg">
+				</div>
+
+				<div class="top-blk">
+
+				</div>
+				<div class="bottom-blk">
+
+				</div>
+
+      </div>
+
+  </div>
+</body>
+
+<!-- <form autocomplete="off" novalidate class="login-form" [formGroup]="form">
 
     <fieldset>
         <legend>Register</legend>
@@ -21,4 +102,4 @@
 
     <button (click)="signUp()" [disabled]="!isPasswordMatch()">Create User</button>
 
-</form>
+</form> -->
