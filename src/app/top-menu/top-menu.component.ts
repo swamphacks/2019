@@ -19,7 +19,7 @@ export class TopMenuComponent implements OnInit {
     this.authService.getAuth().auth.onAuthStateChanged((user) => {
       if(user){
         //logged in
-        router.navigate(['qrpage']);
+        router.navigate(['/profile']);
       }else{
         //logged out
         router.navigate(['/']);
