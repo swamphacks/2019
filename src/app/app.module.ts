@@ -14,7 +14,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthService} from "./shared/security/auth.service";
-import {AuthGuard} from "./shared/security/auth.guard";
 import {HttpModule} from "@angular/http";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
@@ -37,7 +36,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
       ReactiveFormsModule,
       HttpModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,7 +4,6 @@ import {Route} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
-import {AuthGuard} from "./shared/security/auth.guard";
 
 export const routerConfig : Route[] = [
     {

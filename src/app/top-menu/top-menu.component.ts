@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../shared/security/auth.service";
-import {AuthInfo} from "../shared/security/auth-info";
+import { Observable } from 'rxjs/Rx';
+import * as firebase from 'firebase/app';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'top-menu',
@@ -9,22 +11,25 @@ import {AuthInfo} from "../shared/security/auth-info";
 })
 export class TopMenuComponent implements OnInit {
 
-  authInfo: AuthInfo;
+  userState: Observable<firebase.User>;
 
-  constructor(private authService:AuthService) {
-
-
-
+  constructor(private authService:AuthService, private router: Router) {
+    this.userState = authService.getAuth().authState;
+    //if the user is logged in then send them to qr page
+    this.authService.getAuth().auth.onAuthStateChanged((user) => {
+      if(user){
+        //logged in
+        router.navigate(['qrpage']);
+      }else{
+        //logged out
+        router.navigate(['/']);
+      }
+    });
   }
 
-  ngOnInit() {
-
-
-      this.authService.authInfo$.subscribe(authInfo =>  this.authInfo = authInfo);
-
+  ngOnInit(){
 
   }
-
 
     logout() {
         this.authService.logout();

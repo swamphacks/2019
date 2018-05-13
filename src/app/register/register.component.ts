@@ -34,9 +34,9 @@ export class RegisterComponent  {
         const val = this.form.value;
 
         this.authService.signUp(val.email, val.password)
-            .subscribe(
+            .then(
                 () => {
-                    alert('User created successfully !');
+                    //alert('User created successfully !');
                     this.router.navigateByUrl('/home');
                 },
                 err => alert(err)

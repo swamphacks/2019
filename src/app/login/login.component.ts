@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       const formValue = this.form.value;
 
       this.authService.login(formValue.email, formValue.password)
-          .subscribe(
+          .then(
               () => this.router.navigate(['/home']),
               alert
           );

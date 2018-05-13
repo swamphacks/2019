@@ -9,14 +9,14 @@
         </li>
         <li>
             <a routerLinkActive="menu-active" routerLink="login"
-                *ngIf="!authInfo?.isLoggedIn()">Login</a>
+                *ngIf="!(userState | async)?.uid">Login</a>
         </li>
         <li>
             <a routerLinkActive="menu-active" routerLink="register"
-               *ngIf="!authInfo?.isLoggedIn()">Register</a>
+               *ngIf="!(userState | async)?.uid">Register</a>
         </li>
         <li>
-            <a *ngIf="authInfo?.isLoggedIn()" (click)="logout()">Logout</a>
+            <a *ngIf="(userState | async)?.uid" (click)="logout()">Logout</a>
         </li>
     </ul>
 
