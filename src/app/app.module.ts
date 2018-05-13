@@ -17,6 +17,8 @@ import {AuthService} from "./shared/security/auth.service";
 import {HttpModule} from "@angular/http";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {AngularFireAuthModule} from "angularfire2/auth";
     TopMenuComponent,
     SafeUrlPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
       AngularFireAuthModule,
       RouterModule.forRoot(routerConfig),
       ReactiveFormsModule,
+      NgxQRCodeModule,
       HttpModule
   ],
   providers: [AuthService],

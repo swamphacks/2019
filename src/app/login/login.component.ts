@@ -33,8 +33,10 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(formValue.email, formValue.password)
           .then(
-              () => this.router.navigate(['/home']),
-              alert
+            () => {
+                this.router.navigateByUrl('/profile');
+            },
+            err => alert(err)
           );
 
 
