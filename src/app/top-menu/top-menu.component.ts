@@ -22,7 +22,7 @@ export class TopMenuComponent implements OnInit {
         router.navigate(['/profile']);
       }else{
         //logged out
-        router.navigate(['/']);
+        router.navigate(['/register']);
       }
     });
   }

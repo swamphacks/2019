@@ -1,23 +1,18 @@
-<header class="l-header v-center-parent">
-    <img class="v-center" routerLink="home"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-
-    <ul class="top-menu disable-link-styles">
-        <li>
-            <a routerLink="home"
-               routerLinkActive="menu-active">Home</a>
-        </li>
-        <li>
-            <a routerLinkActive="menu-active" routerLink="login"
-                *ngIf="!(userState | async)?.uid">Login</a>
-        </li>
-        <li>
-            <a routerLinkActive="menu-active" routerLink="register"
-               *ngIf="!(userState | async)?.uid">Register</a>
-        </li>
-        <li>
-            <a *ngIf="(userState | async)?.uid" (click)="logout()">Logout</a>
-        </li>
-    </ul>
-
-</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" routerLinkActive="active current" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/home">Home</a>
+            </li>
+            <li *ngIf="!(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="!(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+                <a class="nav-link" (click)="logout()" routerLink="/">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>

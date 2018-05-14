@@ -8,6 +8,10 @@ import {RegisterComponent} from "./register/register.component";
 
 export const routerConfig : Route[] = [
     {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
         path:'home',
         component: HomeComponent
     },
@@ -16,20 +20,16 @@ export const routerConfig : Route[] = [
         component: LoginComponent
     },
     {
-        path: 'register',
-        component: RegisterComponent
-    },
-    {
         path: 'profile',
         component: ProfileComponent
     },
     {
-        path: '',
-        redirectTo: 'home',
+        path: 'register',
+        component: RegisterComponent,
         pathMatch: 'full'
     },
     {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: 'register'
     }
 ];

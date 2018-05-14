@@ -1,9 +1,7 @@
 
-
-.top-menu li:first-child {
-    margin-left: 40px;
-}
-
-header {
-    height:55px;
+.navbar {
+  background:transparent;
+  background-image:none;
+  border-color:transparent;
+  box-shadow:none;
 }

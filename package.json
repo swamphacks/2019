@@ -31,6 +31,7 @@
     "firebase": "^3.7.4",
     "firebase-queue": "^1.5.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
     "lodash": "^4.15.0",
     "ngx-qrcode2": "^0.1.0",
     "rxjs": "6.1.0",
