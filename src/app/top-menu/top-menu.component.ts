@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class TopMenuComponent implements OnInit {
 
   userState: Observable<firebase.User>;
+  show: boolean = false;
 
   constructor(private authService:AuthService, private router: Router) {
     this.userState = authService.getAuth().authState;
@@ -33,6 +34,10 @@ export class TopMenuComponent implements OnInit {
 
     logout() {
         this.authService.logout();
+    }
+
+    toggleCollapse(){
+      this.show = !this.show;
     }
 
 
