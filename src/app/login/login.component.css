@@ -1,0 +1,233 @@
+
+
+.margin-buffer {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.login-txt {
+  margin-bottom: 2em;
+}
+
+.textbtn {
+  color: black;
+}
+
+#signInLink:hover {
+  color: red;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#mainheader {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Montserrat-Regular', serif;
+  color: #1C3444;
+  transition: 0.3s;
+  /* padding-top: 2em; */
+}
+
+.pure-menu-heading {
+  font-size: 110%;
+  margin: 0;
+}
+
+.input-field {
+  height: 50px;
+  border-radius: 6px;
+  width: 100%;
+  border-style: solid !important;
+  border-color: #6DBFE7;
+  border-width: 2px;
+  padding-left: 10px;
+  color: #6DBFE7;
+  font-size: 1.2em;
+  font-family: 'Pangolin', cursive;
+  background-color: white;
+  -webkit-appearance: none;
+}
+
+.form-lbl {
+  color: #333333;
+  font-size: 1.0em;
+  font-family: 'Pangolin', cursive;
+}
+
+.top-margin {
+  margin-top: 2em !important;
+}
+
+/* Buttons */
+.button {
+  padding-top: 0.1px !important;
+  height: 50px;
+  color: white;
+  border-radius: 6px;
+  width: 60%;
+  border: none;
+  transition: 0.3s;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button p {
+  color: white;
+  margin-top: 12px;
+  font-size: 1.2em;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.button .textbtn {
+  color: #333333;
+  font-size: 1.0em;
+  margin-top: 0px;
+
+}
+
+.txtbtnouter {
+  background-color: transparent !important;
+}
+
+.button a:hover,
+.button a:focus {
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.7;
+}
+
+/* Logo Section */
+
+.imgcon {
+  width: 65vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  position: relative;
+}
+
+.top-blk {
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: color-animation-1 6s infinite linear alternate;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.bottom-blk {
+  height: 40vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: color-animation-2 6s infinite linear alternate;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@keyframes color-animation-1 {
+   0% {
+      background: #F998AA;
+   }
+   50% {
+      background: #FAE89C;
+   }
+   100% {
+      background: #A3D3F2;
+   }
+}
+
+@keyframes color-text-animation-1 {
+   0% {
+      color: #F998AA;
+   }
+   50% {
+      color: #FAE89C;
+   }
+   100% {
+      color: #A3D3F2;
+   }
+}
+
+@keyframes color-animation-2 {
+   0% {
+      background: #A3F3C3;
+   }
+   50% {
+      background: #A3D3F2;
+   }
+   100% {
+      background: #2A3D52;
+   }
+}
+
+@keyframes color-text-animation-2 {
+   0% {
+      color: #A3F3C3;
+   }
+   50% {
+      color: #A3D3F2;
+   }
+   100% {
+      color: #2A3D52;
+   }
+}
+
+
+/* Colors */
+
+
+.green {
+  background: #6C9668;
+}
+
+.red {
+  background: red;
+}
+
+.lightRed {
+  background: #EE2229;
+}
+
+.greenTxt {
+  color: #6C9668;
+}
+
+.redTxt {
+  color: red;
+}
+
+.dark {
+  background: #1C3444;
+}
+
+.dark-txt {
+  color: #1C3444;
+}
