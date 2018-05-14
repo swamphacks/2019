@@ -1,3 +1,4 @@
+
 .content {
   padding-left: 50px;
 }
@@ -47,7 +48,7 @@ a:hover {
   padding-left: 10px;
   color: #6DBFE7;
   font-size: 1.2em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Pangolin', cursive;
   background-color: white;
   -webkit-appearance: none;
 }
@@ -55,7 +56,7 @@ a:hover {
 .form-lbl {
   color: #333333;
   font-size: 1.0em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Pangolin', cursive;
 }
 
 .top-margin {
@@ -68,7 +69,7 @@ a:hover {
   height: 50px;
   color: white;
   border-radius: 6px;
-  width: 76%;
+  width: 75%;
   border: none;
   transition: 0.3s;
 }
@@ -109,7 +110,7 @@ a:hover {
 /* Logo Section */
 
 .imgcon {
-  width: 100%;
+  width: 65vw;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -148,6 +149,11 @@ a:hover {
   z-index: 1;
 }
 
+@media (max-width: 767px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
 
 @keyframes color-animation-1 {
    0% {
