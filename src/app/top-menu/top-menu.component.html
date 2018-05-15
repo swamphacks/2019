@@ -15,6 +15,9 @@
             <a class="nav-link" routerLink="/register">Register</a>
         </li>
         <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+            <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" (click)="logout()" routerLink="/">Log Out</a>
         </li>
       </ul>
