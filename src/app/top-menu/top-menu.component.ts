@@ -20,10 +20,10 @@ export class TopMenuComponent implements OnInit {
     this.authService.getAuth().auth.onAuthStateChanged((user) => {
       if(user){
         //logged in
-        router.navigate(['/profile']);
+        router.navigate(['/meals']);
       }else{
         //logged out
-        router.navigate(['/register']);
+        router.navigate(['/home']);
       }
     });
   }
@@ -34,6 +34,7 @@ export class TopMenuComponent implements OnInit {
 
     logout() {
         this.authService.logout();
+        this.toggleCollapse();
     }
 
     toggleCollapse(){

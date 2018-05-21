@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(formValue.email, formValue.password)
           .then(
             () => {
-                this.router.navigateByUrl('/profile');
+                this.router.navigateByUrl('/meals');
             },
             err => alert(err)
           );

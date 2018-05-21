@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {RegisterComponent} from "./register/register.component";
+import {MealsComponent} from "./meals/meals.component";
 
 export const routerConfig : Route[] = [
     {
@@ -22,6 +23,10 @@ export const routerConfig : Route[] = [
     {
         path: 'profile',
         component: ProfileComponent
+    },
+    {
+        path: 'meals',
+        component: MealsComponent 
     },
     {
         path: 'register',

@@ -15,11 +15,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthService} from "./shared/security/auth.service";
+import {DatabaseService} from "./shared/security/database.service";
 import {HttpModule} from "@angular/http";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ProfileComponent } from './profile/profile.component';
+import { MealsComponent } from './meals/meals.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ProfileComponent } from './profile/profile.component';
     SafeUrlPipe,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    MealsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { ProfileComponent } from './profile/profile.component';
       NgxQRCodeModule,
       HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

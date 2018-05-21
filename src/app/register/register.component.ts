@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {AuthService} from "../shared/security/auth.service";
+import {DatabaseService} from "../shared/security/database.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,6 +15,7 @@ export class RegisterComponent  {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
+              private dbService: DatabaseService,
               private router: Router) {
 
       this.form = this.fb.group({
@@ -21,7 +23,6 @@ export class RegisterComponent  {
           password: ['',Validators.required],
           confirm: ['',Validators.required]
       });
-
 
   }
 
@@ -35,12 +36,13 @@ export class RegisterComponent  {
 
         this.authService.signUp(val.email, val.password)
             .then(
-                () => {
-                    this.router.navigateByUrl('/profile');
+                (user) => {
+                    this.dbService.addUser(user.uid);//Save user information in database to retrieve later
+                    this.router.navigateByUrl('/meals');
                 },
                 err => alert(err)
             );
     }
 
-    
+
 }
