@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {firebaseConfig} from "../environments/firebase.config";
@@ -22,6 +23,8 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ProfileComponent } from './profile/profile.component';
 import { MealsComponent } from './meals/meals.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { EmailLinksComponent } from './email-links/email-links.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,16 @@ import { MealsComponent } from './meals/meals.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    MealsComponent
+    MealsComponent,
+    ForgotPasswordComponent,
+    EmailLinksComponent
   ],
   imports: [
     BrowserModule,
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireDatabaseModule,
       AngularFireAuthModule,
+      FormsModule,
       RouterModule.forRoot(routerConfig),
       NgbModule.forRoot(),
       ReactiveFormsModule,

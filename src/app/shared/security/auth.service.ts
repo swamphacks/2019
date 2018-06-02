@@ -34,6 +34,16 @@ export class AuthService {
         return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
     }
 
+    verifyEmail(user){
+      return user.sendEmailVerification();
+    }
+
+    resetPassword(email: string){
+      return this.afAuth.auth.sendPasswordResetEmail(email)
+      .then(() => console.log('sent Password Reset Email!'))
+      .catch((error) => alert("Email does not exist"));
+    }
+
     logout() {
         this.afAuth.auth.signOut();
         this.router.navigate(['/home']);

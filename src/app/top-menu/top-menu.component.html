@@ -8,19 +8,19 @@
         <li class="nav-item" routerLinkActive="active current" [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link" routerLink="/home" (click)="toggleCollapse()" >Home</a>
         </li>
-        <li *ngIf="!(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="!((userState | async)?.uid  && (userState | async)?.emailVerified)" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/login" (click)="toggleCollapse()" >Login</a>
         </li>
-        <li *ngIf="!(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="!((userState | async)?.uid  && (userState | async)?.emailVerified)" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/register" (click)="toggleCollapse()" >Register</a>
         </li>
-        <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="(userState | async)?.uid  && (userState | async)?.emailVerified" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/meals" (click)="toggleCollapse()" >Meals</a>
         </li>
-        <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="(userState | async)?.uid  && (userState | async)?.emailVerified" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/profile" (click)="toggleCollapse()" >Profile</a>
         </li>
-        <li *ngIf="(userState | async)?.uid" class="nav-item" routerLinkActive="current">
+        <li *ngIf="(userState | async)?.uid && (userState | async)?.emailVerified" class="nav-item" routerLinkActive="current">
             <a class="nav-link" (click)="logout()" routerLink="/">Log Out</a>
         </li>
       </ul>

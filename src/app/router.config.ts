@@ -6,6 +6,8 @@ import {LoginComponent} from "./login/login.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {RegisterComponent} from "./register/register.component";
 import {MealsComponent} from "./meals/meals.component";
+import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
+import {EmailLinksComponent} from "./email-links/email-links.component";
 
 export const routerConfig : Route[] = [
     {
@@ -26,7 +28,15 @@ export const routerConfig : Route[] = [
     },
     {
         path: 'meals',
-        component: MealsComponent 
+        component: MealsComponent
+    },
+    {
+        path: 'forgotpassword',
+        component: ForgotPasswordComponent
+    },
+    {
+        path: 'emaillinks',
+        component: EmailLinksComponent
     },
     {
         path: 'register',

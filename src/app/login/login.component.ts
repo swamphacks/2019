@@ -33,8 +33,13 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(formValue.email, formValue.password)
           .then(
-            () => {
-                this.router.navigateByUrl('/meals');
+            (user) => {
+                if(user.emailVerified){
+                    this.router.navigateByUrl('/meals');
+                }else{
+                    this.authService.logout();
+                    alert('Email has not been verified');
+                }
             },
             err => alert(err)
           );

@@ -38,7 +38,10 @@ export class RegisterComponent  {
             .then(
                 (user) => {
                     this.dbService.addUser(user.uid);//Save user information in database to retrieve later
-                    this.router.navigateByUrl('/meals');
+                    this.authService.verifyEmail(user);
+                    //alert('Please verify your email address');
+                    //send user to page with common email websites
+                    this.router.navigateByUrl('/emaillinks');
                 },
                 err => alert(err)
             );

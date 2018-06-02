@@ -18,10 +18,10 @@ export class TopMenuComponent implements OnInit {
     this.userState = authService.getAuth().authState;
     //if the user is logged in then send them to qr page
     this.authService.getAuth().auth.onAuthStateChanged((user) => {
-      if(user){
+      if(user && user.emailVerified){
         //logged in
         router.navigate(['/meals']);
-      }else{
+      }else if(!user){
         //logged out
         router.navigate(['/login']);
       }
