@@ -7,6 +7,27 @@
   /* padding-top: 2em; */
 }
 
+.input-field {
+  height: 50px;
+  border-radius: 6px;
+  width: 100%;
+  border-style: solid !important;
+  border-color: #6DBFE7;
+  border-width: 2px;
+  padding-left: 10px;
+  color: #6DBFE7;
+  font-size: 1.2em;
+  font-family: 'Pangolin', cursive;
+  background-color: white;
+  -webkit-appearance: none;
+}
+
+.form-lbl {
+  color: #333333;
+  font-size: 1.5em;
+  font-family: 'Pangolin', cursive;
+}
+
 /* Buttons */
 a:hover {
   text-decoration: none;
@@ -17,7 +38,7 @@ a:hover {
   height: 50px;
   color: white;
   border-radius: 6px;
-  width: 60%;
+  width: 40%;
   border: none;
   transition: 0.3s;
 }

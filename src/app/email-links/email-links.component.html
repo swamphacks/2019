@@ -3,15 +3,25 @@
     <h3 id="mainheader">Please verify your email</h3>
   </div>
 </div>
-<div class="row" style="margin-top: 5em;">
+<div class="row justify-content-center" style="margin-top: 5em;">
+  <div class="col-lg-4 col-md-4 col-sm-0"></div>
+  <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+    <label class="form-lbl">Resend Email Verification</label>
+    <input class="input-field" [(ngModel)]="emailInput" placeholder="Enter your email here">
+    <button class="button dark" style="margin-top: 2em" (click)="resendEmail()">Send</button>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-0"></div>
+</div>
+<hr>
+<div class="row">
   <!-- TODO: add actual logos, and appropriate colors-->
-  <div class="col-4 text-center">
+  <div class="col-lg-4 col-md-4 col-sm-12 text-center">
     <a class="button green" href="https://www.yahoo.com/" target="_blank"><p>Yahoo</p></a>
   </div>
-  <div class="col-4 text-center">
+  <div class="col-lg-4 col-md-4 col-sm-12 text-center">
     <a class="button dark" href="https://mail.google.com/" target="_blank"><p>Gmail</p></a>
   </div>
-  <div class="col-4 text-center">
+  <div class="col-lg-4 col-md-4 col-sm-12text-center">
     <a class="button red" href="https://outlook.live.com/owa/" target="_blank"><p>Outlook</p></a>
   </div>
 </div>
