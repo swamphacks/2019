@@ -1,10 +1,8 @@
-
-
 export const firebaseConfig = {
-  apiKey: "AIzaSyB7QatIiqQzHl8D3CUIjnjQTuZKfVp5-T8",
-  authDomain: "angularpractice-6d2ed.firebaseapp.com",
-  databaseURL: "https://angularpractice-6d2ed.firebaseio.com",
-  projectId: "angularpractice-6d2ed",
-  storageBucket: "",
-  messagingSenderId: "163075493656"
+    apiKey: "AIzaSyCkPM5Ta8WgzxpOP6O9WuLWD6Irkd6GAPc",
+    authDomain: "swamphacks-applicants.firebaseapp.com",
+    databaseURL: "https://swamphacks-applicants.firebaseio.com",
+    projectId: "swamphacks-applicants",
+    storageBucket: "swamphacks-applicants.appspot.com",
+    messagingSenderId: "622854578748"
 };
