@@ -6,6 +6,16 @@
 </div>
   <!-- Show the things the user has done already -->
 <div class="row">
+  <div class="col" align="center">
+    <h3>Accomplishments</h3>
+  </div>
+</div>
+<div class="row">
   <div class="col">
+    <div class="row" *ngFor="let event of events | async">
+      <div class="col" align="center">
+        Name: {{ event.name }}
+      </div>
+    </div>
   </div>
 </div>

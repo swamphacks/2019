@@ -12,10 +12,11 @@ export class DatabaseService {
   constructor(private afDatabase: AngularFireDatabase) { }
 
   addUser(userid: string){
-    let user = {'acceptance': false};
-    this.afDatabase.list('/Users/').update(userid, user);
-    //add a meals section for later to keep track of which meals they have gotten
-    let meals = {'breakfast': false};
-    this.afDatabase.list('/MealProgress/').update(userid, meals);
+    let user = {'acceptance': false, 'events': ''};
+    this.afDatabase.list('/users/').update(userid, user);
+  }
+
+  getUserEvents(userid: string) {
+    return this.afDatabase.list('/users/'+userid+'/events/');
   }
 }

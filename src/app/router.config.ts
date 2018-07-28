@@ -1,5 +1,3 @@
-
-
 import {Route} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
@@ -8,11 +6,16 @@ import {RegisterComponent} from "./register/register.component";
 import {MealsComponent} from "./meals/meals.component";
 import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
 import {EmailLinksComponent} from "./email-links/email-links.component";
+import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 
 export const routerConfig : Route[] = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+      path: 'comingsoon',
+      component: ComingSoonComponent
     },
     {
         path:'home',

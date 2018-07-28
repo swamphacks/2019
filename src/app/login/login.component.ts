@@ -14,23 +14,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private authService: AuthService,
                 private router:Router) {
-
       this.form = this.fb.group({
           email: ['',Validators.required],
           password: ['',Validators.required]
       });
-
-
   }
 
   ngOnInit() {
   }
 
-
   login() {
-
       const formValue = this.form.value;
-
       this.authService.login(formValue.email, formValue.password)
           .then(
             (user) => {
@@ -43,8 +37,5 @@ export class LoginComponent implements OnInit {
             },
             err => alert(err)
           );
-
-
   }
-
 }

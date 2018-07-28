@@ -23,7 +23,7 @@ export class TopMenuComponent implements OnInit {
         router.navigate(['/meals']);
       }else if(!user){
         //logged out
-        router.navigate(['/login']);
+        router.navigate(['/comingsoon']);
       }
     });
   }

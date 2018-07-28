@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "angularpractice-6d2ed"
+    "default": "angularpractice-6d2ed",
+    "2019Swamphacks": "swamphacks-2019"
   }
 }
