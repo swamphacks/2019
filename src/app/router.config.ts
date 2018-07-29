@@ -10,6 +10,11 @@ import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 
 export const routerConfig : Route[] = [
     {
+      path: '',
+      component: ComingSoonComponent,
+      pathMatch: 'full'
+    },
+    {
         path: 'register',
         component: RegisterComponent
     },
@@ -41,11 +46,11 @@ export const routerConfig : Route[] = [
         path: 'emaillinks',
         component: EmailLinksComponent
     },
-    {
-        path: 'register',
-        component: RegisterComponent,
-        pathMatch: 'full'
-    },
+    // {
+    //     path: 'register',
+    //     component: RegisterComponent,
+    //     pathMatch: 'full'
+    // },
     {
         path: '**',
         redirectTo: 'register'

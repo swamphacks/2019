@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coming-soon.component.css']
 })
 export class ComingSoonComponent implements OnInit {
+  emailInput: string;
+  radioInput = 'volunteer';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addEmail() {
+    console.log(this.radioInput);
   }
 
 }
