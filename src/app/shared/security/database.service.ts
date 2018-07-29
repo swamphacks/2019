@@ -31,4 +31,8 @@ export class DatabaseService {
   getUserEvents(userid: string) {
     return this.afDatabase.list('/users/'+userid+'/events/');
   }
+
+  getServerTime() {
+    return firebase.database().ref('/.info/serverTimeOffset').once('value');
+  }
 }
