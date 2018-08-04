@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../shared/security/database.service';
+import * as Parallax from 'parallax-js';
 
 @Component({
   selector: 'app-coming-soon',
@@ -31,6 +32,13 @@ export class ComingSoonComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterContentInit() {
+    const leftCloudScene = document.getElementById('leftCloudScene');
+    const parallaxInstance = new Parallax(leftCloudScene);
+    const rightCloudScene = document.getElementById('rightCloudScene');
+    const parallaxInstance2 = new Parallax(rightCloudScene);
   }
 
   addEmail() {

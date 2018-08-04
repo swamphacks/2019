@@ -1,35 +1,35 @@
 <div class="mainContent">
   <div class="row">
+    <div class="col" id="leftCloudScene" align="center">
+      <div data-depth="0.80"><img class="cloud" id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
+      <div data-depth="0.80"><img class="cloud" id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
+    </div>
     <div class="col">
-      <h1>Coming Soon to swamps near you!</h1>
-      <h3>{{ countDownText }}</h3>
+      <img class="island" src="../../assets/comingSoonImgs/island.png"/>
     </div>
-  </div>
-  <div class="spacer"></div>
-  <div class="row" style="margin-left: 5px">
-    <div class="col-2">
-      <label class="container">Volunteer
-        <input type="radio" checked="checked" name="radio" value="volunteer" [(ngModel)]="radioInput">
-        <span class="checkmark"></span>
-      </label>
-    </div>
-    <div class="col-2">
-      <label class="container">Sponsor
-        <input type="radio" checked="checked" name="radio" value="sponsor" [(ngModel)]="radioInput">
-        <span class="checkmark"></span>
-      </label>
-    </div>
-    <div class="col-2">
-      <label class="container">Hacker
-        <input type="radio" checked="checked" name="radio" value="hacker" [(ngModel)]="radioInput">
-        <span class="checkmark"></span>
-      </label>
+    <div class="col" id="rightCloudScene" align="center">
+      <div data-depth="0.80"><img class="cloud" id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+      <div data-depth="0.80"><img class="cloud" id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <input class="input-field" placeholder="Enter your email" [(ngModel)]="emailInput">
-      <button (click)="addEmail()" class="button green"><p>Subscribe</p></button>
+    <div class="col" align="center">
+      <img class="title" src="../../assets/comingSoonImgs/Typography(MainText).png"/>
+    </div>
+  </div>
+  <!-- <div class="spacer"></div> -->
+  <div class="row">
+    <div class="col" align="center">
+      <input class="input-field" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emaidivnput">
+      <div class="subscriberSelect brownOrange round">
+        <select class="brownOrange" id="interetSelect">
+          <option value="0">HACKER</option>
+          <option value="1">SPONSOR</option>
+          <option value="2">VOLUNTEER</option>
+        </select>
+      </div>
+      <p class="warningLabel">*This is not the application process</p>
+      <!-- <button (cdivck)="addEmail()" class="button green"><p>Subscribe</p></button> -->
     </div>
   </div>
 </div>

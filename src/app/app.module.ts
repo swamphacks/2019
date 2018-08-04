@@ -6,6 +6,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from "angularfire2";
+import Parallax from 'parallax-js'
 
 import { HomeComponent } from './home/home.component';
 import {RouterModule} from "@angular/router";
@@ -51,7 +52,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
       NgbModule.forRoot(),
       ReactiveFormsModule,
       NgxQRCodeModule,
-      HttpModule
+      HttpModule,
   ],
   providers: [AuthService,DatabaseService],
   bootstrap: [AppComponent]
