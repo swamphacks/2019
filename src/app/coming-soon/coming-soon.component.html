@@ -1,24 +1,25 @@
+<div class="comingSoonBackground"></div>
+<canvas id="canvas"></canvas>
 <div class="mainContent">
+  <div id="leftCloudScene">
+    <div data-depth="0.40"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
+    <div data-depth="0.80"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
+  </div>
+  <!-- <img class="island" src="../../assets/comingSoonImgs/island.png"/> -->
+  <!-- <img id="leftSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
+  <img id="rightSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
+  <img id="bell" src="../../assets/comingSoonImgs/bells/stillBell.png"/>
+  <img id="turtle" src="../../assets/comingSoonImgs/betterQualityTurtle.png"/> -->
+  <div id="rightCloudScene">
+    <div data-depth="0.40"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+    <div data-depth="0.80"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
+  </div>
   <div class="row">
-    <div class="col-4" id="leftCloudScene" align="center">
-      <div data-depth="0.40"><img class="cloud" id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
-      <div data-depth="0.80"><img class="cloud" id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
-    </div>
-    <div class="col-4">
-      <img class="island" src="../../assets/comingSoonImgs/Island2019.png"/>
-      <!-- <img id="swing" src="../../assets/comingSoonImgs/swingset/stillSwing.png"/> -->
-      <img id="leftSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
-      <img id="rightSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
-      <img id="bell" src="../../assets/comingSoonImgs/bells/stillBell.png"/>
-      <img id="turtle" src="../../assets/comingSoonImgs/betterQualityTurtle.png"/>
-
-    </div>
-    <div class="col-4" id="rightCloudScene" align="center">
-      <div data-depth="0.40"><img class="cloud" id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
-      <div data-depth="0.80"><img class="cloud" id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
+    <div class="col" align="center">
+      <img class="island" src="../../assets/comingSoonImgs/island.png"/>
     </div>
   </div>
-  <div class="spacer"></div>
+  <!-- <div class="spacer"></div> -->
   <div class="row">
     <div class="col" align="center">
       <img class="title" src="../../assets/comingSoonImgs/Typography(MainText).png"/>
@@ -27,8 +28,7 @@
   <div class="row">
     <div class="col">
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="col" align="center">
           <div class="interestText">I am interested in being a </div>
           <div class="subscriberSelect">
             <select [(ngModel)]="interestType" id="interetSelect">
@@ -38,28 +38,21 @@
             </select>
           </div>
         </div>
-        <div class="col-4"></div>
       </div>
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-5">
+        <div class="col" align="center">
           <input class="input-field" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
           <button (click)="addEmail()" class="button brownOrange">Keep me Updated!</button>
         </div>
-        <div class="col-3"></div>
       </div>
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4"><p class="warningLabel">*This is not the application process</p></div>
-        <div class="col-4"></div>
+        <div class="col" align="center"><p class="warningLabel">*This is not the application process</p></div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col" align="right">
-      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/facebook.png"/>
-      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/instagram.png"/>
-      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/snapchat.png"/>
-    </div>
+  <div class="socialMediaRow">
+    <img class="socialMediaIcons" href="https://www.facebook.com/SwampHacks/?ref=br_rs" src="../../assets/comingSoonImgs/social-media/facebook.png"/>
+    <img class="socialMediaIcons" href="https://www.instagram.com/swamphack/?hl=en" src="../../assets/comingSoonImgs/social-media/instagram.png"/>
+    <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/snapchat.png"/>
   </div>
 </div>
