@@ -6,6 +6,35 @@
 .island {
   width: 500px;
   height: 450px;
+  position: absolute;
+  z-index: 1;
+}
+
+@-webkit-keyframes bellSwing {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(40deg);}
+  50% {transform: rotate(-40deg);}
+  75% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}
+
+#bell {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 17px;
+  left: 240px;
+  z-index: 0;
+  animation: bellSwing 5s linear 2s infinite;
+}
+
+#swing {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  top: 215px;
+  left: 380px;
+  z-index: 2;
 }
 
 .title{
