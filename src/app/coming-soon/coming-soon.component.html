@@ -1,13 +1,13 @@
 <div class="mainContent">
   <div class="row">
-    <div class="col" id="leftCloudScene" align="center">
+    <div class="col-4" id="leftCloudScene" align="center">
       <div data-depth="0.80"><img class="cloud" id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
       <div data-depth="0.80"><img class="cloud" id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
     </div>
-    <div class="col">
-      <img class="island" src="../../assets/comingSoonImgs/island.png"/>
+    <div class="col-4">
+      <img class="island" [src]="islandPath" (@islandAnimation.done)="animationEnded($event)" [@islandAnimation]="currentState"/>
     </div>
-    <div class="col" id="rightCloudScene" align="center">
+    <div class="col-4" id="rightCloudScene" align="center">
       <div data-depth="0.80"><img class="cloud" id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
       <div data-depth="0.80"><img class="cloud" id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
     </div>
@@ -19,17 +19,41 @@
   </div>
   <!-- <div class="spacer"></div> -->
   <div class="row">
-    <div class="col" align="center">
-      <input class="input-field" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emaidivnput">
-      <div class="subscriberSelect brownOrange round">
-        <select class="brownOrange" id="interetSelect">
-          <option value="0">HACKER</option>
-          <option value="1">SPONSOR</option>
-          <option value="2">VOLUNTEER</option>
-        </select>
+    <div class="col">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <div class="interestText">I am interested in being a </div>
+          <div class="subscriberSelect">
+            <select [(ngModel)]="interestType" id="interetSelect">
+              <option value="hacker">Hacker</option>
+              <option value="sponsor">Sponsor</option>
+              <option value="volunteer">Volunteer</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-4"></div>
       </div>
-      <p class="warningLabel">*This is not the application process</p>
-      <!-- <button (cdivck)="addEmail()" class="button green"><p>Subscribe</p></button> -->
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-5">
+          <input class="input-field" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
+          <button (click)="addEmail()" class="button brownOrange">Keep me Updated!</button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"><p class="warningLabel">*This is not the application process</p></div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" align="right">
+      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/facebook.png"/>
+      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/instagram.png"/>
+      <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/snapchat.png"/>
     </div>
   </div>
 </div>

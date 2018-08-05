@@ -24,7 +24,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "SwampHacks2019/node_modules/parallax-js/dist/parallax.min.js"
+              
             ]
           },
           "configurations": {

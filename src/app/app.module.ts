@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
@@ -43,7 +44,8 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
     ComingSoonComponent
   ],
   imports: [
-    BrowserModule,
+      BrowserModule,
+      BrowserAnimationsModule,
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireDatabaseModule,
       AngularFireAuthModule,
@@ -52,7 +54,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
       NgbModule.forRoot(),
       ReactiveFormsModule,
       NgxQRCodeModule,
-      HttpModule,
+      HttpModule
   ],
   providers: [AuthService,DatabaseService],
   bootstrap: [AppComponent]

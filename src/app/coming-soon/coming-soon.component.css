@@ -1,9 +1,5 @@
 .mainContent {
   padding: 20px;
-  background-image: url("../../assets/comingSoonImgs/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   height: 100vh;
 }
 
@@ -16,14 +12,14 @@
   margin-top: 30px;
   margin-left: 60px;
   margin-bottom: 45px;
-  width: 50vw;
-  height: 15vh;
+  width: 700px;
+  height: 100px;
 }
 
 /* Clouds */
 #leftCloud1 {
   margin-top: 12vh;
-  float: right;
+  margin-left: 25vw;
   width: 90px;
   height: 50px;
 }
@@ -54,67 +50,40 @@
   margin-top: 300px;
 }
 
-.countDown {
-  text-align: center;
-  font-size: 5em;
-  margin-top: 100px;
-}
-
 .input-field {
   margin-top: 10px;
-  height: 50%;
-  width: 33%;
+  height: 40px;
+  width: 70%;
   border-style: solid !important;
-  border-color: black;
-  border-width: 0.5px;
   color: #9b9b9b;
   font-size: 0.9em;
   /* font-family: 'Pangolin', cursive; */
-  background-color: #fffcfc80;
+  opacity: 0.5;
   /* -webkit-appearance: none; */
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .warningLabel {
   text-align: left;
-  width: 33%;
   font-size: 0.9em;
+  color: darkred;
 }
 
 /* Buttons */
 .button {
   display: inline-block;
-  padding-top: 0.1px !important;
-  height: 50px;
+  padding: 5px 10px;
   color: white;
-  border-radius: 6px;
-  width: 20%;
+  border-radius: 2px;
   border: none;
   transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
   margin-left: 5px;
 }
 
 .button:focus {
   outline: none;
-}
-
-.button p {
-  color: white;
-  margin-top: 12px;
-  font-size: 1.2em;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-}
-
-.button .textbtn {
-  color: #333333;
-  font-size: 1.0em;
-  margin-top: 0px;
-
-}
-
-.txtbtnouter {
-  background-color: transparent !important;
 }
 
 .button a:hover,
@@ -127,13 +96,18 @@
   opacity: 0.7;
 }
 
+.interestText {
+  display: inline-block;
+  font-size: 1.1em;
+}
+
 /* Select */
 .subscriberSelect {
-  /* margin-left: -9vw; */
-  display: inline-block;
-  width: 7%;
+  width: auto;
   position: relative;
   font-family: Arial;
+  display: inline-block;
+  color: white;
 }
 
 .round {
@@ -144,8 +118,9 @@
 
 .subscriberSelect select {
     display: inline-block;
-    padding: 4px 3px 3px 15px;
+    padding: 4px 3px 3px 5px;
     margin: 0;
+    margin-right: 5px;
     font: inherit;
     outline: none; /* remove focus ring from Webkit */
     line-height: 1.2;
@@ -156,6 +131,8 @@ select::-ms-expand {	display: none; }
 select{
     -webkit-appearance: none;
     appearance: none;
+    border: none;
+    background-color: inherit;
 }
 
 /* Select arrow styling */
@@ -167,12 +144,24 @@ select{
     bottom: 0;
     font-size: 60%;
     line-height: 30px;
-    padding-left: 20px;
+    /* padding-left: 50px; */
     pointer-events: none;
 }
 
 .no-pointer-events .custom-select:after {
     content: none;
+}
+
+/* Island Animations */
+
+/* Social Media */
+.socialMediaIcons {
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
+  margin-bottom: 0;
+  margin-top: -50px;
+  color: white;
 }
 
 /* Colors */
