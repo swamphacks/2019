@@ -51,8 +51,14 @@
     </div>
   </div>
   <div class="socialMediaRow">
-    <img class="socialMediaIcons" href="https://www.facebook.com/SwampHacks/?ref=br_rs" src="../../assets/comingSoonImgs/social-media/facebook.png"/>
-    <img class="socialMediaIcons" href="https://www.instagram.com/swamphack/?hl=en" src="../../assets/comingSoonImgs/social-media/instagram.png"/>
-    <img class="socialMediaIcons" src="../../assets/comingSoonImgs/social-media/snapchat.png"/>
+    <a href="https://www.facebook.com/SwampHacks/?ref=br_rs" (mouseover)="facebookHovered($event)" (mouseout)="facebookHoverOut($event)" target="_blank">
+      <img class="socialMediaIcons" [src]="facebookSrc"/>
+    </a>
+    <a href="https://www.instagram.com/swamphack/?hl=en" (mouseover)="instagramHovered($event)" (mouseout)="instagramHoverOut($event)" target="_blank">
+      <img class="socialMediaIcons" [src]="instagramSrc"/>
+    </a>
+    <a href="#" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
+      <img class="socialMediaIcons" [src]="snapchatSrc"/>
+    </a>
   </div>
 </div>

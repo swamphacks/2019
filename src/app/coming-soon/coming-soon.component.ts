@@ -32,6 +32,17 @@ export class ComingSoonComponent implements OnInit {
   emailInput: string;
   interestType = 'hacker';
 
+  facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
+  facebookHoveredPath = "../../assets/comingSoonImgs/social-media/hoverFacebook.png";
+  instagramPath = "../../assets/comingSoonImgs/social-media/instagram.png";
+  instagramHoveredPath = "../../assets/comingSoonImgs/social-media/hoverInsta.png";
+  snapchatPath = "../../assets/comingSoonImgs/social-media/snapchat.png";
+  snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/hoverSnap.png";
+
+  facebookSrc = this.facebookPath;
+  instagramSrc = this.instagramPath;
+  snapchatSrc = this.snapchatPath;
+
   constructor(private databaseService: DatabaseService) {
     // set up count down interval
     // let countDownInterval = setInterval(function(){
@@ -83,5 +94,26 @@ export class ComingSoonComponent implements OnInit {
     }
     alert("You have entered an invalid email address!");
     return false;
+  }
+
+  facebookHovered(event) {
+    this.facebookSrc = this.facebookHoveredPath;
+  }
+  facebookHoverOut(event) {
+    this.facebookSrc = this.facebookPath;
+  }
+
+  instagramHovered(event) {
+    this.instagramSrc = this.instagramHoveredPath;
+  }
+  instagramHoverOut(event) {
+    this.instagramSrc = this.instagramPath;
+  }
+
+  snapchatHovered(event) {
+    this.snapchatSrc = this.snapchatHoveredPath;
+  }
+  snapchatHoverOut(event) {
+    this.snapchatSrc = this.snapchatPath;
   }
 }
