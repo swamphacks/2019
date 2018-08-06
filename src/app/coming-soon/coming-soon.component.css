@@ -1,6 +1,12 @@
 .mainContent {
   padding: 20px;
   height: 100vh;
+  font-family: 'aller', sans-serif;
+}
+
+.statusLabel {
+  text-align: center;
+  font-size: 1.1em;
 }
 
 .title{
@@ -141,9 +147,8 @@
   height: 40px;
   width: 300px;
   border-style: solid !important;
-  color: #9b9b9b;
+  color: black;
   font-size: 0.9em;
-  /* font-family: 'Pangolin', cursive; */
   opacity: 0.5;
   /* -webkit-appearance: none; */
   /* display: inline-block; */

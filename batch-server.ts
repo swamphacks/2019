@@ -1,5 +1,4 @@
-
-import {firebaseConfig} from "./src/environments/firebase.config";
+import {firebaseConfig} from "environments/firebase.config";
 import {initializeApp, auth,database} from 'firebase';
 var Queue = require('firebase-queue');
 

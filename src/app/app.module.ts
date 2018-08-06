@@ -5,9 +5,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import {firebaseConfig} from "../environments/firebase.config";
+import {firebaseConfig} from "environments/firebase.config";
 import {AngularFireModule} from "angularfire2";
-import Parallax from 'parallax-js'
+import Parallax from 'parallax-js';
 
 import { HomeComponent } from './home/home.component';
 import {RouterModule} from "@angular/router";
@@ -28,7 +28,7 @@ import { MealsComponent } from './meals/meals.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { EmailLinksComponent } from './email-links/email-links.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
-import { RainComponent } from './coming-soon/rain.component';
+import { RainComponent } from './coming-soon/rain-component/rain.component';
 
 @NgModule({
   declarations: [

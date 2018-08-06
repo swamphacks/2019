@@ -30,6 +30,13 @@ import * as Parallax from 'parallax-js';
 })
 export class ComingSoonComponent implements OnInit {
   emailInput: string;
+  EMAIL_SAVED_MSG = 'Successfully added to interest list!';
+  INCORRECT_EMAIL_MSG = 'Incorrect email format';
+  statusText: string;
+  SUCCESS_COLOR = '#6C9668'; //shade of green
+  ERROR_COLOR = 'darkred';
+  statusColor: string;
+  showStatus = false;
   interestType = 'hacker';
 
   facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
@@ -72,9 +79,19 @@ export class ComingSoonComponent implements OnInit {
   }
 
   addEmail() {
-    if (this.emailInput == '' || !this.validateEmail(this.emailInput)) {
+    if (this.emailInput == '') {
       return;
     }
+
+    if (!this.validateEmail(this.emailInput)) {
+      // Notify user of what went wrong
+      this.statusText = this.INCORRECT_EMAIL_MSG;
+      this.statusColor = this.ERROR_COLOR;
+      this.showStatus = true;
+      setTimeout(function(){this.showStatus = false;}.bind(this), 5000);
+      return;
+    }
+
     switch (this.interestType) {
       case 'volunteer':
         this.databaseService.addVolunteerSubscriber(this.emailInput);
@@ -86,13 +103,18 @@ export class ComingSoonComponent implements OnInit {
         this.databaseService.addHackerSubscriber(this.emailInput);
         break;
     }
+    // Show Success message
+    this.statusText = this.EMAIL_SAVED_MSG;
+    this.statusColor = this.SUCCESS_COLOR;
+    this.showStatus = true;
+    setTimeout(function(){this.showStatus = false;}.bind(this), 5000);
   }
 
   validateEmail(email: string) {
    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       return true;
     }
-    alert("You have entered an invalid email address!");
+    // alert("You have entered an invalid email address!");
     return false;
   }
 

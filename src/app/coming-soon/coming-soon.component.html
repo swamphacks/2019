@@ -5,11 +5,6 @@
     <div data-depth="0.40"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
     <div data-depth="0.80"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
   </div>
-  <!-- <img class="island" src="../../assets/comingSoonImgs/island.png"/> -->
-  <!-- <img id="leftSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
-  <img id="rightSwing" src="../../assets/comingSoonImgs/swingset/swing.png"/>
-  <img id="bell" src="../../assets/comingSoonImgs/bells/stillBell.png"/>
-  <img id="turtle" src="../../assets/comingSoonImgs/betterQualityTurtle.png"/> -->
   <div id="rightCloudScene">
     <div data-depth="0.40"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
     <div data-depth="0.80"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
@@ -19,7 +14,6 @@
       <img class="island" src="../../assets/comingSoonImgs/island.png"/>
     </div>
   </div>
-  <!-- <div class="spacer"></div> -->
   <div class="row">
     <div class="col" align="center">
       <img class="title" src="../../assets/comingSoonImgs/Typography(MainText).png"/>
@@ -41,12 +35,15 @@
       </div>
       <div class="row">
         <div class="col" align="center">
-          <input class="input-field" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
+          <input class="input-field" (keyup.enter)="addEmail()" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
           <button (click)="addEmail()" class="button brownOrange">Keep me Updated!</button>
         </div>
       </div>
       <div class="row">
         <div class="col" align="center"><p class="warningLabel">*This is not the application process</p></div>
+      </div>
+      <div class="row" *ngIf="showStatus">
+        <div class="col" align="center"><p class="statusLabel" [style.color]="statusColor">{{ statusText }}</p></div>
       </div>
     </div>
   </div>
@@ -57,7 +54,7 @@
     <a href="https://www.instagram.com/swamphack/?hl=en" (mouseover)="instagramHovered($event)" (mouseout)="instagramHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="instagramSrc"/>
     </a>
-    <a href="#" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
+    <a href="#" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)">
       <img class="socialMediaIcons" [src]="snapchatSrc"/>
     </a>
   </div>
