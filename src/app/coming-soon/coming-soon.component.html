@@ -1,21 +1,21 @@
 <div class="comingSoonBackground"></div>
 <rain-component></rain-component>
 <div class="mainContent">
-  <div id="leftCloudScene">
-    <div data-depth="0.40"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
+  <div data-relative-input="true" id="leftCloudScene">
+    <div data-depth="0.60"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
     <div data-depth="0.80"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
   </div>
-  <div id="rightCloudScene">
-    <div data-depth="0.40"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+  <div data-relative-input="true" id="rightCloudScene">
+    <div data-depth="0.60"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
     <div data-depth="0.80"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
   </div>
-  <div class="row">
-    <div class="col" align="center">
+  <div class="row" data-relative-input="true" id="islandScene">
+    <div class="col" align="center" data-depth="0.30">
       <img class="island" src="../../assets/comingSoonImgs/island.png"/>
     </div>
   </div>
-  <div class="row">
-    <div class="col" align="center">
+  <div class="row" data-relative-input="true" id="mainTextScene">
+    <div class="col" align="center" data-depth="0.20">
       <img class="title" src="../../assets/comingSoonImgs/Typography(MainText).png"/>
     </div>
   </div>
@@ -36,12 +36,11 @@
       <div class="row">
         <div class="col" align="center">
           <input class="input-field" (keyup.enter)="addEmail()" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
-          <button (click)="addEmail()" class="button brownOrange">Keep me Updated!</button>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col" align="center"><p class="warningLabel">*This is not the application process</p></div>
-      </div>
+      </div> -->
       <div class="row" *ngIf="showStatus">
         <div class="col" align="center"><p class="statusLabel" [style.color]="statusColor">{{ statusText }}</p></div>
       </div>

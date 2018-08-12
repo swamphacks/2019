@@ -76,6 +76,10 @@ export class ComingSoonComponent implements OnInit {
     const parallaxInstance = new Parallax(leftCloudScene);
     const rightCloudScene = document.getElementById('rightCloudScene');
     const parallaxInstance2 = new Parallax(rightCloudScene);
+    const islandScene = document.getElementById('islandScene');
+    const parallaxInstance3 = new Parallax(islandScene);
+    const mainTextScene = document.getElementById('mainTextScene');
+    const parallaxInstance4 = new Parallax(mainTextScene);
   }
 
   addEmail() {
