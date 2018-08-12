@@ -19,8 +19,10 @@
 .title{
   margin-top: 3vh;
   margin-bottom: 2vh;
-  width: 60vw;
-  height: 15vh;
+  /* width: 60vw;
+  height: 15vh; */
+  width: 207px;
+  height: 36px;
 }
 
 .interestText {
@@ -108,39 +110,27 @@
 /* Screen size adjustments */
 @media (min-width: 200px) {
   .island {
-    width: 450px;
-    height: 400px;
-    margin-left: -110vw;
-    margin-top: 15vh;
+    width: 300px;
+    height: 300px;
+    margin-left: -30vw;
+    margin-top: 25vh;
   }
 
   .title {
     margin-top: -850px;
     width: 80vw;
-    height: 10vh;
+    height: 10vw;
   }
 
   #leftCloud1 {
-    /* top: 12vh !important;
-    left: 12vw !important;
-    width: 12vw !important;
-    height: 6vh !important; */
     display: none;
   }
 
   #leftCloud2 {
-    /* top: 35vh !important;
-    left: 5vw !important;
-    width: 18vw !important;
-    height: 8vh !important; */
     display: none;
   }
 
   #rightCloud1 {
-    /* top: 10vh !important;
-    right: 5vw !important;
-    width: 9vw !important;
-    height: 5vh !important; */
     display: none;
   }
 
@@ -149,7 +139,6 @@
     left: 78vw !important;
     width: 25vw !important;
     height: 8vh !important;
-    /* display: none; */
   }
 
   .socialMediaRow {
@@ -166,34 +155,22 @@
   }
 
   .title{
-    width: 60vw;
-    height: 13vh;
+    width: 50vw;
+    height: 6vw;
     margin-top: 3vh;
     margin-bottom: 2vh;
   }
 
   #leftCloud1 {
     display: block;
-    top: 12vh !important;
-    left: 25vw !important;
-    width: 6vw !important;
-    height: 6vh !important;
   }
 
   #leftCloud2 {
     display: block;
-    top: 35vh !important;
-    left: 15vw !important;
-    width: 11vw !important;
-    height: 11vh !important;
   }
 
   #rightCloud1 {
     display: block;
-    top: 8vh !important;
-    right: 30vw !important;
-    width: 5vw !important;
-    height: 5vh !important;
   }
 
   #rightCloud2 {

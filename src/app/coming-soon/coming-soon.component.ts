@@ -38,6 +38,7 @@ export class ComingSoonComponent implements OnInit {
   statusColor: string;
   showStatus = false;
   interestType = 'hacker';
+  isMobile = false;
 
   facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
   facebookHoveredPath = "../../assets/comingSoonImgs/social-media/hoverFacebook.png";
@@ -46,11 +47,17 @@ export class ComingSoonComponent implements OnInit {
   snapchatPath = "../../assets/comingSoonImgs/social-media/snapchat.png";
   snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/hoverSnap.png";
 
+  desktopIslandPath = '../../assets/comingSoonImgs/island.png';
+  mobileIslandPath = '../../assets/comingSoonImgs/island(mobile).png';
+
+  islandPath = this.desktopIslandPath;
+
   facebookSrc = this.facebookPath;
   instagramSrc = this.instagramPath;
   snapchatSrc = this.snapchatPath;
 
   constructor(private databaseService: DatabaseService) {
+    this.checkIfMobile();
     // set up count down interval
     // let countDownInterval = setInterval(function(){
     //   let currentTime = new Date().getTime();
@@ -69,6 +76,7 @@ export class ComingSoonComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.addEventListener('resize', this.checkIfMobile.bind(this));
   }
 
   ngAfterContentInit() {
@@ -80,6 +88,16 @@ export class ComingSoonComponent implements OnInit {
     const parallaxInstance3 = new Parallax(islandScene);
     const mainTextScene = document.getElementById('mainTextScene');
     const parallaxInstance4 = new Parallax(mainTextScene);
+  }
+
+  checkIfMobile() {
+    if (window.screen.width <= 450) {
+      this.isMobile = true;
+      this.islandPath = this.mobileIslandPath;
+    } else {
+      this.isMobile = false;
+      this.islandPath = this.desktopIslandPath;
+    }
   }
 
   addEmail() {
