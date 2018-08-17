@@ -17,12 +17,10 @@
 }
 
 .title{
+  width: 50vw;
+  height: 8vw;
   margin-top: 3vh;
   margin-bottom: 2vh;
-  /* width: 60vw;
-  height: 15vh; */
-  width: 207px;
-  height: 36px;
 }
 
 .interestText {
@@ -111,7 +109,7 @@
 @media (min-width: 200px) {
   .island {
     width: 300px;
-    height: 300px;
+    height: 350px;
     margin-left: -30vw;
     margin-top: 25vh;
   }
@@ -119,7 +117,7 @@
   .title {
     margin-top: -850px;
     width: 80vw;
-    height: 10vw;
+    height: 13vw;
   }
 
   #leftCloud1 {
@@ -156,7 +154,7 @@
 
   .title{
     width: 50vw;
-    height: 6vw;
+    height: 8vw;
     margin-top: 3vh;
     margin-bottom: 2vh;
   }
