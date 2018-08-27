@@ -1,21 +1,21 @@
 <div class="comingSoonBackground"></div>
-<rain-component></rain-component>
+<!-- <rain-component></rain-component> -->
 <div class="mainContent">
   <div data-relative-input="true" id="leftCloudScene">
-    <div data-depth="0.60"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
-    <div data-depth="0.80"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
+    <div data-depth="0.50"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
+    <div data-depth="0.70"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
   </div>
   <div data-relative-input="true" id="rightCloudScene">
-    <div data-depth="0.60"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
-    <div data-depth="0.80"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
+    <div data-depth="0.50"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+    <div data-depth="0.70"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
   </div>
   <div class="row" data-relative-input="true" id="islandScene">
-    <div class="col" align="center" data-depth="0.30">
+    <div class="col" align="center" data-depth="0.20">
       <img class="island" [src]="islandPath"/>
     </div>
   </div>
   <div class="row" data-relative-input="true" id="mainTextScene">
-    <div class="col" align="center" data-depth="0.20">
+    <div class="col" align="center" data-depth="0.10">
       <img class="title" src="../../assets/comingSoonImgs/Typography (large).png"/>
     </div>
   </div>
@@ -23,26 +23,12 @@
     <div class="col">
       <div class="row">
         <div class="col" align="center">
-          <div class="interestText">I am interested in being a </div>
-          <div class="subscriberSelect">
-            <select [(ngModel)]="interestType" id="interetSelect">
-              <option value="hacker">Hacker</option>
-              <option value="sponsor">Sponsor</option>
-              <option value="volunteer">Volunteer</option>
-            </select>
-          </div>
+          <input class="input-field" (keyup.enter)="addEmail()" placeholder="ENTER EMAIL" [(ngModel)]="emailInput">
+          <button class="subscribeBtn brownOrange" (click)="addEmail()">Subscribe</button>
         </div>
       </div>
-      <div class="row">
-        <div class="col" align="center">
-          <input class="input-field" (keyup.enter)="addEmail()" placeholder="ENTER EMAIL TO JOIN INTEREST LIST" [(ngModel)]="emailInput">
-        </div>
-      </div>
-      <!-- <div class="row">
-        <div class="col" align="center"><p class="warningLabel">*This is not the application process</p></div>
-      </div> -->
       <div class="row" *ngIf="showStatus">
-        <div class="col" align="center"><p class="statusLabel" [style.color]="statusColor">{{ statusText }}</p></div>
+        <div class="col" align="center" style="margin-top: 15px;"><p class="statusLabel" [style.color]="statusColor">{{ statusText }}</p></div>
       </div>
     </div>
   </div>
@@ -53,7 +39,10 @@
     <a href="https://www.instagram.com/swamphack/?hl=en" (mouseover)="instagramHovered($event)" (mouseout)="instagramHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="instagramSrc"/>
     </a>
-    <a href="#" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)">
+    <a href="https://twitter.com/swamphacks?lang=en" (mouseover)="twitterHovered($event)" (mouseout)="twitterHoverOut($event)" target="_blank">
+      <img class="socialMediaIcons" [src]="twitterSrc"/>
+    </a>
+    <a href="https://www.snapchat.com/add/swamphackssnaps" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="snapchatSrc"/>
     </a>
   </div>

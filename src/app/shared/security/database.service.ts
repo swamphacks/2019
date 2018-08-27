@@ -16,16 +16,8 @@ export class DatabaseService {
     this.afDatabase.list('/users/').update(userid, user);
   }
 
-  addVolunteerSubscriber(email: string) {
-    this.afDatabase.list('/subscribedVolunteers/').push({'email': email});
-  }
-
-  addSponsorSubscriber(email: string) {
-    this.afDatabase.list('/subscribedSponsor/').push({'email': email});
-  }
-
-  addHackerSubscriber(email: string) {
-    this.afDatabase.list('/subscribedHacker/').push({'email': email});
+  addInterestedUserEmail(email: string) {
+    this.afDatabase.list('/interestedUserEmail/').push({'email': email});
   }
 
   getUserEvents(userid: string) {

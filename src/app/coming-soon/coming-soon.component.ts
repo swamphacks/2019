@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DatabaseService } from '../shared/security/database.service';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import * as Parallax from 'parallax-js';
@@ -33,19 +33,20 @@ export class ComingSoonComponent implements OnInit {
   EMAIL_SAVED_MSG = 'Successfully added to interest list!';
   INCORRECT_EMAIL_MSG = 'Incorrect email format';
   statusText: string;
-  SUCCESS_COLOR = '#6C9668'; //shade of green
+  SUCCESS_COLOR = '#E8F9F9';
   ERROR_COLOR = 'darkred';
   statusColor: string;
   showStatus = false;
-  interestType = 'hacker';
   isMobile = false;
 
   facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
   facebookHoveredPath = "../../assets/comingSoonImgs/social-media/hoverFacebook.png";
   instagramPath = "../../assets/comingSoonImgs/social-media/instagram.png";
   instagramHoveredPath = "../../assets/comingSoonImgs/social-media/hoverInsta.png";
+  twitterPath = "../../assets/comingSoonImgs/social-media/twitter.png";
+  twitterHoveredPath = "../../assets/comingSoonImgs/social-media/twitterHover.png";
   snapchatPath = "../../assets/comingSoonImgs/social-media/snapchat.png";
-  snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/hoverSnap.png";
+  snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/snapchatHover.png";
 
   desktopIslandPath = '../../assets/comingSoonImgs/island.png';
   mobileIslandPath = '../../assets/comingSoonImgs/island(mobile).png';
@@ -54,29 +55,19 @@ export class ComingSoonComponent implements OnInit {
 
   facebookSrc = this.facebookPath;
   instagramSrc = this.instagramPath;
+  twitterSrc = this.twitterPath;
   snapchatSrc = this.snapchatPath;
 
   constructor(private databaseService: DatabaseService) {
     this.checkIfMobile();
-    // set up count down interval
-    // let countDownInterval = setInterval(function(){
-    //   let currentTime = new Date().getTime();
-    //   let timeDifference = this.eventDate - currentTime;
-    //   if (timeDifference <= 0) {
-    //     clearInterval(countDownInterval);
-    //     this.countDownText = 'Welcome to the Swamp!';
-    //   }
-    //   let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    //   let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //   let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    //   let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-    //
-    //   this.countDownText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    // }.bind(this), 1000);
   }
 
   ngOnInit() {
     window.addEventListener('resize', this.checkIfMobile.bind(this));
+  }
+
+  ngAfterViewInit() {
+
   }
 
   ngAfterContentInit() {
@@ -91,7 +82,8 @@ export class ComingSoonComponent implements OnInit {
   }
 
   checkIfMobile() {
-    if (window.screen.width <= 450) {
+    console.log(window);
+    if (window.screen.width <= 450 || window.innerWidth <= 400) {
       this.isMobile = true;
       this.islandPath = this.mobileIslandPath;
     } else {
@@ -113,18 +105,8 @@ export class ComingSoonComponent implements OnInit {
       setTimeout(function(){this.showStatus = false;}.bind(this), 5000);
       return;
     }
-
-    switch (this.interestType) {
-      case 'volunteer':
-        this.databaseService.addVolunteerSubscriber(this.emailInput);
-        break;
-      case 'sponsor':
-        this.databaseService.addSponsorSubscriber(this.emailInput);
-        break;
-      case 'hacker':
-        this.databaseService.addHackerSubscriber(this.emailInput);
-        break;
-    }
+    //save user email
+    this.databaseService.addInterestedUserEmail(this.emailInput);
     // Show Success message
     this.statusText = this.EMAIL_SAVED_MSG;
     this.statusColor = this.SUCCESS_COLOR;
@@ -154,10 +136,35 @@ export class ComingSoonComponent implements OnInit {
     this.instagramSrc = this.instagramPath;
   }
 
+  twitterHovered(event) {
+    this.twitterSrc = this.twitterHoveredPath;
+  }
+  twitterHoverOut(event) {
+    this.twitterSrc = this.twitterPath;
+  }
+
   snapchatHovered(event) {
     this.snapchatSrc = this.snapchatHoveredPath;
   }
   snapchatHoverOut(event) {
     this.snapchatSrc = this.snapchatPath;
+  }
+
+  startCountDown() {
+    // set up count down interval
+    // let countDownInterval = setInterval(function(){
+    //   let currentTime = new Date().getTime();
+    //   let timeDifference = this.eventDate - currentTime;
+    //   if (timeDifference <= 0) {
+    //     clearInterval(countDownInterval);
+    //     this.countDownText = 'Welcome to the Swamp!';
+    //   }
+    //   let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    //   let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //   let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    //   let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    //
+    //   this.countDownText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    // }.bind(this), 1000);
   }
 }
