@@ -1,6 +1,6 @@
 .mainContent {
   padding: 20px;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: 'aller', sans-serif;
 }
 
@@ -81,19 +81,6 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
   /* color: white;
   opacity: 0.75; */
-}
-
-.statusLabel {
-  text-align: center;
-  font-family: 'aller', sans-serif;
-  font-size: 17px !important;
-}
-
-.warningLabel {
-  text-align: center;
-  font-family: 'aller', sans-serif;
-  font-size: 5px !important;
-  color: darkred;
 }
 
 /* Social Media */

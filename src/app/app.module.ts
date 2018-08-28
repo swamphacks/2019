@@ -5,8 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import {firebaseConfig} from "environments/firebase.config";
-import {AngularFireModule} from "angularfire2";
+import { firebaseConfig } from "environments/firebase.config";
+import { AngularFireModule } from "angularfire2";
 import Parallax from 'parallax-js';
 
 import { HomeComponent } from './home/home.component';
@@ -29,6 +29,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { EmailLinksComponent } from './email-links/email-links.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { RainComponent } from './coming-soon/rain-component/rain.component';
+
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { RainComponent } from './coming-soon/rain-component/rain.component';
       NgbModule.forRoot(),
       ReactiveFormsModule,
       NgxQRCodeModule,
-      HttpModule
+      HttpModule,
+      MatSnackBarModule,
   ],
   providers: [AuthService,DatabaseService],
   bootstrap: [AppComponent]

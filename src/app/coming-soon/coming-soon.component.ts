@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DatabaseService } from '../shared/security/database.service';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import * as Parallax from 'parallax-js';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-coming-soon',
@@ -30,13 +31,8 @@ import * as Parallax from 'parallax-js';
 })
 export class ComingSoonComponent implements OnInit {
   emailInput: string;
-  EMAIL_SAVED_MSG = 'Successfully added to interest list!';
+  EMAIL_SAVED_MSG = 'Email has been added!';
   INCORRECT_EMAIL_MSG = 'Incorrect email format';
-  statusText: string;
-  SUCCESS_COLOR = '#E8F9F9';
-  ERROR_COLOR = 'darkred';
-  statusColor: string;
-  showStatus = false;
   isMobile = false;
 
   facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
@@ -58,7 +54,7 @@ export class ComingSoonComponent implements OnInit {
   twitterSrc = this.twitterPath;
   snapchatSrc = this.snapchatPath;
 
-  constructor(private databaseService: DatabaseService) {
+  constructor(private databaseService: DatabaseService, private snackbar: MatSnackBar) {
     this.checkIfMobile();
   }
 
@@ -99,19 +95,18 @@ export class ComingSoonComponent implements OnInit {
 
     if (!this.validateEmail(this.emailInput)) {
       // Notify user of what went wrong
-      this.statusText = this.INCORRECT_EMAIL_MSG;
-      this.statusColor = this.ERROR_COLOR;
-      this.showStatus = true;
-      setTimeout(function(){this.showStatus = false;}.bind(this), 5000);
+      this.snackbar.open(this.INCORRECT_EMAIL_MSG, 'Close', {
+        duration: 5000,
+      });
+
       return;
     }
     //save user email
     this.databaseService.addInterestedUserEmail(this.emailInput);
     // Show Success message
-    this.statusText = this.EMAIL_SAVED_MSG;
-    this.statusColor = this.SUCCESS_COLOR;
-    this.showStatus = true;
-    setTimeout(function(){this.showStatus = false;}.bind(this), 5000);
+    this.snackbar.open(this.EMAIL_SAVED_MSG, 'Close', {
+      duration: 5000,
+    });
   }
 
   validateEmail(email: string) {
