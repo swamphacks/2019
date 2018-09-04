@@ -2,34 +2,39 @@
 <!-- <rain-component></rain-component> -->
 <div class="mainContent">
   <div data-relative-input="true" id="leftCloudScene">
-    <div data-depth="0.50"><img id="leftCloud1" src="../../assets/comingSoonImgs/clouds/cloudLeft1.png"/></div>
-    <div data-depth="0.70"><img id="leftCloud2" src="../../assets/comingSoonImgs/clouds/cloudLeft2.png"/></div>
+    <div data-depth="0.50"><img [id]="leftCloud1Id" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+    <div data-depth="0.70"><img [id]="leftCloud2Id" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
   </div>
   <div data-relative-input="true" id="rightCloudScene">
-    <div data-depth="0.50"><img id="rightCloud1" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
-    <div data-depth="0.70"><img id="rightCloud2" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
+    <div data-depth="0.50"><img [id]="rightCloud1Id" src="../../assets/comingSoonImgs/clouds/cloudRight1.png"/></div>
+    <div data-depth="0.70"><img [id]="rightCloud2Id" src="../../assets/comingSoonImgs/clouds/cloudRight2.png"/></div>
+  </div>
+  <div class="row">
+    <div class="col" align="center">
+      <img [class]="titleMobileClass" src="../../assets/comingSoonImgs/typography(mobile).png"/>
+    </div>
   </div>
   <div class="row" data-relative-input="true" id="islandScene">
     <div class="col" align="center" data-depth="0.20">
-      <img class="island" [src]="islandPath"/>
+      <img [class]="islandClass"  [src]="islandPath"/>
     </div>
   </div>
   <div class="row" data-relative-input="true" id="mainTextScene">
     <div class="col" align="center" data-depth="0.10">
-      <img class="title" src="../../assets/comingSoonImgs/Typography (large).png"/>
+      <img [class]="titleClass" src="../../assets/comingSoonImgs/Typography (large).png"/>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <div class="row">
         <div class="col" align="center">
-          <input class="input-field" (keyup.enter)="addEmail()" placeholder="ENTER EMAIL" [(ngModel)]="emailInput">
-          <button class="subscribeBtn brownOrange" (click)="addEmail()">Subscribe</button>
+          <input [class]="inputClass" (keyup.enter)="addEmail()" placeholder="Enter Email" [(ngModel)]="emailInput">
+          <button class="subscribeBtn brownOrange" (click)="addEmail()">Stay Updated</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="socialMediaRow">
+  <div class="socialMediaRow" *ngIf="!isMobile">
     <a href="https://www.facebook.com/SwampHacks/?ref=br_rs" (mouseover)="facebookHovered($event)" (mouseout)="facebookHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="facebookSrc"/>
     </a>
@@ -39,7 +44,7 @@
     <a href="https://twitter.com/swamphacks?lang=en" (mouseover)="twitterHovered($event)" (mouseout)="twitterHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="twitterSrc"/>
     </a>
-    <a href="https://www.snapchat.com/add/swamphackssnaps" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
+    <a style="margin-right: 20px; margin-left: -5px" href="https://www.snapchat.com/add/swamphackssnaps" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
       <img class="socialMediaIcons" [src]="snapchatSrc"/>
     </a>
   </div>

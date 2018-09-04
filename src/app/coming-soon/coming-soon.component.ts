@@ -35,16 +35,25 @@ export class ComingSoonComponent implements OnInit {
   INCORRECT_EMAIL_MSG = 'Incorrect email format';
   isMobile = false;
 
+  islandClass = 'island';
+  inputClass = 'input-field';
+  titleClass = 'title';
+  titleMobileClass = 'titleMobile';
+  leftCloud1Id = 'leftCloud1';
+  leftCloud2Id = 'leftCloud2';
+  rightCloud1Id = 'rightCloud1';
+  rightCloud2Id = 'rightCloud2';
+
   facebookPath = "../../assets/comingSoonImgs/social-media/facebook.png";
-  facebookHoveredPath = "../../assets/comingSoonImgs/social-media/hoverFacebook.png";
+  facebookHoveredPath = "../../assets/comingSoonImgs/social-media/facebookHover.png";
   instagramPath = "../../assets/comingSoonImgs/social-media/instagram.png";
-  instagramHoveredPath = "../../assets/comingSoonImgs/social-media/hoverInsta.png";
+  instagramHoveredPath = "../../assets/comingSoonImgs/social-media/instagramHover.png";
   twitterPath = "../../assets/comingSoonImgs/social-media/twitter.png";
   twitterHoveredPath = "../../assets/comingSoonImgs/social-media/twitterHover.png";
   snapchatPath = "../../assets/comingSoonImgs/social-media/snapchat.png";
   snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/snapchatHover.png";
 
-  desktopIslandPath = '../../assets/comingSoonImgs/island.png';
+  desktopIslandPath = '../../assets/comingSoonImgs/Island2019.png';
   mobileIslandPath = '../../assets/comingSoonImgs/island(mobile).png';
 
   islandPath = this.desktopIslandPath;
@@ -79,12 +88,33 @@ export class ComingSoonComponent implements OnInit {
 
   checkIfMobile() {
     console.log(window);
-    if (window.screen.width <= 450 || window.innerWidth <= 400) {
+    if (window.screen.width <= 450 || window.innerWidth <= 400 || window.screen.height <= 450) {
       this.isMobile = true;
-      this.islandPath = this.mobileIslandPath;
+      this.islandClass = 'islandMobile';
+      this.inputClass = 'input-fieldMobile';
+      this.titleClass = 'disappear';
+      this.titleMobileClass = 'titleMobile';
+      this.leftCloud1Id = 'disappear';
+      this.leftCloud2Id = 'disappear';
+      this.rightCloud1Id = 'disappear';
+      this.rightCloud2Id = 'rightCloud2Mobile';
+      if (window.innerWidth >= window.innerHeight) {
+        this.titleMobileClass = 'titleMobileLandscape';
+        this.islandClass = 'islandMobileLandscape';
+        this.rightCloud2Id = 'disappear';
+      }
+      // this.islandPath = this.mobileIslandPath;
     } else {
       this.isMobile = false;
-      this.islandPath = this.desktopIslandPath;
+      this.islandClass = 'island';
+      this.inputClass = 'input-field';
+      this.titleClass = 'title';
+      this.titleMobileClass = 'disappear';
+      this.leftCloud1Id = 'leftCloud1';
+      this.leftCloud2Id = 'leftCloud2';
+      this.rightCloud1Id = 'rightCloud1';
+      this.rightCloud2Id = 'rightCloud2';
+      // this.islandPath = this.desktopIslandPath;
     }
   }
 
@@ -95,8 +125,9 @@ export class ComingSoonComponent implements OnInit {
 
     if (!this.validateEmail(this.emailInput)) {
       // Notify user of what went wrong
-      this.snackbar.open(this.INCORRECT_EMAIL_MSG, 'Close', {
+      this.snackbar.open(this.INCORRECT_EMAIL_MSG, 'OK', {
         duration: 5000,
+        panelClass: ['snackbarColor']
       });
 
       return;
@@ -104,8 +135,9 @@ export class ComingSoonComponent implements OnInit {
     //save user email
     this.databaseService.addInterestedUserEmail(this.emailInput);
     // Show Success message
-    this.snackbar.open(this.EMAIL_SAVED_MSG, 'Close', {
+    this.snackbar.open(this.EMAIL_SAVED_MSG, 'OK', {
       duration: 5000,
+      panelClass: ['snackbarColor']
     });
   }
 

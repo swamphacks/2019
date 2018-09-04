@@ -5,15 +5,23 @@
 }
 
 .island {
-  width: 500px;
-  height: 450px;
-  /* margin-left: -5vw; */
+  width: 450px;
+  height: 400px;
   margin-top: 5vh;
-  /* width: 34.7vw;
-  height: 56vh; */
-  /* position: absolute; */
-  /* left: 35vw; */
   z-index: 1;
+}
+
+.islandMobile {
+  width: 260px;
+  height: 260px;
+  margin-top: 10vh;
+}
+
+.islandMobileLandscape {
+  width: 230px;
+  height: 230px;
+  margin-top: -10vh;
+  margin-right: -45vw;
 }
 
 .title{
@@ -23,6 +31,20 @@
   margin-bottom: 2vh;
 }
 
+.titleMobile {
+  width: 80vw;
+  height: 13vw;
+  margin-top: 20px;
+  margin-bottom: 2vh;
+}
+
+.titleMobileLandscape {
+  width: 50vw;
+  height: 8vw;
+  margin-bottom: -55vh;
+  margin-left: -45vw;
+}
+
 .interestText {
   margin-top: 10vh;
   display: inline-block;
@@ -30,8 +52,10 @@
 }
 
 .input-field {
-  margin-top: 60px;
+  /* margin-top: 60px; */
+  margin-top: 10vh;
   width: 250px;
+  height: 35px;
   font-size: 15px !important;
   /* background-color: #ffffff00; */
   border-color: black;
@@ -42,7 +66,24 @@
   /* border: none;
   box-shadow: none !important; */
   /* padding-left: 33px; */
-  font-family: 'aller', sans-serif;
+  font-family: 'metropolis', sans-serif;
+  color: #065144;
+  font-weight: 800;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+.input-fieldMobile {
+  margin-top: 10vh;
+  font-size: 15px !important;
+  width: 300px;
+  height: 35px;
+  border-color: black;
+  border-radius: 0.5px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'metropolis', sans-serif;
   color: #065144;
   font-weight: 800;
   opacity: 0.5;
@@ -54,10 +95,14 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 18px;
+  font-family: 'metropolis', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
   border-color: black;
-  border-radius: 2px;
+  border-radius: 1px;
+  border-width: 0.5px;
+  padding-top: 6px;
+  padding-bottom: 5.5px;
   /* padding-top: 15px;
   padding-bottom: 15px; */
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -133,91 +178,20 @@
   height: 50px;
 }
 
-/* Screen size adjustments */
-@media (min-width: 200px) {
-  .island {
-    width: 250px;
-    height: 300px;
-    margin-left: -40vw;
-    margin-top: 25vh;
-  }
-
-  .title {
-    margin-top: -900px;
-    width: 80vw;
-    height: 13vw;
-  }
-
-  .input-field {
-    font-size: 22px;
-    width: 300px;
-  }
-
-  #leftCloud1 {
-    display: none;
-  }
-
-  #leftCloud2 {
-    display: none;
-  }
-
-  #rightCloud1 {
-    display: none;
-  }
-
-  #rightCloud2 {
-    top: 20vh !important;
-    left: 78vw !important;
-  }
-
-  .socialMediaRow {
-    display: none;
-  }
+.disappear {
+  display: none;
 }
 
-@media (min-width: 600px) {
-  .island {
-    width: 400px;
-    height: 350px;
-    margin-left: 0;
-    margin-top: 5vh;
-  }
+#disappear {
+  display: none;
+}
 
-  .title{
-    width: 660px;
-    height: 108px;
-    margin-top: 3vh;
-    margin-bottom: 2vh;
-  }
-
-  .input-field {
-    font-size: 30px;
-    width: 300px;
-  }
-
-  #leftCloud1 {
-    display: block;
-  }
-
-  #leftCloud2 {
-    display: block;
-  }
-
-  #rightCloud1 {
-    display: block;
-  }
-
-  #rightCloud2 {
-    display: block;
-    top: 35vh !important;
-    left: 70vw !important;
-    width: 90px;
-    height: 50px;
-  }
-
-  .socialMediaRow {
-    display: block;
-  }
+#rightCloud2Mobile {
+  top: 12vh !important;
+  left: 70vw;
+  position: absolute;
+  width: 90px;
+  height: 50px;
 }
 
 /* Select */

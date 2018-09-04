@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Monoton|Montserrat|Pangolin|Poppins');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:900');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 
@@ -25,5 +23,15 @@
 
 @font-face {
   font-family: aller;
-  src: url('./assets/comingSoonImgs/fonts/Aller_Rg.ttf') format("opentype");
+  src: url('./assets/comingSoonImgs/fonts/aller/Aller_Rg.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: metropolis;
+  src: url('./assets/comingSoonImgs/fonts/metropolis/Metropolis-Regular.otf') format("opentype");
+}
+
+.snackbarColor {
+  background-color: #064a3e;
+  color: white;
 }

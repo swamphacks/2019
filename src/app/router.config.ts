@@ -14,45 +14,50 @@ export const routerConfig : Route[] = [
       component: ComingSoonComponent,
       pathMatch: 'full'
     },
-    {
-        path: 'register',
-        component: RegisterComponent
-    },
+    // {
+    //     path: 'register',
+    //     component: RegisterComponent
+    // },
     {
       path: 'comingsoon',
       component: ComingSoonComponent
     },
-    {
-        path:'home',
-        component: HomeComponent
-    },
-    {
-        'path': 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'profile',
-        component: ProfileComponent
-    },
-    {
-        path: 'meals',
-        component: MealsComponent
-    },
-    {
-        path: 'forgotpassword',
-        component: ForgotPasswordComponent
-    },
-    {
-        path: 'emaillinks',
-        component: EmailLinksComponent
-    },
+    // {
+    //     path:'home',
+    //     component: HomeComponent
+    // },
+    // {
+    //     'path': 'login',
+    //     component: LoginComponent
+    // },
+    // {
+    //     path: 'profile',
+    //     component: ProfileComponent
+    // },
+    // {
+    //     path: 'meals',
+    //     component: MealsComponent
+    // },
+    // {
+    //     path: 'forgotpassword',
+    //     component: ForgotPasswordComponent
+    // },
+    // {
+    //     path: 'emaillinks',
+    //     component: EmailLinksComponent
+    // },
     // {
     //     path: 'register',
     //     component: RegisterComponent,
     //     pathMatch: 'full'
-    // },
-    {
-        path: '**',
-        redirectTo: 'register'
-    }
+    // // },
+    // {
+    //     path: '**',
+    //     redirectTo: 'register'
+    // }
+        // },
+        {
+            path: '**',
+            redirectTo: 'comingsoon'
+        }
 ];
