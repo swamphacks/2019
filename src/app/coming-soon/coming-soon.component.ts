@@ -35,13 +35,14 @@ interface MailChimpResponse {
     // ])
   ]
 })
+
 export class ComingSoonComponent implements OnInit {
   emailInput: string;
   EMAIL_SAVED_MSG = 'Email has been added!';
   INCORRECT_EMAIL_MSG = 'Incorrect email format';
   isMobile = false;
 
-  mailChimpEndpoint = '';
+  mailChimpEndpoint = 'https://swamphacks.us10.list-manage.com/subscribe/post-json?u=44a52d9dbedc78feec6c91b97&amp;id=3596e8ca10&';
 
   islandClass = 'island';
   inputClass = 'input-field';
@@ -156,13 +157,13 @@ export class ComingSoonComponent implements OnInit {
       }
     }.bind(this));
     //send email
-    // this.sendNotificationEmail(this.emailInput);
+    this.sendNotificationEmail(this.emailInput);
   }
 
   sendNotificationEmail(email: string) {
     const params = new HttpParams()
       .set('EMAIL', email)
-      .set('b_123abc123abc123abc123abc123abc123abc', ''); // hidden input name
+      .set('b_44a52d9dbedc78feec6c91b97_3596e8ca10', ''); // hidden input name
     const mailChimpUrl = this.mailChimpEndpoint + params.toString();
 
     // 'c' refers to the jsonp callback param key. This is specific to Mailchimp
