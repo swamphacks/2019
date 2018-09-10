@@ -17,17 +17,31 @@ export class DatabaseService {
   }
 
   checkDuplicate(email: string) {
-    // this.afDatabase.list('/listserv/').snapshotChanges();
-    return false;
+    let duplicate = new Promise(function(resolve, reject) {
+      this.afDatabase.list('/listserv/').subscribe(((emails) => {
+        for (let index in emails) {
+          if (emails[index]['email'] === email) {
+            resolve(true);
+          }
+        }
+        resolve(false);
+      }));
+    }.bind(this));
+    return duplicate;
   }
 
   addInterestedUserEmail(email: string) {
-    if (this.checkDuplicate(email)) {
-      return false;
-    }
-
-    this.afDatabase.list('/listserv/').push({'email': email});
-    return true;
+    let successful = new Promise(function(resolve, reject) {
+      this.checkDuplicate(email).then((isDuplicate) => {
+        if (isDuplicate) {
+           resolve(false);
+        }
+    
+        this.afDatabase.list('/listserv/').push({'email': email});
+        resolve(true);
+      });
+    }.bind(this));
+    return successful;
   }
 
   getUserEvents(userid: string) {

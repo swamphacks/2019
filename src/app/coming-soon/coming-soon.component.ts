@@ -95,7 +95,7 @@ export class ComingSoonComponent implements OnInit {
   }
 
   checkIfMobile() {
-    console.log(window);
+    // console.log(window);
     if (window.screen.width <= 450 || window.innerWidth <= 400 || window.screen.height <= 450) {
       this.isMobile = true;
       this.islandClass = 'islandMobile';
@@ -141,14 +141,22 @@ export class ComingSoonComponent implements OnInit {
       return;
     }
     //save user email
-    this.databaseService.addInterestedUserEmail(this.emailInput);
-    // Show Success message
-    this.snackbar.open(this.EMAIL_SAVED_MSG, 'OK', {
-      duration: 5000,
-      panelClass: ['snackbarColor']
-    });
+    this.databaseService.addInterestedUserEmail(this.emailInput).then(function(successful) {
+      if (successful) {
+        // Show Success message
+        this.snackbar.open(this.EMAIL_SAVED_MSG, 'OK', {
+          duration: 5000,
+          panelClass: ['snackbarColor']
+        });
+      } else {
+        this.snackbar.open('Email already exists', 'OK', {
+          duration: 5000,
+          panelClass: ['snackbarColor']
+        });
+      }
+    }.bind(this));
     //send email
-    this.sendNotificationEmail(this.emailInput);
+    // this.sendNotificationEmail(this.emailInput);
   }
 
   sendNotificationEmail(email: string) {
