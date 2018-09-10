@@ -16,8 +16,18 @@ export class DatabaseService {
     this.afDatabase.list('/users/').update(userid, user);
   }
 
+  checkDuplicate(email: string) {
+    // this.afDatabase.list('/listserv/').snapshotChanges();
+    return false;
+  }
+
   addInterestedUserEmail(email: string) {
-    this.afDatabase.list('/interestedUserEmail/').push({'email': email});
+    if (this.checkDuplicate(email)) {
+      return false;
+    }
+
+    this.afDatabase.list('/listserv/').push({'email': email});
+    return true;
   }
 
   getUserEvents(userid: string) {

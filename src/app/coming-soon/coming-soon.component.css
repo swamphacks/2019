@@ -12,13 +12,13 @@
 }
 
 .islandMobile {
-  width: 260px;
+  width: 310px;
   height: 260px;
   margin-top: 10vh;
 }
 
 .islandMobileLandscape {
-  width: 230px;
+  width: 280px;
   height: 230px;
   margin-top: -10vh;
   margin-right: -45vw;

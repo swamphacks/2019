@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -59,6 +60,8 @@ import { MatSnackBarModule } from '@angular/material';
       ReactiveFormsModule,
       NgxQRCodeModule,
       HttpModule,
+      HttpClientModule,
+      HttpClientJsonpModule,
       MatSnackBarModule,
   ],
   providers: [AuthService,DatabaseService],

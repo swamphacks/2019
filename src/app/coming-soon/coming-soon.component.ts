@@ -3,6 +3,12 @@ import { DatabaseService } from '../shared/security/database.service';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import * as Parallax from 'parallax-js';
 import {MatSnackBar} from '@angular/material';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
+interface MailChimpResponse {
+  result: string;
+  msg: string;
+}
 
 @Component({
   selector: 'app-coming-soon',
@@ -35,6 +41,8 @@ export class ComingSoonComponent implements OnInit {
   INCORRECT_EMAIL_MSG = 'Incorrect email format';
   isMobile = false;
 
+  mailChimpEndpoint = '';
+
   islandClass = 'island';
   inputClass = 'input-field';
   titleClass = 'title';
@@ -63,7 +71,7 @@ export class ComingSoonComponent implements OnInit {
   twitterSrc = this.twitterPath;
   snapchatSrc = this.snapchatPath;
 
-  constructor(private databaseService: DatabaseService, private snackbar: MatSnackBar) {
+  constructor(private databaseService: DatabaseService, private snackbar: MatSnackBar, private http: HttpClient) {
     this.checkIfMobile();
   }
 
@@ -138,6 +146,27 @@ export class ComingSoonComponent implements OnInit {
     this.snackbar.open(this.EMAIL_SAVED_MSG, 'OK', {
       duration: 5000,
       panelClass: ['snackbarColor']
+    });
+    //send email
+    this.sendNotificationEmail(this.emailInput);
+  }
+
+  sendNotificationEmail(email: string) {
+    const params = new HttpParams()
+      .set('EMAIL', email)
+      .set('b_123abc123abc123abc123abc123abc123abc', ''); // hidden input name
+    const mailChimpUrl = this.mailChimpEndpoint + params.toString();
+
+    // 'c' refers to the jsonp callback param key. This is specific to Mailchimp
+    this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
+      if (response.result && response.result !== 'error') {
+      }
+      else { 
+        //error
+      }
+    }, error => {
+      console.error(error);
+      // this.error = 'Sorry, an error occurred.';
     });
   }
 
