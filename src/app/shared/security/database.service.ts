@@ -35,9 +35,9 @@ export class DatabaseService {
       this.checkDuplicate(email).then((isDuplicate) => {
         if (isDuplicate) {
            resolve(false);
+        } else {
+          this.afDatabase.list('/listserv/').push({'email': email});
         }
-    
-        this.afDatabase.list('/listserv/').push({'email': email});
         resolve(true);
       });
     }.bind(this));
