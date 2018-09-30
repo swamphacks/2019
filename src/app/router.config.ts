@@ -11,53 +11,53 @@ import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 export const routerConfig : Route[] = [
     {
       path: '',
-      component: ComingSoonComponent,
+      component: HomeComponent,
       pathMatch: 'full'
     },
-    // {
-    //     path: 'register',
-    //     component: RegisterComponent
-    // },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
     {
       path: 'comingsoon',
       component: ComingSoonComponent
     },
-    // {
-    //     path:'home',
-    //     component: HomeComponent
-    // },
-    // {
-    //     'path': 'login',
-    //     component: LoginComponent
-    // },
-    // {
-    //     path: 'profile',
-    //     component: ProfileComponent
-    // },
-    // {
-    //     path: 'meals',
-    //     component: MealsComponent
-    // },
-    // {
-    //     path: 'forgotpassword',
-    //     component: ForgotPasswordComponent
-    // },
-    // {
-    //     path: 'emaillinks',
-    //     component: EmailLinksComponent
-    // },
-    // {
-    //     path: 'register',
-    //     component: RegisterComponent,
-    //     pathMatch: 'full'
-    // // },
-    // {
-    //     path: '**',
-    //     redirectTo: 'register'
-    // }
+    {
+        path:'home',
+        component: HomeComponent
+    },
+    {
+        'path': 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent
+    },
+    {
+        path: 'meals',
+        component: MealsComponent
+    },
+    {
+        path: 'forgotpassword',
+        component: ForgotPasswordComponent
+    },
+    {
+        path: 'emaillinks',
+        component: EmailLinksComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
+    }
         // },
-        {
-            path: '**',
-            redirectTo: 'comingsoon'
-        }
+        // {
+        //     path: '**',
+        //     redirectTo: 'home'
+        // }
 ];

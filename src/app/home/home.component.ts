@@ -1,6 +1,7 @@
 
 import {tap} from 'rxjs/operators';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: any) {
 
 
   }
@@ -18,8 +19,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-    search(search:string) {
-
-    }
-
+  apply() {
+    this.document.location.href = 'http://dashboard2019.swamphacks.com/makeaccount.html';
+  }
 }
