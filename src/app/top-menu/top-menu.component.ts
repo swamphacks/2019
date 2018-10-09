@@ -11,31 +11,31 @@ import {Router} from "@angular/router";
 })
 export class TopMenuComponent implements OnInit {
 
-  userState: Observable<firebase.User>;
+  // userState: Observable<firebase.User>;
   show: boolean = false;
 
   constructor(private authService:AuthService, private router: Router) {
-    this.userState = authService.getAuth().authState;
-    //if the user is logged in then send them to qr page
-    this.authService.getAuth().auth.onAuthStateChanged((user) => {
-      if(user && user.emailVerified){
-        //logged in
-        router.navigate(['/meals']);
-      }else if(!user){
-        //logged out
-        router.navigate(['/comingsoon']);
-      }
-    });
+    // this.userState = authService.getAuth().authState;
+    // //if the user is logged in then send them to qr page
+    // this.authService.getAuth().auth.onAuthStateChanged((user) => {
+    //   if(user && user.emailVerified){
+    //     //logged in
+    //     router.navigate(['/meals']);
+    //   }else if(!user){
+    //     //logged out
+    //     router.navigate(['/home']);
+    //   }
+    // });
   }
 
   ngOnInit(){
 
   }
 
-    logout() {
-        this.authService.logout();
-        this.toggleCollapse();
-    }
+    // logout() {
+    //     this.authService.logout();
+    //     this.toggleCollapse();
+    // }
 
     toggleCollapse(){
       this.show = !this.show;

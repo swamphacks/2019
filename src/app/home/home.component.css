@@ -1,0 +1,114 @@
+.applyButton {
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    width: 200px;
+    height: 35px;
+    /* margin-left: -125px; */
+    margin-top: 10px;
+    background-color: #065144; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.headerContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 160px;
+    /* Adjust to certain by moving by half the dimensions */
+    margin-left: -250px;
+    margin-top: -250px;
+    text-align: center;
+}
+
+#mainTitle {
+    font-family: 'metropolis', sans-serif;
+    color: #3e4a32;
+    font-size: 55px;
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+#headerDate {
+    font-family: 'metropolis', sans-serif;
+    color: #065144;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+.banner {
+    width: 100vw;
+    /* height: 50vw; */
+    height: 700px;
+}
+
+.mainPageImg {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    /* height: 100vh; */
+   /*width: 100vh; */
+    /* width: inherit; */
+    /* height: 100%; */
+    /* height: 45em; */
+    /* height: 700px; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: auto;
+}
+
+.fixedSize {
+    width: 1500px;
+    height: 700px;
+}
+
+.islandLeft {
+    width: auto;
+    height: auto;
+    top: 300px;
+    left: -300px;
+}
+
+.islandRight {
+    width: auto;
+    height: auto;
+    top: 300px;
+    left: 80%;
+}
+
+.sun {
+    width: auto;
+    height: auto;
+    top: 130px;
+    left: 55%;
+}
+
+.glareTop {
+    width: 25vw;
+    height: 18vw;
+    top: 0;
+    left: 75%;
+}
+
+.glareBottom {
+    width: 40vw;
+    height: 25vw;
+    top: 400px;
+    left: 0;
+}
+
+
