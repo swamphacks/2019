@@ -3,6 +3,7 @@ import {AuthService} from "../shared/security/auth.service";
 import { Observable } from 'rxjs/Rx';
 import * as firebase from 'firebase/app';
 import {Router} from "@angular/router";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'top-menu',
@@ -36,9 +37,12 @@ export class TopMenuComponent implements OnInit {
     //     this.authService.logout();
     //     this.toggleCollapse();
     // }
-
-    toggleCollapse(){
+// TODO: move top bar to home page
+    toggleCollapse(sectionId){
       this.show = !this.show;
+      let el = document.getElementById(sectionId);
+      el.scrollIntoView;
+      // this.myElement.nativeElement.ownerDocument.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
     }
 
 

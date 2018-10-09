@@ -1,8 +1,8 @@
-
 import {tap} from 'rxjs/operators';
 import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as Parallax from 'parallax-js';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,8 @@ import * as Parallax from 'parallax-js';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  show: boolean = false;
+  dashboardURL = 'http://dashboard2019.swamphacks.com/makeaccount.html';
 
   constructor(@Inject(DOCUMENT) private document: any) {
 
@@ -17,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    document.addEventListener('scroll', this.showOrHideNavbar);
   }
 
   ngAfterContentInit() {
@@ -33,9 +35,32 @@ export class HomeComponent implements OnInit {
     const parallaxInstance6 = new Parallax(glareTopScenes);
     const glareBotScenes = document.getElementById('glareBotScene');
     const parallaxInstance7 = new Parallax(glareBotScenes);
+    const headerScene = document.getElementById('headerScene');
+    const parallaxInstance8 = new Parallax(headerScene);
+  }
+
+  showOrHideNavbar() {
+    if (window.pageYOffset >= 600) {
+      // TODO: maybe add animation later
+      // hide scroll bar
+      document.getElementById("navbar").style.display = 'none';
+    } else {
+      document.getElementById("navbar").style.display = 'block';
+    }
   }
 
   apply() {
-    this.document.location.href = 'http://dashboard2019.swamphacks.com/makeaccount.html';
+    this.document.location.href = this.dashboardURL;
+  }
+
+  toggleCollapse(sectionId){
+    this.show = !this.show;
+    let section = $('#'+sectionId)[0];
+    // console.log(section);
+    if (section) {
+      $('html, body').animate({
+        scrollTop: section['offsetTop']
+      }, 800);
+    }
   }
 }

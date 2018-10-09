@@ -1,3 +1,24 @@
+/* Nav bar */
+.navbar {
+    background: transparent;
+    background-image:none;
+    border-color:transparent;
+    box-shadow:none;
+    transition: top 0.3s;
+  }
+  
+.nav-link {
+text-decoration: none;
+font-size: 20px;
+color: #065144;
+font-weight: 500;
+margin-left: 30px;
+}
+  
+.nav-link:hover {
+    color: white!important;
+}
+
 .applyButton {
     /* position: absolute; */
     /* top: 50%;
@@ -91,23 +112,23 @@
 }
 
 .sun {
-    width: auto;
-    height: auto;
-    top: 130px;
-    left: 55%;
+    width: 25vw;
+    height: 25vw;
+    top: 10vw;
+    left: 55vw;
 }
 
 .glareTop {
     width: 25vw;
     height: 18vw;
-    top: 0;
+    top: 2vw;
     left: 75%;
 }
 
 .glareBottom {
     width: 40vw;
     height: 25vw;
-    top: 400px;
+    top: 30vw;
     left: 0;
 }
 
