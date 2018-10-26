@@ -11,7 +11,7 @@
 text-decoration: none;
 font-size: 20px;
 color: #065144;
-font-weight: 500;
+font-weight: bold;
 margin-left: 30px;
 }
   
@@ -19,13 +19,71 @@ margin-left: 30px;
     color: white!important;
 }
 
+.navbarAnimationOut {
+    animation: navbarFadeOut 0.5s linear forwards;
+}
+
+.navbarAnimationIn {
+    animation: navbarFadeIn 0.5s linear forwards;
+}
+
+@keyframes navbarFadeOut {
+    from { 
+        opacity: 1;
+        top: 0;
+    }
+    to   { 
+        opacity: 0; 
+        top: -50px;
+    }
+}
+
+@keyframes navbarFadeIn {
+    from { 
+        opacity: 0;
+        top: -50px;
+    }
+    to   { 
+        opacity: 1;
+        top: 0;
+    }
+}
+
+#artboard {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: auto;
+    z-index: 9999;
+    animation: zoomIn 4s linear 1s forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+        z-index: -3;
+    }
+}
+
 .applyButton {
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%; */
+    position: absolute;
+     top: 50%;
+    left: 50%;
     width: 200px;
     height: 35px;
-    /* margin-left: -125px; */
+    margin-left: -110px;
     margin-top: 10px;
     background-color: #065144; /* Green */
     border: none;
@@ -35,6 +93,47 @@ margin-left: 30px;
     display: inline-block;
     font-size: 20px;
     border-radius: 25px;
+}
+
+.applyButton:hover {
+    /* background-color:  #042b24;  */
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid #042b24;
+}
+
+#gatorTraveler {
+    position: absolute;
+    top: 60%;
+    left: 47%;
+    /* 1/3 original size */
+    width: 80px; 
+    height: 40px;
+    animation: gatorMovement 5s linear 4s forwards;
+}
+
+.movementAnimation {
+    animation: gatorMovement 5s linear forwards;
+    /* -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
+}
+
+@keyframes gatorMovement {
+    0% {
+        -ms-transform: scale(1.5) translate(0, 20px);; /* IE 9 */
+        -webkit-transform: scale(1.5) translate(0, 20px);; /* Safari */
+        transform: scale(1.5) translate(0, 20px);;
+    }
+    50% {
+        -ms-transform: scale(3) translate(0, 20px);; /* IE 9 */
+        -webkit-transform: scale(3) translate(0, 20px);; /* Safari */
+        transform: scale(3) translate(0, 20px);;
+    }
+    100% {
+        -ms-transform: scale(3) translate(0, -110px);; /* IE 9 */
+        -webkit-transform: scale(3) translate(0, -110px);; /* Safari */
+        transform: scale(3) translate(0, -110px);;
+    }
 }
 
 .headerContainer {
@@ -54,7 +153,8 @@ margin-left: 30px;
     color: #3e4a32;
     font-size: 55px;
     font-weight: 400;
-    margin-top: -15px;
+    margin-top: -20px;
+    /* margin-top: 100px; */
 }
 
 #headerDate {
@@ -97,6 +197,12 @@ margin-left: 30px;
     height: 700px;
 }
 
+.backTrees {
+    margin-top: 250px;
+    width: 1500px;
+    height: 300px;
+}
+
 .islandLeft {
     width: auto;
     height: auto;
@@ -132,4 +238,6 @@ margin-left: 30px;
     left: 0;
 }
 
-
+.swampGreen {
+    background-color: #065144;
+}

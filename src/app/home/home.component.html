@@ -1,5 +1,5 @@
 <!-- nav bar -->
-<nav class="navbar navbar-light navbar-expand-md fixed-top" id="navbar">
+<nav class="navbar navbar-light navbar-expand-md fixed-top navbarAnimationIn" id="navbar">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <button (click)="toggleCollapse()" class="navbar-toggler" style="border-color: transparent!important;" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,14 +21,14 @@
           </ul>
         </div>
       </nav>
-    
+<!-- <img id="artboard" src="../../assets/mainpage/Artboard 1.png"/> -->
 <!-- Main Section -->
 <div class="banner">
-    <img class="mainPageImg fixedSize"src="../../assets/mainpage/background.png"/>
-    <img class="mainPageImg fixedSize" src="../../assets/mainpage/islandParts/waterBlue.png"/>
+    <img class="mainPageImg" src="../../assets/mainpage/background.png"/>
+    <img class="mainPageImg" src="../../assets/mainpage/islandParts/waterBlue.png"/>
     <div id="backTreesScene" data-relative-input="true">
             <div data-depth="0.20" >
-                    <img class="mainPageImg fixedSize" src="../../assets/mainpage/islandParts/backTrees.png"/>
+                    <img class="mainPageImg fixedSize backTrees" src="../../assets/mainpage/islandParts/backTrees.png"/>
             </div>
     </div>
     <div id="leftIslandScenes">
@@ -42,7 +42,7 @@
             </div>
     </div>
     <div id="sunScene" data-relative-input="true">
-           <div  data-depth="0.40" >
+           <div  data-depth="0.20" >
                 <img class="mainPageImg sun" src="../../assets/mainpage/islandParts/Sun.png"/>
            </div>
     </div>
@@ -65,14 +65,15 @@
     <div class="headerContainer" id="headerScene" data-relative-input="true">
         <div data-depth="0.15">
                 <!-- Logo -->
-                <img src="../../assets/mainpage/greenBlueLogo.png" width="200px" height="120px"/>
+                <img src="../../assets/mainpage/greenBlueLogo.png" width="242px" height="140px"/>
                 <div id="mainTitle">swamp<span style="color: #065144; font-weight: bolder">hacks</span></div>
                 <p id="headerDate">University of Florida | January 18-20, 2019</p>
-                <!-- Apply button -->
-                <button class="applyButton" (click)="apply()"><b>Apply</b></button>
         </div>
      </div>
+     <!-- <img id="gatorTraveler" src="../../assets/mainpage/greenBlueLogo.png"/> -->
 </div>
+<!-- Apply button -->
+<button class="applyButton" (click)="apply()"><b>Apply</b></button>
 <div id="about">
         <h1>About</h1>
         <p>

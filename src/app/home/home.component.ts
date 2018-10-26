@@ -19,6 +19,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    $( document ).ready(function() {
+      // add animation to gator
+      // $('#gatorTraveler').addClass('movementAnimation');
+      setTimeout(function(){
+        // remove animation after 5 seconds
+        // $('#gatorTraveler').removeClass('movementAnimation');
+      }, 5000);
+  });
     document.addEventListener('scroll', this.showOrHideNavbar);
   }
 
@@ -40,16 +48,21 @@ export class HomeComponent implements OnInit {
   }
 
   showOrHideNavbar() {
-    if (window.pageYOffset >= 600) {
+    if (window.pageYOffset >= 200) {
       // TODO: maybe add animation later
       // hide scroll bar
-      document.getElementById("navbar").style.display = 'none';
+      // document.getElementById("navbar").style.display = 'none';
+      $('#navbar').removeClass('navbarAnimationIn');
+      $('#navbar').addClass('navbarAnimationOut');
     } else {
-      document.getElementById("navbar").style.display = 'block';
+      // document.getElementById("navbar").style.display = 'block';
+      $('#navbar').removeClass('navbarAnimationOut');
+      $('#navbar').addClass('navbarAnimationIn');
     }
   }
 
   apply() {
+    console.log('clicked');
     this.document.location.href = this.dashboardURL;
   }
 
@@ -64,3 +77,5 @@ export class HomeComponent implements OnInit {
     }
   }
 }
+
+
