@@ -14,26 +14,6 @@ interface MailChimpResponse {
   selector: 'app-coming-soon',
   templateUrl: './coming-soon.component.html',
   styleUrls: ['./coming-soon.component.css'],
-  animations: [
-    // trigger('islandAnimation', [
-    //   state('stillBellStillSwing', style({})),
-    //   state('stillBellAwaySwing', style({})),
-    //   state('stillBellCrossSwing', style({})),
-    //
-    //   state('leftBellStillSwing', style({})),
-    //   state('leftBellAwaySwing', style({})),
-    //   state('leftBellCrossSwing', style({})),
-    //
-    //   state('rightBellStillSwing', style({})),
-    //   state('rightBellAwaySwing', style({})),
-    //   state('rightBellCrossSwing', style({})),
-    //   transition('* <=> *', animate('1000ms')),
-    //   // transition('still => left', animate('1000ms ease-out')),
-    //   // transition('left => still', animate('1000ms ease-in')),
-    //   // transition('still => right', animate('1000ms ease-out')),
-    //   // transition('right => still', animate('1000ms ease-in')),
-    // ])
-  ]
 })
 
 export class ComingSoonComponent implements OnInit {
@@ -62,15 +42,15 @@ export class ComingSoonComponent implements OnInit {
   snapchatPath = "../../assets/comingSoonImgs/social-media/snapchat.png";
   snapchatHoveredPath = "../../assets/comingSoonImgs/social-media/snapchatHover.png";
 
-  desktopIslandPath = '../../assets/comingSoonImgs/Island2019.png';
-  mobileIslandPath = '../../assets/comingSoonImgs/island(mobile).png';
-
-  islandPath = this.desktopIslandPath;
-
   facebookSrc = this.facebookPath;
   instagramSrc = this.instagramPath;
   twitterSrc = this.twitterPath;
   snapchatSrc = this.snapchatPath;
+
+  desktopIslandPath = '../../assets/comingSoonImgs/Island2019.png';
+  mobileIslandPath = '../../assets/comingSoonImgs/island(mobile).png';
+
+  islandPath = this.desktopIslandPath;
 
   constructor(private databaseService: DatabaseService, private snackbar: MatSnackBar, private http: HttpClient) {
     this.checkIfMobile();

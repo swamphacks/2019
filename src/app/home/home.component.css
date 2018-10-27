@@ -20,31 +20,31 @@ margin-left: 30px;
 }
 
 .navbarAnimationOut {
-    animation: navbarFadeOut 0.5s linear forwards;
+    animation: navbarFadeOut 0.2s linear forwards;
 }
 
 .navbarAnimationIn {
-    animation: navbarFadeIn 0.5s linear forwards;
+    animation: navbarFadeIn 0.2s linear forwards;
 }
 
 @keyframes navbarFadeOut {
     from { 
-        opacity: 1;
+        /* opacity: 1; */
         top: 0;
     }
     to   { 
-        opacity: 0; 
+        /* opacity: 0;  */
         top: -50px;
     }
 }
 
 @keyframes navbarFadeIn {
     from { 
-        opacity: 0;
+        /* opacity: 0; */
         top: -50px;
     }
     to   { 
-        opacity: 1;
+        /* opacity: 1; */
         top: 0;
     }
 }
@@ -197,24 +197,44 @@ margin-left: 30px;
     height: 700px;
 }
 
+.foreground {
+    margin-top: 550px;
+    width: 1400px;
+    height: 155px;
+}
+
 .backTrees {
-    margin-top: 250px;
+    margin-top: 300px;
     width: 1500px;
     height: 300px;
 }
 
 .islandLeft {
-    width: auto;
-    height: auto;
+    width: 600px;
+    height: 350px;
     top: 300px;
-    left: -300px;
+    left: -250px;
 }
 
 .islandRight {
-    width: auto;
-    height: auto;
+    width: 600px;
+    height: 350px;
     top: 300px;
-    left: 80%;
+    left: 75%;
+}
+
+.islandLeftFront {
+    width: 400px;
+    height: 250px;
+    top: 400px;
+    left: -200px;
+}
+
+.islandRightFront {
+    width: 400px;
+    height: 230px;
+    top: 400px;
+    left: 85%;
 }
 
 .sun {
@@ -222,6 +242,10 @@ margin-left: 30px;
     height: 25vw;
     top: 10vw;
     left: 55vw;
+}
+
+.glares {
+    height: 55vw;
 }
 
 .glareTop {
@@ -238,6 +262,220 @@ margin-left: 30px;
     left: 0;
 }
 
+.waterfall {
+    height: 2500px;
+    width: 590px;
+    position: absolute;
+    top: 610px;
+    left: 835px;
+}
+
+.layers {
+    height: auto;
+    margin-top: -5px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20%;
+    padding-bottom: 5%; 
+}
+
+.aboutLayer {
+    color: white;
+}
+
+.scheduleLayer {
+    color: white;
+}
+
+.sponsorLayer {
+    color: white;
+    background-image: linear-gradient(#6dcff4, #368fcb);
+    height: 1000px;
+    /* height: auto; */
+    text-align: center;
+    padding-bottom: 200px;
+}
+
+.faqsLayer {
+    color: white;
+}
+
+.footerLayer {
+    background-color: #0b2c6e;
+    color: white;
+    z-index: 1;
+}
+
+.lakeDivider{
+    margin-bottom: -50px;
+    margin-top: -5px;
+    z-index: 1;
+}
+
+.islandDivider{
+    margin-bottom: -24vw;
+    margin-top: -25px;
+    z-index: 1;
+}
+
+.lakeShore {
+    width: 110vw;
+    height: 100px;
+}
+
+.islandDivider {
+    width: 105vw;
+    height: 25vw;
+}
+
+.endOfIslandDivider {
+    margin-bottom: -24vw;
+    margin-top: -15px;
+    z-index: 1;
+}
+
+.footerDivider {
+    margin-top: -25px;
+    margin-bottom: -80px;
+    z-index: -1;
+}
+
+.footerDiv {
+    width: 105vw;
+    height: 15vw;
+}
+
+.footerLinks {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding-right: 100px;
+}
+
+.endOfIsland {
+    width: 100vw;
+    height: 25vw;
+}
+
+.sectionDescription {
+    width: 70%;
+    font-family: gotham, sans-serif;
+}
+
+.indent {
+    margin-left: 5%;
+}
+
+.aboutTitle {
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.scheduleTitle {
+    font-weight: 600;
+}
+
+.faqTitle {
+    font-weight: 600;
+}
+
+.sponsorsTitle {
+    margin-left: -35%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.subTitle {
+    font-weight: 700;
+}
+
+.scheduleDesc {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.leftNimbus {
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+
+.rightNimbus {
+    width: 400px;
+    height: 200px;
+    float: right;
+}
+
+.arrowBtn {
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    background-image: url("../../assets/mainpage/rightArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+}
+
+.arrowBtn:focus {
+    outline:0;
+}
+
+.downArrow {
+    background-size: 20px;
+}
+
+.darkGreen {
+    background-color: #0e250f;
+}
+
 .swampGreen {
     background-color: #065144;
+}
+
+.darkBrown {
+    background-color: #603a0c;
+}
+
+.brown {
+    background-color: #8d5513;
+}
+
+.lightBrown {
+    background-color: #a1631d;
+}
+
+.skyBlue {
+    color: #84d5df;
+}
+
+.lightSkyBlue {
+    color: #83ffee;
+}
+
+.hide {
+    display: none;
+}
+
+/* Social Media */
+.socialMediaRow {
+    padding: 20px;
+}
+  
+.socialMediaIcons {
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+    margin-bottom: 0;
+    margin-top: 50%;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .sectionDescription {
+        width: 100%;
+    }
 }

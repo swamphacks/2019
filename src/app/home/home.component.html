@@ -22,24 +22,35 @@
         </div>
       </nav>
 <!-- <img id="artboard" src="../../assets/mainpage/Artboard 1.png"/> -->
+<img class="waterfall" src="../../assets/mainpage/waterFall.png"/>
 <!-- Main Section -->
 <div class="banner">
     <img class="mainPageImg" src="../../assets/mainpage/background.png"/>
-    <img class="mainPageImg" src="../../assets/mainpage/islandParts/waterBlue.png"/>
+    <img class="mainPageImg" src="../../assets/mainpage/islandParts/water.png"/>
     <div id="backTreesScene" data-relative-input="true">
             <div data-depth="0.20" >
-                    <img class="mainPageImg fixedSize backTrees" src="../../assets/mainpage/islandParts/backTrees.png"/>
+                    <img class="mainPageImg fixedSize backTrees" src="../../assets/mainpage/islandParts/back.png"/>
             </div>
     </div>
     <div id="leftIslandScenes">
            <div  data-depth="0.60">
-                <img class="mainPageImg islandLeft" src="../../assets/mainpage/islandParts/left (1).png"/>
+                <img class="mainPageImg islandLeft" src="../../assets/mainpage/islandParts/leftTwo.png"/>
            </div>
     </div>
     <div id="rightIslandScenes">
             <div data-depth="0.60" >
-                    <img class="mainPageImg islandRight" src="../../assets/mainpage/islandParts/right.png"/>
+                    <img class="mainPageImg islandRight" src="../../assets/mainpage/islandParts/rightTwo.png"/>
             </div>
+    </div>
+    <div id="leftIslandFrontScenes">
+        <div  data-depth="0.80">
+                <img class="mainPageImg islandLeftFront" src="../../assets/mainpage/islandParts/leftThree.png"/>
+        </div>
+    </div>
+    <div id="rightIslandFrontScenes">
+        <div data-depth="0.80" >
+                <img class="mainPageImg islandRightFront" src="../../assets/mainpage/islandParts/rightThree.png"/>
+        </div>
     </div>
     <div id="sunScene" data-relative-input="true">
            <div  data-depth="0.20" >
@@ -47,9 +58,13 @@
            </div>
     </div>
 
-    <img class="mainPageImg fixedSize" style="margin-left: -1px;" src="../../assets/mainpage/Foreground.png"/>
-   
+    <img class="mainPageImg fixedSize foreground" style="margin-left: -1px;" src="../../assets/mainpage/foreground.png"/>
     <div id="glareTopScene" data-relative-input="true">
+        <div  data-depth="0.40" >
+                <img class="mainPageImg glares" src="../../assets/mainpage/islandParts/glares.png"/>
+        </div>
+    </div>
+    <!-- <div id="glareTopScene" data-relative-input="true">
             <div  data-depth="0.40" >
                     <img class="mainPageImg glareTop" src="../../assets/mainpage/islandParts/glareTop.png"/>
             </div>
@@ -59,7 +74,7 @@
             <div  data-depth="0.40" >
                     <img class="mainPageImg glareBottom" src="../../assets/mainpage/islandParts/glareBottom.png"/>
             </div>
-     </div>
+     </div> -->
     <!-- <img class="mainPageImg glare" src="../../assets/mainpage/Glares.png"/> -->
     <!-- Center Header Area -->
     <div class="headerContainer" id="headerScene" data-relative-input="true">
@@ -74,30 +89,205 @@
 </div>
 <!-- Apply button -->
 <button class="applyButton" (click)="apply()"><b>Apply</b></button>
-<div id="about">
-        <h1>About</h1>
-        <p>
-                Where does it come from?
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+<!-- <div class="darkGreen"></div> -->
+<div class="lakeDivider">
+        <img class="lakeShore" src="../../assets/mainpage/dividers/greenDivider.png"/>
+</div>
+<section class="layers aboutLayer darkBrown" id="about">
+        <h1 class="aboutTitle">Welcome to the <span class="skyBlue">Swamp</span></h1>
+        <p class="sectionDescription">
+                SwampHacks is 36 hours for you to learn, create, and celebrate. For the whole weekend, 500 students will come together as aspiring developers, engineers, builders, designers—any person who has a desire to create something—focus on a project, and learn by making.
         </p>
-</div>
-<div id="schedule">
-        <h1>Schedule</h1>
-        <p>
-                Where does it come from?
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        <p class="sectionDescription">
+                From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
+        <h1 class="aboutTitle" style="margin-top: 100px;">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
+        <p class="sectionDescription">
+                SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. With both the basement level and first floor, anticipate a large open space for community hacking and the quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611     
+        </p>
+</section>
+<div class="islandDivider brown">
+        <img class="islandDivider" src="../../assets/mainpage/dividers/darkBrownDivider.png"/>
 </div>
-<div id="sponsors">
-    <h1>Sponsors</h1>
-    <p>
-            Where does it come from?
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-    </p>
+<section class="layers scheduleLayer brown" id="schedule">
+        <h1 class="scheduleTitle">Schedule</h1>
+        <div class="indent">
+                <!-- Friday -->
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">Friday, January 18th</h2>
+                        <button class="arrowBtn" id="fridayArrowButton" (click)="toggleSection('friday')" [style.background-image]="'url('+ fridayArrowUrl +')'"></button>
+                </div>
+                <div id="fridaySection" class="hide">
+                        <div class="sectionDescription scheduleDesc">
+                                Hacker Check-In
+                                <span class="lightSkyBlue" style="float: right">5:30 - 6:30PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Opening Ceremony
+                                <span class="lightSkyBlue" style="float: right">6:30 - 8:00PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Dinner
+                                <span class="lightSkyBlue" style="float: right">8 - 10PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Sponsor Fair + Team Building
+                                <span class="lightSkyBlue" style="float: right">9 - 10PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Hacking Begins
+                                <span class="lightSkyBlue" style="float: right">10PM</span>
+                        </div>
+                </div>
+                <!-- Saturday -->
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">Saturday, January 19th</h2>
+                        <button class="arrowBtn" id="saturdayArrowButton" (click)="toggleSection('saturday')" [style.background-image]="'url('+ saturdayArrowUrl +')'"></button>
+                </div>
+                <div id="saturdaySection" class="hide">
+                        <div class="sectionDescription scheduleDesc">
+                                Midnight Snack
+                                <span class="lightSkyBlue" style="float: right">12:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Breakfast
+                                <span class="lightSkyBlue" style="float: right">8:00 - 9:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Lunch
+                                <span class="lightSkyBlue" style="float: right">1:00 - 2:30PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Dinner
+                                <span class="lightSkyBlue" style="float: right">6:00 - 7:30PM</span>
+                        </div>
+                </div>
+                <!-- Sunday -->
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">Sunday, January 20th</h2>
+                        <button class="arrowBtn" id="sundayArrowButton" (click)="toggleSection('sunday')" [style.background-image]="'url('+ sundayArrowUrl +')'"></button>
+                </div>
+                <div id="sundaySection" class="hide">
+                        <div class="sectionDescription scheduleDesc">
+                                Midnight Snack
+                                <span class="lightSkyBlue" style="float: right">12:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Breakfast
+                                <span class="lightSkyBlue" style="float: right">6:00 - 8:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Devpost Submissions Close
+                                <span class="lightSkyBlue" style="float: right">8:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Hacking Ends + Lunch
+                                <span class="lightSkyBlue" style="float: right">10:00AM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Demo Waves
+                                <span class="lightSkyBlue" style="float: right">10:00AM - 1:15PM</span>
+                        </div>
+                        <div class="sectionDescription scheduleDesc">
+                                Closing Ceremony
+                                <span class="lightSkyBlue" style="float: right">2:45 - 4:00PM</span>
+                        </div>
+                </div>
+        </div>
+</section>
+<div class="islandDivider">
+        <img class="islandDivider" src="../../assets/mainpage/dividers/brownDivider.png"/>
 </div>
+<section class="layers lightBrown faqsLayer" id="faqs">
+        <h1 class="faqTitle">FAQs</h1>
+        <div class="indent">
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">What is a Hackathon?</h2>
+                        <button class="arrowBtn" id="question1ArrowButton" (click)="toggleSection('question1')" [style.background-image]="'url('+ question1ArrowUrl +')'"></button>
+                </div>
+                <div id="question1Section" class="hide">
+                        <p class="sectionDescription">
+                                A hackathon is a weekend long event where projects are made from idea to prototype. At the end of the given time, projects are presented in a science fair setting—which, yes, includes prizes. The purpose of a hackathon is to have students learn development by creating a product while being provided resources like free-rentable hardware, tech workshops, and mentors. Hackathons are a space where road-blocks are eliminated, and students can learn new skills with ease.
+                        </p>
+                </div>
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">What should I bring?</h2>
+                        <button class="arrowBtn" id="question2ArrowButton" (click)="toggleSection('question2')" [style.background-image]="'url('+ question2ArrowUrl +')'"></button>
+                </div>
+                <div id="question2Section" class="hide">
+                        <p class="sectionDescription">
+                                Bring yourself, some comfy clothes, toiletries (toothpaste, toothbrush, deodorant, etc) and your hacking gear (laptop, hardware…and don’t forget the chargers!)
+                        </p>
+                </div>
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">HELP, this is my first hackathon!?</h2>
+                        <button class="arrowBtn" id="question3ArrowButton" (click)="toggleSection('question3')" [style.background-image]="'url('+ question3ArrowUrl +')'"></button>
+                </div>
+                <div id="question3Section" class="hide">
+                        <p class="sectionDescription">
+                                That is awesome! We are so glad you decided to be a part of the hacker community. SwampHacks welcomes everyone of any major and any level as long as they have a passion for development! We will have workshops during the event, mentors to help you through any troubles, so no matter what skill levels, we will provide the resources to help you learn.
+                        </p>
+                </div>
+                <div style="display: flex; flex-direction: row">
+                        <h2 class="skyBlue subTitle">How much will I be spending?</h2>
+                        <button class="arrowBtn" id="question4ArrowButton" (click)="toggleSection('question4')" [style.background-image]="'url('+ question4ArrowUrl +')'"></button>
+                </div>
+                <div id="question4Section" class="hide">
+                        <p class="sectionDescription">
+                                That is awesome! We are so glad you decided to be a part of the hacker community. SwampHacks welcomes everyone of any major and any level as long as they have a passion for development! We will have workshops during the event, mentors to help you through any troubles, so no matter what skill levels, we will provide the resources to help you learn.
+                        </p>
+                </div>
+        </div>
+</section>
+<div class="endOfIslandDivider">
+        <img class="endOfIsland" src="../../assets/mainpage/dividers/islandTip.png"/>
+</div>
+<section class="layers sponsorLayer" id="sponsors">
+        <h1 class="sponsorsTitle">Our Amazing Sponsors</h1>
+        <!-- logo area -->
+        <!-- clouds -->
+        <div class="row" id="nimbusLeftScene">
+                <div class="col">
+                        <img class="leftNimbus" src="../../assets/mainpage/nimbusLeft.png"/>
+                </div>
+        </div>
+        <div class="row" id="nimbusRightScene">
+                <div class="col">
+                        <img class="rightNimbus" src="../../assets/mainpage/nimbusRight.png"/>
+                </div>
+        </div>
+</section>
+<div class="footerDivider">
+        <img class="footerDiv" src="../../assets/mainpage/dividers/footerDivider.png"/>
+</div>
+<section class="footerLayer" id="footer">
+        <div class="row">
+                <!-- Social Media -->
+                <div class="col socialMediaRow" style="text-align: center">
+                        <a href="https://www.facebook.com/SwampHacks/?ref=br_rs" (mouseover)="facebookHovered($event)" (mouseout)="facebookHoverOut($event)" target="_blank">
+                                <img class="socialMediaIcons" [src]="facebookSrc"/>
+                        </a>
+                        <a href="https://www.instagram.com/swamphack/?hl=en" (mouseover)="instagramHovered($event)" (mouseout)="instagramHoverOut($event)" target="_blank">
+                                <img class="socialMediaIcons" [src]="instagramSrc"/>
+                        </a>
+                        <a href="https://twitter.com/swamphacks?lang=en" (mouseover)="twitterHovered($event)" (mouseout)="twitterHoverOut($event)" target="_blank">
+                                <img class="socialMediaIcons" [src]="twitterSrc"/>
+                        </a>
+                        <a style="margin-right: 20px; margin-left: -5px" href="https://www.snapchat.com/add/swamphackssnaps" (mouseover)="snapchatHovered($event)" (mouseout)="snapchatHoverOut($event)" target="_blank">
+                                <img class="socialMediaIcons" [src]="snapchatSrc"/>
+                        </a>
+                </div>
+                <!-- Logo -->
+                <div class="col" style="text-align: center">
+                        <img src="../../assets/mainpage/greenBlueLogo.png" width="200px" height="100px"/>
+                        <!-- TODO: insert heart and animation -->
+                        <p>Made with heart in Gainesville</p>
+                </div>
+                <!-- Other -->
+                <div class="col" style="text-align: right">
+                        <a href="#" class="footerLinks" style="margin-top: 40px">MLH Code of Conduct</a>
+                        <a href="#" class="footerLinks">Last Year's Site</a>
+                        <a href="#" class="footerLinks">Last Year's Devpost</a>
+                </div>
+        </div>
+</section>
