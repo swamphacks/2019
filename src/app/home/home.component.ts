@@ -19,20 +19,20 @@ export class HomeComponent implements OnInit {
   saturdayArrowUrl = this.downArrowUrl;
   sundayArrowUrl = this.downArrowUrl;
 
-  question1ArrowUrl = this.downArrowUrl;
-  question2ArrowUrl = this.downArrowUrl;
-  question3ArrowUrl = this.downArrowUrl;
-  question4ArrowUrl = this.downArrowUrl;
-  question5ArrowUrl = this.downArrowUrl;
-  question6ArrowUrl = this.downArrowUrl;
-  question7ArrowUrl = this.downArrowUrl;
-  question8ArrowUrl = this.downArrowUrl;
-  question9ArrowUrl = this.downArrowUrl;
-  question10ArrowUrl = this.downArrowUrl;
-  question11ArrowUrl = this.downArrowUrl;
-  question12ArrowUrl = this.downArrowUrl;
-  question13ArrowUrl = this.downArrowUrl;
-  question14ArrowUrl = this.downArrowUrl;
+  question1ArrowUrl = this.rightArrowUrl;
+  question2ArrowUrl = this.rightArrowUrl;
+  question3ArrowUrl = this.rightArrowUrl;
+  question4ArrowUrl = this.rightArrowUrl;
+  question5ArrowUrl = this.rightArrowUrl;
+  question6ArrowUrl = this.rightArrowUrl;
+  question7ArrowUrl = this.rightArrowUrl;
+  question8ArrowUrl = this.rightArrowUrl;
+  question9ArrowUrl = this.rightArrowUrl;
+  question10ArrowUrl = this.rightArrowUrl;
+  question11ArrowUrl = this.rightArrowUrl;
+  question12ArrowUrl = this.rightArrowUrl;
+  question13ArrowUrl = this.rightArrowUrl;
+  question14ArrowUrl = this.rightArrowUrl;
 
   foregroundDesktopUrl = "../../assets/mainpage/foreground.png";
   foregroundMobileUrl = "../../assets/mainpage/mobile/mobile-foreground.png";
@@ -196,10 +196,10 @@ export class HomeComponent implements OnInit {
   }
   // if false then they are not hidden
   sectionStates = {'friday': false, 'saturday': false, 'sunday': false,
-                        'question1': false, 'question2': false, 'question3': false, 'question4': false,
-                        'question5': false, 'question6': false, 'question7': false, 'question8': false,
-                        'question9': false, 'question10': false, 'question11': false, 'question12': false,
-                        'question13': false, 'question14': false};
+                        'question1': true, 'question2': true, 'question3': true, 'question4': true,
+                        'question5': true, 'question6': true, 'question7': true, 'question8': true,
+                        'question9': true, 'question10': true, 'question11': true, 'question12': true,
+                        'question13': true, 'question14': true};
 
   toggleSection(section: string) {
     let sectionEle = $('#'+section+'Section');
