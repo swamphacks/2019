@@ -729,23 +729,37 @@
     }
 
     .islandLeft {
-        width: 450px;
+        /* width: 450px;
         height: 300px;
         top: 340px;
-        left: -200px;
+        left: -200px; */
+        display: none;
     }
 
     .islandLeftFront {
-        width: 200px;
+        /* width: 200px;
         height: 150px;
         top: 440px;
-        left: -90px;
+        left: -90px; */
+        display: none;
+    }
+
+    .sun {
+        display: none;
     }
 
     .headerContainer {
         margin-left: -54%;
         text-align: center;
         width: 100%;
+    }
+
+    .aboutTitle {
+        margin-top: 20px;
+    }
+
+    .sectionDescription {
+        padding: 5%;
     }
 
     .scheduleDesc {
@@ -774,6 +788,19 @@
 
     .nav-link {
         color: whitesmoke !important;
+    }
+
+    .socialMediaRow {
+        margin-bottom: 20px;
+    }
+
+    .linkCol {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .footerLinks {
+        padding-right: 0;
     }
 }
 
