@@ -206,7 +206,8 @@ export class HomeComponent implements OnInit {
     if(sectionEle) {
       if (this.sectionStates[section]) {
         // show
-        sectionEle.removeClass('hide');
+        sectionEle.slideDown();
+        // sectionEle.removeClass('hide');
         this.sectionStates[section] = false;
         // show down arrow
         this.updateArrow(section, this.downArrowUrl);
@@ -214,8 +215,9 @@ export class HomeComponent implements OnInit {
         $('#' + section + 'ArrowButton').addClass('downArrow');
         $('#' + section + 'ArrowButton').removeClass('rightArrow');
       } else {
-        //  hide
-        sectionEle.addClass('hide');
+        // hide
+        sectionEle.slideUp();
+        // sectionEle.addClass('hide');
         this.sectionStates[section] = true;
         // show right arrow
         this.updateArrow(section, this.rightArrowUrl);
