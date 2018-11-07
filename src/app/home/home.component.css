@@ -186,7 +186,7 @@
 
 .applyButton {
     position: absolute;
-     top: 50%;
+     top: 60%;
     left: 50%;
     width: 200px;
     height: 35px;
@@ -252,7 +252,7 @@
 
 .headerContainer {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 500px;
     height: 160px;
@@ -278,6 +278,20 @@
     font-weight: 700;
     margin-top: 5px;
     margin-left: -15px;
+}
+
+.cohostText {
+    font-family: 'metropolis', sans-serif;
+    color: #065144;
+    font-weight: 700;
+    margin-top: -10px;
+    text-align: left;
+    padding-left: 115px;
+    font-style: italic;
+}
+
+#realTruckLogo {
+    margin-bottom: 20px;
 }
 
 .banner {
@@ -451,8 +465,8 @@
 .sponsorLayer {
     color: white;
     background-image: linear-gradient(#6dcff4, #368fcb);
-    height: 1000px;
-    /* height: auto; */
+    /* height: 1000px; */
+    height: auto;
     text-align: center;
     padding-bottom: 200px;
 }
@@ -617,6 +631,14 @@
 .sectionTime {
     float: right;
  }
+
+.sponsorLogo {
+    transition: transform 0.5s;
+}
+
+.sponsorLogo:hover {
+    transform: scale(1.2);
+}
 
 .leftNimbus {
     width: 200px;
@@ -923,6 +945,21 @@
 
     .footerLinks {
         padding-right: 0;
+    }
+
+    #realTruckSponsor {
+        width: 55% !important;
+        height: 55% !important;
+    }
+
+    #citiSponsor {
+        width: 35% !important;
+        height: 35% !important;
+    }
+
+    #americanExpSponsor {
+        width: 15% !important;
+        height: 15% !important;
     }
 
     #nimbusLeftScene {
