@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
   backTreesSrc = this.backTreesDesktopUrl;
 
   isMobile = false;
+  inSafari = false;
 
   parallaxInstance1: Parallax;
   parallaxInstance2: Parallax;
@@ -64,6 +65,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     $( document ).ready(function() {
+      var sBrowser, sUsrAg = navigator.userAgent;
+      if (sUsrAg.indexOf("Safari") > -1) {
+        sBrowser = "Apple Safari";
+        //"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1 980x1306"
+        this.inSafari = true;
+      }
+        
       // add animation to gator
       // $('#gatorTraveler').addClass('movementAnimation');
       // Show the loader
@@ -79,7 +87,7 @@ export class HomeComponent implements OnInit {
       }, 3000);
 
       setTimeout(function() {$("#animationWindow").addClass("hide");},3500);
-  });
+  }.bind(this));
     document.addEventListener('scroll', this.showOrHideNavbar.bind(this));
     window.addEventListener('resize', this.checkIfMobile.bind(this));
   }
@@ -102,7 +110,9 @@ export class HomeComponent implements OnInit {
       const width = window.innerWidth;
       if (this.prevWidth > width) {
         // site shrunk: make foreground fixed size
-        $('#foregroundId').addClass('fixedForeground');
+        if (!this.inSafari) {
+          $('#foregroundId').addClass('fixedForeground');
+        }
         $('#backTree').addClass('fixedBackTrees');
       } else {
         // site expanded: make foreground max width
@@ -187,6 +197,12 @@ export class HomeComponent implements OnInit {
   toggleCollapse(sectionId){
     this.show = !this.show;
     let section = $('#'+sectionId)[0];
+    if (this.show) {
+      // change background
+      $('#navbar').addClass('nav-mobileBackground');
+    } else {
+      $('#navbar').removeClass('nav-mobileBackground');
+    }
     // console.log(section);
     if (section) {
       $('html, body').animate({

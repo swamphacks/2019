@@ -22,7 +22,7 @@
         </div>
 </nav>
 
-<div id="animationWindow" class="showFlex">
+<div *ngIf="!isMobile" id="animationWindow" class="showFlex">
         <div class="loader"></div>
 </div>
 
@@ -30,12 +30,12 @@
 <!-- <img class="waterfall" src="../../assets/mainpage/waterFall.png"/> -->
 <!-- Main Section -->
 <div class="banner">
+    <img *ngIf="isMobile" src="../../assets/mainpage/mobile/phoneBackgroundPNG.png" width="100%" height="100%"/>
     <img class="mainPageImg" src="../../assets/mainpage/background.png"/>
     <img class="mainPageImg" src="../../assets/mainpage/islandParts/water.png"/>
     <div id="backTreesScene" data-relative-input="true">
             <div data-depth="0.20" >
                     <img *ngIf="!isMobile" class="backTrees" id="backtree" src="../../assets/mainpage/islandParts/back.png"/>
-                    <img *ngIf="isMobile" class="mobileBackTrees" id="backtree" src="../../assets/mainpage/mobile/mobile-back.png"/>
             </div>
     </div>
     <div id="leftIslandScenes">
@@ -69,8 +69,7 @@
             </div>
     </div>
 
-    <img *ngIf="!isMobile" class="mainPageImg foreground" id="foregroundId" style="margin-left: -1px;" src="../../assets/mainpage/Foreground.png"/>
-    <img *ngIf="isMobile" class="mainPageImg mobileForeground" id="foregroundId" src="../../assets/mainpage/mobile/mobile-foreground.png"/>
+    <img *ngIf="!isMobile" class="foreground" id="foregroundId" style="margin-left: -1px;" src="../../assets/mainpage/Foreground.png"/>
     
     <div id="glareTopScene" data-relative-input="true">
         <div  data-depth="0.40" >
@@ -93,7 +92,7 @@
     <div class="headerContainer" id="headerScene" data-relative-input="true">
         <div data-depth="0.15">
                 <!-- Logo -->
-                <img src="../../assets/mainpage/greenBlueLogo.png" width="242px" height="140px"/>
+                <img id="mainLogo" src="../../assets/mainpage/greenBlueLogo.png" width="242px" height="140px"/>
                 <div id="mainTitle">swamp<span style="color: #065144; font-weight: bolder">hacks</span></div>
                 <p id="headerDate">University of Florida | January 18-20, 2019</p>
         </div>
@@ -114,7 +113,7 @@
         <p class="sectionDescription">
                 From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
-        <h1 class="aboutTitle" style="margin-top: 100px;">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
+        <h1 class="aboutTitle" id="aboutSubTitle">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
         <p class="sectionDescription">
                 SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. With both the basement level and first floor, anticipate a large open space for community hacking and the quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611     
         </p>
@@ -128,7 +127,7 @@
                 <!-- Friday -->
                 <div class="sectionTitle">
                         <h2 class="skyBlue subScheduleTitle">Friday, January 18th</h2>
-                        <button class="arrowBtn" id="fridayArrowButton" (click)="toggleSection('friday')" [style.background-image]="'url('+ fridayArrowUrl +')'"></button>
+                        <!-- <button class="arrowBtn" id="fridayArrowButton" (click)="toggleSection('friday')" [style.background-image]="'url('+ fridayArrowUrl +')'"></button> -->
                 </div>
                 <div id="fridaySection" style="text-align: center">
                         <div class="sectionDescription scheduleDesc">
@@ -159,7 +158,7 @@
                 <!-- Saturday -->
                 <div class="sectionTitle">
                         <h2 class="skyBlue subScheduleTitle">Saturday, January 19th</h2>
-                        <button class="arrowBtn" id="saturdayArrowButton" (click)="toggleSection('saturday')" [style.background-image]="'url('+ saturdayArrowUrl +')'"></button>
+                        <!-- <button class="arrowBtn" id="saturdayArrowButton" (click)="toggleSection('saturday')" [style.background-image]="'url('+ saturdayArrowUrl +')'"></button> -->
                 </div>
                 <div id="saturdaySection">
                         <div class="sectionDescription scheduleDesc">
@@ -182,9 +181,9 @@
                 <!-- Sunday -->
                 <div class="sectionTitle">
                         <h2 class="skyBlue subScheduleTitle">Sunday, January 20th</h2>
-                        <button class="arrowBtn" id="sundayArrowButton" (click)="toggleSection('sunday')" [style.background-image]="'url('+ sundayArrowUrl +')'"></button>
+                        <!-- <button class="arrowBtn" id="sundayArrowButton" (click)="toggleSection('sunday')" [style.background-image]="'url('+ sundayArrowUrl +')'"></button> -->
                 </div>
-                <div id="sundaySection">
+                <div id="sundaySection" class="schedule-bot-margin">
                         <div class="sectionDescription scheduleDesc">
                                 Midnight Snack
                                 <span class="lightSkyBlue sectionTime">12:00AM</span>
@@ -220,8 +219,10 @@
         <h1 class="faqTitle">Frequently Asked Questions</h1>
         <div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">What is a Hackathon?</h2>
-                        <button class="arrowBtn rightArrow" id="question1ArrowButton" (click)="toggleSection('question1')" [style.background-image]="'url('+ question1ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question1')">
+                                <h2 class="skyBlue subTitle">What is a Hackathon?</h2>
+                                <span class="arrow rightArrow" id="question1ArrowButton" [style.background-image]="'url('+ question1ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question1Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
@@ -229,8 +230,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">What should I bring?</h2>
-                        <button class="arrowBtn rightArrow" id="question2ArrowButton" (click)="toggleSection('question2')" [style.background-image]="'url('+ question2ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question2')">
+                                <h2 class="skyBlue subTitle">What should I bring?</h2>
+                                <span class="arrow rightArrow" id="question2ArrowButton" [style.background-image]="'url('+ question2ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question2Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -238,8 +241,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">HELP, this is my first hackathon!?</h2>
-                        <button class="arrowBtn rightArrow" id="question3ArrowButton" (click)="toggleSection('question3')" [style.background-image]="'url('+ question3ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question3')">
+                                <h2 class="skyBlue subTitle">HELP, this is my first hackathon!?</h2>
+                                <span class="arrow rightArrow" id="question3ArrowButton" [style.background-image]="'url('+ question3ArrowUrl +')'"></span> 
+                        </button>
                 </div>
                 <div id="question3Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -247,8 +252,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">How much will I be spending?</h2>
-                        <button class="arrowBtn rightArrow" id="question4ArrowButton" (click)="toggleSection('question4')" [style.background-image]="'url('+ question4ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question4')">
+                                <h2 class="skyBlue subTitle">How much will I be spending?</h2>
+                                <span class="arrow rightArrow" id="question4ArrowButton" [style.background-image]="'url('+ question4ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question4Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -256,8 +263,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Where is SwampHacks?</h2>
-                        <button class="arrowBtn rightArrow" id="question5ArrowButton" (click)="toggleSection('question5')" [style.background-image]="'url('+ question5ArrowUrl +')'"></button>
+                        <button class="arrowBtn"(click)="toggleSection('question5')">
+                                <h2 class="skyBlue subTitle">Where is SwampHacks?</h2>
+                                <span class="arrow rightArrow" id="question5ArrowButton" [style.background-image]="'url('+ question5ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question5Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -265,8 +274,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Who is SwampHacks for?</h2>
-                        <button class="arrowBtn rightArrow" id="question6ArrowButton" (click)="toggleSection('question6')" [style.background-image]="'url('+ question6ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question6')">
+                                <h2 class="skyBlue subTitle">Who is SwampHacks for?</h2>
+                                <span class="arrow rightArrow" id="question6ArrowButton" [style.background-image]="'url('+ question6ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question6Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -274,8 +285,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Can high school students attend?</h2>
-                        <button class="arrowBtn rightArrow" id="question7ArrowButton" (click)="toggleSection('question7')" [style.background-image]="'url('+ question7ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question7')">
+                                <h2 class="skyBlue subTitle">Can high school students attend?</h2>
+                                <span class="arrow rightArrow" id="question7ArrowButton" [style.background-image]="'url('+ question7ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question7Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -283,8 +296,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Can volunteers participate in hacking?</h2>
-                        <button class="arrowBtn rightArrow" id="question8ArrowButton" (click)="toggleSection('question8')" [style.background-image]="'url('+ question8ArrowUrl +')'"></button>
+                        <button class="arrowBtn" id="question8ArrowButton" (click)="toggleSection('question8')">
+                                <h2 class="skyBlue subTitle">Can volunteers participate in hacking?</h2>
+                                <span class="arrow rightArrow" id="question8ArrowButton" [style.background-image]="'url('+ question8ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question8Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -292,8 +307,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Can Mentors participate in hacking?</h2>
-                        <button class="arrowBtn rightArrow" id="question9ArrowButton" (click)="toggleSection('question9')" [style.background-image]="'url('+ question9ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question9')">
+                                <h2 class="skyBlue subTitle">Can Mentors participate in hacking?</h2>
+                                <span class="arrow rightArrow" id="question9ArrowButton" [style.background-image]="'url('+ question9ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question9Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -301,8 +318,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">What happens after I apply?</h2>
-                        <button class="arrowBtn rightArrow" id="question10ArrowButton" (click)="toggleSection('question10')" [style.background-image]="'url('+ question10ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question10')">
+                                <h2 class="skyBlue subTitle">What happens after I apply?</h2>
+                                <span class="arrow rightArrow" id="question10ArrowButton"  [style.background-image]="'url('+ question10ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question10Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -310,8 +329,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">What do I do about teams?</h2>
-                        <button class="arrowBtn rightArrow" id="question11ArrowButton" (click)="toggleSection('question11')" [style.background-image]="'url('+ question11ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question11')">
+                                <h2 class="skyBlue subTitle">What do I do about teams?</h2>
+                                <span class="arrow rightArrow" id="question11ArrowButton" [style.background-image]="'url('+ question11ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question11Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -319,8 +340,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">How do I get there?</h2>
-                        <button class="arrowBtn rightArrow" id="question12ArrowButton" (click)="toggleSection('question12')" [style.background-image]="'url('+ question12ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question12')">
+                                <h2 class="skyBlue subTitle">How do I get there?</h2>
+                                <span class="arrow rightArrow" id="question12ArrowButton" [style.background-image]="'url('+ question12ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question12Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -328,8 +351,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Will I be sitting at my computer all weekend?</h2>
-                        <button class="arrowBtn rightArrow" id="question13ArrowButton" (click)="toggleSection('question13')" [style.background-image]="'url('+ question13ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question13')">
+                                <h2 class="skyBlue subTitle" id="question13" >Will I be sitting at my computer all weekend?</h2>
+                                <span class="arrow rightArrow" id="question13ArrowButton" [style.background-image]="'url('+ question13ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question13Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -337,8 +362,10 @@
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
-                        <h2 class="skyBlue subTitle">Will SwampHacks provide travel reimbursement?</h2>
-                        <button class="arrowBtn rightArrow" id="question14ArrowButton" (click)="toggleSection('question14')" [style.background-image]="'url('+ question14ArrowUrl +')'"></button>
+                        <button class="arrowBtn" (click)="toggleSection('question14')">
+                                <h2 class="skyBlue subTitle"  id="question14">Will SwampHacks provide travel reimbursement?</h2>
+                                <span class="arrow rightArrow" id="question14ArrowButton" [style.background-image]="'url('+ question14ArrowUrl +')'"></span>
+                        </button>
                 </div>
                 <div id="question14Section" class="bot-margin hide">
                         <p class="sectionDescription">
@@ -355,14 +382,24 @@
         <h1 class="sponsorsTitle">Our Amazing Sponsors</h1>
         <!-- logo area -->
         <!-- clouds -->
-        <div class="" id="nimbusLeftScene">
+        <div class="row" style="margin: 0" id="nimbusLeftScene">
                 <div class="col">
                         <img class="leftNimbus" src="../../assets/mainpage/nimbusLeft.png"/>
                 </div>
         </div>
-        <div class="" id="nimbusRightScene">
+        <div class="row" style="margin: 0" id="nimbusRightScene">
                 <div class="col">
                         <img class="rightNimbus" src="../../assets/mainpage/nimbusRight.png"/>
+                </div>
+        </div>
+        <div class="row" style="margin: 0">
+                <div class="col">
+                        <p class="sectionDescription" style="margin-top: 30px;">
+                                Interested in Sponsoring?
+                        </p>
+                        <p> Email us at 
+                                <a href="#" class="sponsorInterest">sponsors@swamphacks.com</a>
+                        </p>
                 </div>
         </div>
 </section>
@@ -396,7 +433,7 @@
                 <div class="col-sm-12 col-md-4 linkCol">
                         <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" class="footerLinks" id="mlhLink">MLH Code of Conduct</a>
                         <a href="http://2018.swamphacks.com/public/index.html" target="_blank" class="footerLinks">Last Year's Site</a>
-                        <a href="https://swamphacks2017.devpost.com/" target="_blank" class="footerLinks">Last Year's Devpost</a>
+                        <a href="https://swamphacks2017.devpost.com/" target="_blank" class="footerLinks bot-margin">Last Year's Devpost</a>
                 </div>
         </div>
 </section>

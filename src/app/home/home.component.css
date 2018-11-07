@@ -122,6 +122,10 @@
     color: white!important;
 }
 
+.nav-mobileBackground {
+    background-color: #6dcff4;
+}
+
 .navbarAnimationOut {
     animation: navbarFadeOut 0.2s linear forwards;
 }
@@ -186,7 +190,7 @@
     left: 50%;
     width: 200px;
     height: 35px;
-    margin-left: -110px;
+    margin-left: -100px;
     margin-top: 10px;
     background-color: #065144; /* Green */
     border: none;
@@ -303,8 +307,14 @@
 }
 
 .foreground {
-    margin-top: 550px;
-    width: 101%;
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    top: 550px;
+    left:0;
+    width: 100.1vw;
     /* width: 2000px; */
     /* background-size:  */
     height: 155px;
@@ -486,6 +496,19 @@
     z-index: 1;
 }
 
+.sponsorInterest {
+    margin-top: -15px;
+    text-decoration: none;
+    font-family: gotham, sans-serif;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.sponsorInterest:hover {
+    text-decoration: underline;
+}
+
 .footerDivider {
     margin-top: -100px;
     margin-bottom: -80px;
@@ -534,6 +557,10 @@
     font-family: gotham, sans-serif;
 }
 
+#aboutSubTitle {
+    margin-top: 100px;
+}
+
 .scheduleTitle {
     font-weight: 600;
     margin-top: 35px;
@@ -556,6 +583,7 @@
 .subTitle {
     font-weight: 700;
     font-family: gotham, sans-serif;
+    display: inline-block;
 }
 
 .subScheduleTitle {
@@ -604,8 +632,18 @@
 
 .arrowBtn {
     margin-left: 5px;
-    width: 50px;
+    width: auto;
     height: 50px;
+    background: transparent;
+    border: none;
+    /* padding: 8px 16px;
+    background-image: url("../../assets/mainpage/rightArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px; */
+}
+
+.arrow {
     background: transparent;
     border: none;
     padding: 8px 16px;
@@ -649,6 +687,10 @@
 
 .skyBlue {
     color: #84d5df;
+}
+
+.oceanBlue {
+    color: #0b2c6e;
 }
 
 .lightSkyBlue {
@@ -715,7 +757,12 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 450px) {
+
+    .mainPageImg {
+        display: none;
+    }
+
     .sectionDescription {
         width: 100%;
     }
@@ -748,18 +795,66 @@
         display: none;
     }
 
+    .lakeGator {
+        width: 52vw;
+        height: 10vw;
+    }
+
     .headerContainer {
-        margin-left: -54%;
+        margin-left: -50%;
         text-align: center;
         width: 100%;
     }
 
     .aboutTitle {
         margin-top: 20px;
+        font-size: 25px;
+    }
+
+    #aboutSubTitle {
+        margin-top: 10% !important;
+    }
+
+    .scheduleTitle {
+        font-size: 25px;
+    }
+
+    .schedule-bot-margin {
+        margin-bottom: 50px;
+    }
+
+    .faqTitle {
+        font-size: 25px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .sponsorsTitle {
+        font-size: 25px;
+    }
+
+    .subTitle {
+        font-size: 15px; 
+    }
+
+    .sectionTitle {
+        justify-content: center;
+        margin-left: 6%;
+    }
+
+    .move-left {
+        margin-left: -12% !important;
+    }
+
+    .subScheduleTitle {
+        font-size: 22px; 
+        margin-left: 0;
     }
 
     .sectionDescription {
-        padding: 5%;
+        font-size: 15px;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
     .scheduleDesc {
@@ -770,10 +865,29 @@
        float: none;
     }
 
+    .arrowBtn {    
+        margin-top: -4%;
+        margin-left: -4%;
+        background-size: 14px;
+    }
+
+    .downArrow {
+        background-size: 14px;
+    }
+
+    .rightArrow {
+        background-size: 7px;
+    }
+
     #mainTitle {
         font-size: 35px;
-        margin-top: -20px;
+        margin-top: -10px;
         /* margin-top: 100px; */
+    }
+
+    #mainLogo {
+        width: 42vw;
+        height: 13vh;
     }
     
     #headerDate {
@@ -784,6 +898,14 @@
 
     #mlhLink {
         margin-top: 5px;
+    }
+
+    #question13 {
+        width: 90%;
+    }
+
+    #question14 {
+        width: 90%;
     }
 
     .nav-link {
@@ -802,8 +924,13 @@
     .footerLinks {
         padding-right: 0;
     }
+
+    #nimbusLeftScene {
+        display: none;
+    }
+
+    #nimbusRightScene {
+        display: none;
+    }
 }
 
-@media only screen and (max-width: 1200px) {
-
-}
