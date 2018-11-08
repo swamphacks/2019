@@ -122,6 +122,10 @@
     color: white!important;
 }
 
+.nav-link:focus {
+    color: rgba(0,0,0,.5)!important;
+}
+
 .nav-mobileBackground {
     background-color: #6dcff4;
 }
@@ -186,7 +190,7 @@
 
 .applyButton {
     position: absolute;
-     top: 60%;
+     top: 55%;
     left: 50%;
     width: 200px;
     height: 35px;
@@ -341,7 +345,7 @@
 .backTrees {
     position: absolute;
     margin-top: 300px;
-    top: 350px;
+    top: 300px;
     left: 50%;
     padding: 0;
     margin: 0;
@@ -524,6 +528,7 @@
 }
 
 .footerDivider {
+    background-color: linear-gradient(#6dcff4, #368fcb);
     margin-top: -100px;
     margin-bottom: -80px;
     z-index: -1;
@@ -823,9 +828,15 @@
     }
 
     .headerContainer {
+        top: 300px;
         margin-left: -50%;
         text-align: center;
         width: 100%;
+    }
+
+    .cohostText {
+        margin-top: 3%;
+        padding-left: 25%;
     }
 
     .aboutTitle {
@@ -852,6 +863,7 @@
     }
 
     .sponsorsTitle {
+        margin-top: 100px;
         font-size: 25px;
     }
 
@@ -877,6 +889,7 @@
         font-size: 15px;
         padding-left: 10%;
         padding-right: 10%;
+        margin-bottom: 10%;
     }
 
     .scheduleDesc {
@@ -909,13 +922,20 @@
 
     #mainLogo {
         width: 42vw;
-        height: 13vh;
+        height: 27vw;
+    }
+
+    #realTruckLogo {
+        width: 180px;
+        height: 27.33px;
     }
     
     #headerDate {
         font-size: 15px;
         margin-top: 5px;
         margin-left: -15px;
+        padding-left: 15%;
+        padding-right: 15%;
     }
 
     #mlhLink {
@@ -948,13 +968,13 @@
     }
 
     #realTruckSponsor {
-        width: 55% !important;
-        height: 55% !important;
+        width: 80% !important;
+        height: 80% !important;
     }
 
     #citiSponsor {
-        width: 35% !important;
-        height: 35% !important;
+        /* width: 35% !important; */
+        /* height: 35% !important; */
     }
 
     #americanExpSponsor {

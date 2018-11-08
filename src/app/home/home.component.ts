@@ -197,7 +197,7 @@ export class HomeComponent implements OnInit {
   toggleCollapse(sectionId){
     this.show = !this.show;
     let section = $('#'+sectionId)[0];
-    if (this.show) {
+    if (this.show && this.isMobile) {
       // change background
       $('#navbar').addClass('nav-mobileBackground');
     } else {
@@ -205,8 +205,12 @@ export class HomeComponent implements OnInit {
     }
     // console.log(section);
     if (section) {
+      let offSet = 200;
+      if (this.isMobile) {
+        offSet = 80;
+      }
       $('html, body').animate({
-        scrollTop: section['offsetTop'] + 200
+        scrollTop: section['offsetTop'] + offSet
       }, 800);
     }
   }
