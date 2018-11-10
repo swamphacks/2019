@@ -34,15 +34,35 @@ export class HomeComponent implements OnInit {
   question13ArrowUrl = this.rightArrowUrl;
   question14ArrowUrl = this.rightArrowUrl;
 
-  foregroundDesktopUrl = "../../assets/mainpage/foreground.png";
   foregroundMobileUrl = "../../assets/mainpage/mobile/mobile-foreground.png";
-
-  foregroundSrc = this.foregroundDesktopUrl;
-
-  backTreesDesktopUrl = "../../assets/mainpage/islandParts/back.png";
   backTreesMobileUrl = "../../assets/mainpage/mobile/mobile-back.png";
 
-  backTreesSrc = this.backTreesDesktopUrl;
+  // day time urls
+  dayBackgroundUrl = "../../assets/mainpage/background.png";
+  dayWaterUrl = "../../assets/mainpage/islandParts/water.png";
+  dayLeftIslandUrl = "../../assets/mainpage/islandParts/leftTwo.png";
+  dayRightIslandUrl = "../../assets/mainpage/islandParts/rightTwo.png";
+  dayLeftIslandFrontUrl = "../../assets/mainpage/islandParts/leftThree.png";
+  dayRightIslandFrontUrl = "../../assets/mainpage/islandParts/rightThree.png";
+  daySunUrl = "../../assets/mainpage/islandParts/Sun.png";
+  dayGlareUrl = "../../assets/mainpage/islandParts/glares.png";
+  dayForegroundDesktopUrl = "../../assets/mainpage/foreground.png";
+  dayBackTreesDesktopUrl = "../../assets/mainpage/islandParts/back.png";
+  // noon time urls
+
+  // night time urls
+
+  // site image sources
+  backgroundSrc = this.dayBackgroundUrl;
+  waterSrc = this.dayWaterUrl;
+  leftIslandSrc = this.dayLeftIslandUrl;
+  rightIslandSrc = this.dayRightIslandUrl;
+  leftIslandFrontSrc = this.dayLeftIslandFrontUrl;
+  rightIslandFrontSrc = this.dayRightIslandFrontUrl;
+  sunSrc = this.daySunUrl;
+  glareSrc = this.dayGlareUrl;
+  foregroundSrc = this.dayForegroundDesktopUrl;
+  backTreesSrc = this.dayBackTreesDesktopUrl;
 
   isMobile = false;
   inSafari = false;
@@ -120,8 +140,8 @@ export class HomeComponent implements OnInit {
       }
       this.prevWidth = width;
       this.isMobile = false;
-      this.backTreesSrc = this.backTreesDesktopUrl;
-      this.foregroundSrc = this.foregroundDesktopUrl;
+      this.backTreesSrc = this.dayBackTreesDesktopUrl;
+      this.foregroundSrc = this.dayForegroundDesktopUrl;
       // add fix size class
       $('#backTree').addClass('backTrees');
       $('#foregroundId').addClass('foreground');
