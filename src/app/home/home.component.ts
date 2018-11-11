@@ -11,7 +11,6 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   show: boolean = false;
-  mlhLink = 'https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2019-season&amp;utm_content=blue';
 
   dashboardURL = 'http://dashboard2019.swamphacks.com/makeaccount.html';
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
