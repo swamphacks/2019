@@ -11,9 +11,18 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   show: boolean = false;
+  mlhLink = 'https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2019-season&amp;utm_content=blue';
+
   dashboardURL = 'http://dashboard2019.swamphacks.com/makeaccount.html';
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
   downArrowUrl = "../../assets/mainpage/downArrow.png";
+
+  timeCapsuleClosedUrl = "../../assets/mainpage/time_capsule_dirty_2019.png";
+  timeCapsuleGlowUrl = "../../assets/mainpage/time_capsule_glow_dirty_2019.png";
+  timeCapsuleOpenUrl = "../../assets/mainpage/time_capsule_open_dirty_2019.png";
+
+  timeCapsuleSrc = this.timeCapsuleClosedUrl;
+  timeCapsuleOpened = false;
 
   fridayArrowUrl = this.downArrowUrl;
   saturdayArrowUrl = this.downArrowUrl;
@@ -46,7 +55,7 @@ export class HomeComponent implements OnInit {
   dayRightIslandFrontUrl = "../../assets/mainpage/islandParts/rightThree.png";
   daySunUrl = "../../assets/mainpage/islandParts/Sun.png";
   dayGlareUrl = "../../assets/mainpage/islandParts/glares.png";
-  dayForegroundDesktopUrl = "../../assets/mainpage/foreground.png";
+  dayForegroundDesktopUrl = "../../assets/mainpage/Foreground.png";
   dayBackTreesDesktopUrl = "../../assets/mainpage/islandParts/back.png";
   // noon time urls
 
@@ -91,19 +100,14 @@ export class HomeComponent implements OnInit {
         //"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1 980x1306"
         this.inSafari = true;
       }
-        
-      // add animation to gator
-      // $('#gatorTraveler').addClass('movementAnimation');
       // Show the loader
-      // $("#animationWindow").removeClass("hide");
-      // $("#animationWindow").addClass("showflex");
+      $("#animationWindow").removeClass("hide");
+      $("#animationWindow").addClass("showflex");
       setTimeout(function(){
         	// Hide the loader
 					$("#animationWindow").removeClass("showflex");
           // $("#animationWindow").addClass("hide");
           $("#animationWindow").addClass("fadeOutAnimation");
-        // remove animation after 5 seconds
-        // $('#gatorTraveler').removeClass('movementAnimation');
       }, 3000);
 
       setTimeout(function() {$("#animationWindow").addClass("hide");},3500);
@@ -113,7 +117,7 @@ export class HomeComponent implements OnInit {
   }
 
   checkIfMobile() {
-    if (window.screen.width <= 450 || window.innerWidth <= 400 || window.screen.height <= 450) {
+    if (window.screen.width <= 450 || window.innerWidth <= 650 || window.screen.height <= 450) {
       this.isMobile = true;
       this.backTreesSrc = this.backTreesMobileUrl;
       this.foregroundSrc = this.foregroundMobileUrl;
@@ -169,6 +173,8 @@ export class HomeComponent implements OnInit {
     // const parallaxInstance7 = new Parallax(glareBotScenes);
     const headerScene = document.getElementById('headerScene');
     this.parallaxInstance8 = new Parallax(headerScene);
+    // const gatorScene = document.getElementById('gatorScene');
+    // this.parallaxInstance8 = new Parallax(gatorScene);
   }
 
   enableParallax() {
@@ -235,11 +241,12 @@ export class HomeComponent implements OnInit {
     }
   }
   // if false then they are not hidden
-  sectionStates = {'friday': false, 'saturday': false, 'sunday': false,
-                        'question1': true, 'question2': true, 'question3': true, 'question4': true,
-                        'question5': true, 'question6': true, 'question7': true, 'question8': true,
-                        'question9': true, 'question10': true, 'question11': true, 'question12': true,
-                        'question13': true, 'question14': true};
+  sectionStates = {
+                    'question1': true, 'question2': true, 'question3': true, 'question4': true,
+                    'question5': true, 'question6': true, 'question7': true, 'question8': true,
+                    'question9': true, 'question10': true, 'question11': true, 'question12': true,
+                    'question13': true, 'question14': true
+                  };
 
   toggleSection(section: string) {
     let sectionEle = $('#'+section+'Section');
@@ -247,7 +254,6 @@ export class HomeComponent implements OnInit {
       if (this.sectionStates[section]) {
         // show
         sectionEle.slideDown();
-        // sectionEle.removeClass('hide');
         this.sectionStates[section] = false;
         // show down arrow
         this.updateArrow(section, this.downArrowUrl);
@@ -257,7 +263,6 @@ export class HomeComponent implements OnInit {
       } else {
         // hide
         sectionEle.slideUp();
-        // sectionEle.addClass('hide');
         this.sectionStates[section] = true;
         // show right arrow
         this.updateArrow(section, this.rightArrowUrl);
@@ -365,6 +370,29 @@ export class HomeComponent implements OnInit {
   }
   snapchatHoverOut(event) {
     this.snapchatSrc = this.snapchatPath;
+  }
+
+  // Capsule Hover
+  capsuleHovered(e) {
+    if (!this.timeCapsuleOpened) {
+      this.timeCapsuleSrc = this.timeCapsuleGlowUrl;
+    }
+  }
+
+  capsuleHoverOut(e) {
+    if (!this.timeCapsuleOpened) {
+      this.timeCapsuleSrc = this.timeCapsuleClosedUrl;
+    }
+  }
+
+  capsuleClicked() {
+    this.timeCapsuleSrc = this.timeCapsuleOpenUrl;
+    this.timeCapsuleOpened = true;
+    $('#capsule').addClass('timeCapsuleAnimation');
+    // $('#capsuleMessage').removeClass("hide");
+    setTimeout(function() {
+      $('#capsuleMessageContainer').addClass('capsuleMessageAnimation');
+    }, 1000);
   }
 }
 

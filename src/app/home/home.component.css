@@ -1,3 +1,13 @@
+.mlh-badge {
+    display:block;
+    max-width:100px;
+    min-width:60px;
+    position:fixed;
+    right:5%;
+    top:0;
+    width:10%;
+    z-index:10000;
+}
 /* loading screen */
 #animationWindow {
     position: fixed;
@@ -212,46 +222,21 @@
     /* border: 2px solid white; */
 }
 
-#gatorTraveler {
-    position: absolute;
-    top: 60%;
-    left: 47%;
-    /* 1/3 original size */
-    width: 80px; 
-    height: 40px;
-    animation: gatorMovement 5s linear 4s forwards;
-}
-
-.movementAnimation {
-    animation: gatorMovement 5s linear forwards;
-    /* -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; */
-}
-
-@keyframes gatorMovement {
-    0% {
-        -ms-transform: scale(1.5) translate(0, 20px);; /* IE 9 */
-        -webkit-transform: scale(1.5) translate(0, 20px);; /* Safari */
-        transform: scale(1.5) translate(0, 20px);;
-    }
-    50% {
-        -ms-transform: scale(3) translate(0, 20px);; /* IE 9 */
-        -webkit-transform: scale(3) translate(0, 20px);; /* Safari */
-        transform: scale(3) translate(0, 20px);;
-    }
-    100% {
-        -ms-transform: scale(3) translate(0, -110px);; /* IE 9 */
-        -webkit-transform: scale(3) translate(0, -110px);; /* Safari */
-        transform: scale(3) translate(0, -110px);;
-    }
-}
-
 .lakeGator {
     width: 20vw;
     height: 3vw;
     position: absolute;
     top: 560px;
-    left: 30%;
+    left: -60%;
+    animation: gatorMovement 50s linear 2s infinite;
+}
+
+@keyframes gatorMovement {
+    100% {
+        -ms-transform: translateX(2000px); /* IE 9 */
+        -webkit-transform: translateX(2000px); /* Safari */
+        transform: translateX(2000px);
+    }
 }
 
 .headerContainer {
@@ -286,16 +271,30 @@
 
 .cohostText {
     font-family: 'metropolis', sans-serif;
-    color: #065144;
+    color: #84d5df;
     font-weight: 700;
-    margin-top: -10px;
     text-align: left;
-    padding-left: 115px;
     font-style: italic;
+    z-index: 5;
+}
+
+.cohostContainer {
+    position: absolute;
+    top: 650px;
+    right: 20px;
+    /* z-index: 2;
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px; */
 }
 
 #realTruckLogo {
+    transition: transform 0.5s;
     margin-bottom: 20px;
+}
+
+#realTruckLogo:hover {
+    transform: scale(1.05);
 }
 
 .banner {
@@ -377,20 +376,8 @@
     /* animation: sway 7s linear infinite; */
 }
 
-@keyframes sway {
-    0% {
-        transform: translateX(20px);
-    }
-    50% {
-        transform: translateX(-20px); 
-    }
-    100% {
-        transform: translateX(20px);
-    }
-}
-
 .islandRight {
-    width: 600px;
+    width: 834px;
     height: 350px;
     top: 300px;
     left: 100%;
@@ -401,16 +388,16 @@
 
 .islandLeftFront {
     width: 400px;
-    height: 250px;
-    top: 400px;
+    height: 280px;
+    top: 380px;
     left: -200px;
     /* animation: sway 7s linear 1s infinite; */
 }
 
 .islandRightFront {
     width: 400px;
-    height: 230px;
-    top: 400px;
+    height: 250px;
+    top: 380px;
     left: 85%;
     /* animation: sway 7s linear 4s infinite; */
 }
@@ -557,6 +544,84 @@
     height: 25vw;
 }
 
+.messageContainer {
+    visibility: hidden;
+    margin-left: 210px;
+    width: 20%;
+    /* these are for the animation */
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transition: visibility 1s;
+}
+
+.capsuleMessageAnimation {
+    animation: slide-up 1s forwards;
+    -webkit-animation: slide-up 1s forwards;
+}
+
+@keyframes slide-up {
+    100% { 
+        visibility: visible;
+        transform: translateX(0%); 
+    }
+}
+
+@-webkit-keyframes slide-up {
+    100% { 
+        visibility: visible;
+        -webkit-transform: translateX(0%); 
+    }
+}
+
+.capsuleMessage {
+    background: #e5e5eb;
+    color: black;
+    border-radius: 10px;
+    position: relative;
+    padding: .3em .6em;
+    margin-bottom: .5em;
+    line-height: 1.4;
+}
+
+.capsuleAuthor {
+    float: right;
+}
+
+/* caret */
+.capsuleMessage:after {
+    box-sizing: content-box;
+    border-bottom-right-radius: 1em 0.5em;
+    border-right: 0.5em solid #e5e5eb;
+    bottom: 0;
+    content: '';
+    height: 1em;
+    position: absolute;
+    left: -0.5em;
+    width: 0.5em;
+}
+
+.timeCapsule {
+    float: left;
+    margin: 0;
+    margin-left: 50px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+.timeCapsuleAnimation {
+    animation: moveDown 1s linear forwards;
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(35px);
+    }
+}
+
+
 .sectionDescription {
     padding-left: 20%;
     padding-right: 20%;
@@ -590,6 +655,12 @@
     font-weight: 600;
     margin-top: 55px;
     font-family: gotham, sans-serif;
+}
+
+.dropDownSection {
+    /* stops jquery slide down from having a small jump at the end */
+    transition: none;
+    border: 1px solid transparent;
 }
 
 .sponsorsTitle {
@@ -642,7 +713,7 @@
 }
 
 .sponsorLogo:hover {
-    transform: scale(1.2);
+    transform: scale(1.08);
 }
 
 .leftNimbus {
@@ -784,9 +855,21 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
+
+    .mlh-badge {
+        position: absolute;
+    }
 
     .mainPageImg {
+        display: none;
+    }
+
+    .messageContainer {
+        display: none;
+    }
+
+    .timeCapsule {
         display: none;
     }
 
@@ -825,10 +908,12 @@
     .lakeGator {
         width: 52vw;
         height: 10vw;
+        left: 50px;
+        animation: none;
     }
 
     .headerContainer {
-        top: 300px;
+        top: 350px;
         margin-left: -50%;
         text-align: center;
         width: 100%;
@@ -836,7 +921,6 @@
 
     .cohostText {
         margin-top: 3%;
-        padding-left: 25%;
     }
 
     .aboutTitle {
@@ -921,7 +1005,7 @@
     }
 
     #mainLogo {
-        width: 42vw;
+        width: 45.9vw;
         height: 27vw;
     }
 
@@ -933,7 +1017,7 @@
     #headerDate {
         font-size: 15px;
         margin-top: 5px;
-        margin-left: -15px;
+        /* margin-left: -15px; */
         padding-left: 5%;
         padding-right: 5%;
     }

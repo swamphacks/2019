@@ -1,3 +1,8 @@
+<!-- MLH BADGE -->
+<!-- <a id=“mlh-trust-badge” style=“display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href=“https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white” target=“_blank”><img src=“../../assets/mainpage/mobile/mlh-trust-badge-2019-white.svg” alt=“Major League Hacking 2019 Hackathon Season” style=“width:100%“/></a> -->
+<a id="mlh-trust-badge" class="mlh-badge" href=“{{mlhLink}}” target=“_blank”>
+        <img src="../../assets/mainpage/mlh-trust-badge-2019-white.svg" style=“width:100%“/>
+</a>
 <!-- nav bar -->
 <nav class="navbar navbar-light navbar-expand-md fixed-top navbarAnimationIn" id="navbar">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -22,7 +27,7 @@
         </div>
 </nav>
 
-<div *ngIf="!isMobile" id="animationWindow" class="showFlex">
+<div *ngIf="!isMobile" id="animationWindow" class="hide">
         <div class="loader"></div>
 </div>
 
@@ -31,49 +36,52 @@
 <!-- Main Section -->
 <div class="banner">
     <img *ngIf="isMobile" src="../../assets/mainpage/mobile/phoneBackgroundPNG.png" width="100%" height="100%"/>
-    <img class="mainPageImg" src="../../assets/mainpage/background.png"/>
-    <img class="mainPageImg" src="../../assets/mainpage/islandParts/water.png"/>
+    <img class="mainPageImg" [src]="backgroundSrc"/>
+    <img class="mainPageImg" [src]="waterSrc"/>
     <div id="backTreesScene">
             <div data-depth="0.20" >
-                    <img *ngIf="!isMobile" class="backTrees" id="backtree" src="../../assets/mainpage/islandParts/back.png"/>
+                    <img *ngIf="!isMobile" class="backTrees" id="backtree" [src]="backTreesSrc"/>
             </div>
     </div>
     <div id="leftIslandScenes">
            <div  data-depth="0.60">
-                <img class="mainPageImg islandLeft" src="../../assets/mainpage/islandParts/leftTwo.png"/>
+                <img class="mainPageImg islandLeft" [src]="leftIslandSrc"/>
            </div>
     </div>
     <div id="rightIslandScenes">
             <div data-depth="0.60" >
-                    <img class="mainPageImg islandRight" src="../../assets/mainpage/islandParts/rightTwo.png"/>
+                    <img class="mainPageImg islandRight" [src]="rightIslandSrc"/>
             </div>
     </div>
     <div id="leftIslandFrontScenes">
         <div  data-depth="0.80">
-                <img class="mainPageImg islandLeftFront" src="../../assets/mainpage/islandParts/leftThree.png"/>
+                <img class="mainPageImg islandLeftFront" [src]="leftIslandFrontSrc"/>
         </div>
     </div>
     <div id="rightIslandFrontScenes">
         <div data-depth="0.80" >
-                <img class="mainPageImg islandRightFront" src="../../assets/mainpage/islandParts/rightThree.png"/>
+                <img class="mainPageImg islandRightFront" [src]="rightIslandFrontSrc"/>
         </div>
     </div>
     <div id="sunScene" data-relative-input="true">
            <div  data-depth="0.20" >
-                <img class="mainPageImg sun" src="../../assets/mainpage/islandParts/Sun.png"/>
+                <img class="mainPageImg sun" [src]="sunSrc"/>
            </div>
     </div>
     <div id="gatorScene">
-            <div>
+            <div data-depth="0.50">
                 <img class="lakeGator" src="../../assets/mainpage/gator.png"/>   
             </div>
     </div>
-
-    <img *ngIf="!isMobile" class="foreground" id="foregroundId" style="margin-left: -1px;" src="../../assets/mainpage/Foreground.png"/>
+    <img *ngIf="!isMobile" class="foreground" id="foregroundId" [src]="foregroundSrc"/>
+    <div class="cohostContainer">
+        <div class="cohostText">Co-Hosted by:</div>
+        <a href="https://www.realtruck.com/" target="_blank"><img id="realTruckLogo" src="../../assets/mainpage/realTruckLogo.png" width="280px" height="42.4px"/></a>
+    </div>
     
     <div id="glareTopScene" data-relative-input="true">
         <div  data-depth="0.40" >
-                <img *ngIf="!isMobile" class="mainPageImg glares" src="../../assets/mainpage/islandParts/glares.png"/>
+                <img *ngIf="!isMobile" class="mainPageImg glares" [src]="glareSrc"/>
         </div>
     </div>
     <!-- <div id="glareTopScene" data-relative-input="true">
@@ -94,8 +102,6 @@
                 <!-- Logo -->
                 <img id="mainLogo" src="../../assets/mainpage/greenBlueLogo.png" width="242px" height="140px"/>
                 <div id="mainTitle">swamp<span style="color: #065144; font-weight: bolder">hacks</span></div>
-                <div class="cohostText">Co-Hosted by:</div>
-                <img id="realTruckLogo" src="../../assets/mainpage/realTruckLogo.png" width="270px" height="41px"/>
                 <p id="headerDate">University of Florida | January 18-20, 2019</p>
         </div>
      </div>
@@ -112,9 +118,14 @@
         <p class="sectionDescription">
                 SwampHacks is 36 hours for you to learn, create, and celebrate. For the whole weekend, 500 students will come together as aspiring developers, engineers, builders, designers—any person who has a desire to create something—focus on a project, and learn by making.
         </p>
-        <p class="sectionDescription">
+        <p class="sectionDescription" style="margin-bottom: 50px">
                 From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
+        <div class="messageContainer" id="capsuleMessageContainer">
+                <div class="capsuleMessage">This Website looks amazing thanks to our amazing designer, Kathy!</div>
+                <div class="capsuleAuthor">Selena Gomez</div>
+        </div>
+        <img class="timeCapsule" id="capsule" [src]="timeCapsuleSrc" width="15%" height="15%" (mouseover)="capsuleHovered($event)" (mouseout)="capsuleHoverOut($event)" (click)="capsuleClicked()"/>
         <h1 class="aboutTitle" id="aboutSubTitle">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
         <p class="sectionDescription">
                 SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. With both the basement level and first floor, anticipate a large open space for community hacking and the quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611     
@@ -237,7 +248,7 @@
                                 <span class="arrow rightArrow" id="question2ArrowButton" [style.background-image]="'url('+ question2ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question2Section" class="bot-margin hide">
+                <div id="question2Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Bring yourself, some comfy clothes, toiletries (toothpaste, toothbrush, deodorant, etc) and your hacking gear (laptop, hardware…and don’t forget the chargers!)
                         </p>
@@ -248,7 +259,7 @@
                                 <span class="arrow rightArrow" id="question3ArrowButton" [style.background-image]="'url('+ question3ArrowUrl +')'"></span> 
                         </button>
                 </div>
-                <div id="question3Section" class="bot-margin hide">
+                <div id="question3Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 That is awesome! We are so glad you decided to be a part of the hacker community. SwampHacks welcomes everyone of any major and any level as long as they have a passion for development! We will have workshops during the event, mentors to help you through any troubles, so no matter what skill levels, we will provide the resources to help you learn.
                         </p>
@@ -259,7 +270,7 @@
                                 <span class="arrow rightArrow" id="question4ArrowButton" [style.background-image]="'url('+ question4ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question4Section" class="bot-margin hide">
+                <div id="question4Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Just like the best things in life, it’s free! The food is free, the swag is free, the prizes are free, the fun is free!
                         </p>
@@ -270,7 +281,7 @@
                                 <span class="arrow rightArrow" id="question5ArrowButton" [style.background-image]="'url('+ question5ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question5Section" class="bot-margin hide">
+                <div id="question5Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. Anticipate a large open space for community hacking and a more quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611
                         </p>
@@ -281,7 +292,7 @@
                                 <span class="arrow rightArrow" id="question6ArrowButton" [style.background-image]="'url('+ question6ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question6Section" class="bot-margin hide">
+                <div id="question6Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Are you currently enrolled in a university? Are you interested in building something awesome? Congratulations! You are eligible! With SwampHacks V, we look forward to making an open environment for any university student at any skill level to explore their desire to learn more about technology.
                         </p>
@@ -292,7 +303,7 @@
                                 <span class="arrow rightArrow" id="question7ArrowButton" [style.background-image]="'url('+ question7ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question7Section" class="bot-margin hide">
+                <div id="question7Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 As much as we'd love to see high school participants, our hacking venue does not allow minors to stay overnight, so we cannot allow high school students to participate this year. We hope that you can join us in the future though!
                         </p>
@@ -303,7 +314,7 @@
                                 <span class="arrow rightArrow" id="question8ArrowButton" [style.background-image]="'url('+ question8ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question8Section" class="bot-margin hide">
+                <div id="question8Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Unfortunately, as a volunteer, we'll need you to help out for the duration of the event. As a result, volunteers are not allowed to participate or help participants in the hackathon.
                         </p>
@@ -314,7 +325,7 @@
                                 <span class="arrow rightArrow" id="question9ArrowButton" [style.background-image]="'url('+ question9ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question9Section" class="bot-margin hide">
+                <div id="question9Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Unfortunately, as a mentor, we'll need you to help our hackers for the duration of the event. As a result, mentors are not allowed to participate in the hackathon, but are free to help hackers as long as they aren't contributing a substantial amount to a group's project.
                         </p>
@@ -325,7 +336,7 @@
                                 <span class="arrow rightArrow" id="question10ArrowButton"  [style.background-image]="'url('+ question10ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question10Section" class="bot-margin hide">
+                <div id="question10Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Thanks for applying! Sit tight and we'll send an email out regarding your application status. In the email, we'll give you more information and further instructions on what to do! Your dashboard account will also guide you on where you are in the application process.
                         </p>
@@ -336,7 +347,7 @@
                                 <span class="arrow rightArrow" id="question11ArrowButton" [style.background-image]="'url('+ question11ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question11Section" class="bot-margin hide">
+                <div id="question11Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Gather your friends, meet some peeps at opening, or attend our team-creation event before opening ceremonies. No worries about knowing anyone beforehand; SwampHacks is for creating new connections and meeting new people from around the states. Maximum 4 people per team.
                         </p>
@@ -347,7 +358,7 @@
                                 <span class="arrow rightArrow" id="question12ArrowButton" [style.background-image]="'url('+ question12ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question12Section" class="bot-margin hide">
+                <div id="question12Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 We are working to charter buses to pick up students from nearby schools. We will release our bus routes and give an update on travel in late November! 
                         </p>
@@ -358,7 +369,7 @@
                                 <span class="arrow rightArrow" id="question13ArrowButton" [style.background-image]="'url('+ question13ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question13Section" class="bot-margin hide">
+                <div id="question13Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 Negatory! (unless you want to). During the event, we will have a multitude of activities for you to do! These will include networking sessions, informal talks, workshops, and much more, so don't fret about being isolated.
                         </p>
@@ -369,7 +380,7 @@
                                 <span class="arrow rightArrow" id="question14ArrowButton" [style.background-image]="'url('+ question14ArrowUrl +')'"></span>
                         </button>
                 </div>
-                <div id="question14Section" class="bot-margin hide">
+                <div id="question14Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 SwampHacks will be doing our best this year to provide travel reimbursements. The deadline for applications seeking travel reimbursement is Sunday, November 18th at 11:59PM. 
                         </p>
@@ -395,7 +406,7 @@
         </div>
         <div class="row" style="margin: 0; margin-top: 50px">
                 <div class="col">
-                        <a class="sponsorLogo" href="https://www.americanexpress.com/" target="_blank"><img id="americanExpSponsor" src="../../assets/mainpage/logos/americanExpressWhite.png" width="10%" height="10%"/></a>
+                        <a class="sponsorLogo" href="https://www.americanexpress.com/" target="_blank"><img id="americanExpSponsor" src="../../assets/mainpage/logos/americanExpressWhite.png" width="8%" height="8%"/></a>
                 </div>
         </div>
         <!-- clouds -->
