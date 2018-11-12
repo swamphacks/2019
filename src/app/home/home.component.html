@@ -30,9 +30,9 @@
 <div *ngIf="!isMobile" id="animationWindow" class="hide">
         <div class="loader"></div>
 </div>
-
-<!-- <img id="artboard" src="../../assets/mainpage/Artboard 1.png"/> -->
-<!-- <img class="waterfall" src="../../assets/mainpage/waterFall.png"/> -->
+<button class="floatingBtn" id="floatBtn" (click)="scrollTop()">
+        <img src="../../assets/mainpage/icons/umbrella-icon.png"/>
+</button>
 <!-- Main Section -->
 <div class="banner">
     <img *ngIf="isMobile" src="../../assets/mainpage/mobile/phoneBackgroundPNG.png" width="100%" height="100%"/>
@@ -118,12 +118,15 @@
         <p class="sectionDescription">
                 SwampHacks is 36 hours for you to learn, create, and celebrate. For the whole weekend, 500 students will come together as aspiring developers, engineers, builders, designers—any person who has a desire to create something—focus on a project, and learn by making.
         </p>
-        <p class="sectionDescription" style="margin-bottom: 50px">
+        <p class="sectionDescription">
                 From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
         <div class="messageContainer" id="capsuleMessageContainer">
-                <div class="capsuleMessage">This Website looks amazing thanks to our amazing designer, Kathy!</div>
-                <div class="capsuleAuthor">Selena Gomez</div>
+                <div class="capsuleMessage">"Have fun! build great things! and please don’t kill each other over t-shirts"</div>
+                <div class="capsuleAuthor">
+                        <p style="margin-bottom: 5px">- Jeffrey Shao</p>
+                        <p>2018 Food Coordinator</p>
+                </div>
         </div>
         <img class="timeCapsule" id="capsule" [src]="timeCapsuleSrc" width="15%" height="15%" (mouseover)="capsuleHovered($event)" (mouseout)="capsuleHoverOut($event)" (click)="capsuleClicked()"/>
         <h1 class="aboutTitle" id="aboutSubTitle">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
@@ -131,11 +134,18 @@
                 SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. With both the basement level and first floor, anticipate a large open space for community hacking and the quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611     
         </p>
 </section>
-<div class="islandDivider brown">
+<div class="islandDivider">
         <img class="islandDivider" src="../../assets/mainpage/dividers/darkBrownDivider.png"/>
+        <div class="secondMessageContainer" id="capsuleMessage2Container">
+                <div class="capsuleMessage">“Treat your self, cause you deserve it. Oh and endorse me on LinkedIn”</div>
+                <div class="capsule2Author">
+                        <p style="margin-bottom: 5px">- Jiayang Li</p>
+                        <p>2018 Marketing Director</p>
+                </div>
+        </div>
 </div>
 <section class="layers scheduleLayer brown" id="schedule">
-        <h1 class="scheduleTitle">Schedule</h1>
+        <h1 class="scheduleTitle">Schedule</h1> <img class="timeCapsule2" id="capsule2" [src]="timeCapsule2Src" width="15%" height="15%" (mouseover)="capsule2Hovered($event)" (mouseout)="capsule2HoverOut($event)" (click)="capsule2Clicked()"/>
         <!-- <div class="indent"> -->
                 <!-- Friday -->
                 <div class="sectionTitle">
@@ -383,6 +393,17 @@
                 <div id="question14Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
                                 SwampHacks will be doing our best this year to provide travel reimbursements. The deadline for applications seeking travel reimbursement is Sunday, November 18th at 11:59PM. 
+                        </p>
+                </div>
+                <div class="sectionTitle flexCenter">
+                        <button class="arrowBtn" (click)="toggleSection('question15')">
+                                <h2 class="skyBlue subTitle"  id="question15">When are applications due?</h2>
+                                <span class="arrow rightArrow" id="question15ArrowButton" [style.background-image]="'url('+ question15ArrowUrl +')'"></span>
+                        </button>
+                </div>
+                <div id="question15Section" class="bot-margin hide dropDownSection">
+                        <p class="sectionDescription">
+                                Applications will close on December 21th.
                         </p>
                 </div>
         </div>

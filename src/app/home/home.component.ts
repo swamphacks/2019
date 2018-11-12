@@ -16,12 +16,15 @@ export class HomeComponent implements OnInit {
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
   downArrowUrl = "../../assets/mainpage/downArrow.png";
 
-  timeCapsuleClosedUrl = "../../assets/mainpage/time_capsule_dirty_2019.png";
-  timeCapsuleGlowUrl = "../../assets/mainpage/time_capsule_glow_dirty_2019.png";
-  timeCapsuleOpenUrl = "../../assets/mainpage/time_capsule_open_dirty_2019.png";
+  timeCapsuleClosedUrl = "../../assets/mainpage/capsules/sealed_in_2018.png";
+  timeCapsuleGlowUrl = "../../assets/mainpage/capsules/sealed_in_2018_glow.png";
+  timeCapsuleOpenUrl = "../../assets/mainpage/capsules/sealed_in_2018_open.png";
 
   timeCapsuleSrc = this.timeCapsuleClosedUrl;
   timeCapsuleOpened = false;
+
+  timeCapsule2Src = this.timeCapsuleClosedUrl;
+  timeCapsule2Opened = false;
 
   fridayArrowUrl = this.downArrowUrl;
   saturdayArrowUrl = this.downArrowUrl;
@@ -41,6 +44,7 @@ export class HomeComponent implements OnInit {
   question12ArrowUrl = this.rightArrowUrl;
   question13ArrowUrl = this.rightArrowUrl;
   question14ArrowUrl = this.rightArrowUrl;
+  question15ArrowUrl = this.rightArrowUrl;
 
   foregroundMobileUrl = "../../assets/mainpage/mobile/mobile-foreground.png";
   backTreesMobileUrl = "../../assets/mainpage/mobile/mobile-back.png";
@@ -199,15 +203,21 @@ export class HomeComponent implements OnInit {
   }
 
   showOrHideNavbar() {
+    const aboutOffset = $('#about')[0]['offsetTop'];
+    if (window.pageYOffset >= aboutOffset) {
+      // show floating button
+      $('#floatBtn').addClass('floatingBtnAnimation');
+    } else {
+      // hide floating button
+      $('#floatBtn').removeClass('floatingBtnAnimation');
+    }
+
     if (window.pageYOffset >= 200) {
-      // TODO: maybe add animation later
       // hide scroll bar
-      // document.getElementById("navbar").style.display = 'none';
       $('#navbar').removeClass('navbarAnimationIn');
       $('#navbar').addClass('navbarAnimationOut');
       this.disableParallax();
     } else {
-      // document.getElementById("navbar").style.display = 'block';
       $('#navbar').removeClass('navbarAnimationOut');
       $('#navbar').addClass('navbarAnimationIn');
       this.enableParallax();
@@ -244,7 +254,7 @@ export class HomeComponent implements OnInit {
                     'question1': true, 'question2': true, 'question3': true, 'question4': true,
                     'question5': true, 'question6': true, 'question7': true, 'question8': true,
                     'question9': true, 'question10': true, 'question11': true, 'question12': true,
-                    'question13': true, 'question14': true
+                    'question13': true, 'question14': true, 'question15': true
                   };
 
   toggleSection(section: string) {
@@ -324,7 +334,16 @@ export class HomeComponent implements OnInit {
       case 'question14':
         this.question14ArrowUrl = arrowUrl;
         break;
+      case 'question15':
+        this.question15ArrowUrl = arrowUrl;
+        break;
     }
+  }
+
+  scrollTop() {
+    $('html, body').animate({
+      scrollTop: $('#navbar')[0]['offsetTop']
+    }, 800);
   }
 
 
@@ -391,6 +410,27 @@ export class HomeComponent implements OnInit {
     // $('#capsuleMessage').removeClass("hide");
     setTimeout(function() {
       $('#capsuleMessageContainer').addClass('capsuleMessageAnimation');
+    }, 1000);
+  }
+  capsule2Hovered(e) {
+    if (!this.timeCapsule2Opened) {
+      this.timeCapsule2Src = this.timeCapsuleGlowUrl;
+    }
+  }
+
+  capsule2HoverOut(e) {
+    if (!this.timeCapsule2Opened) {
+      this.timeCapsule2Src = this.timeCapsuleClosedUrl;
+    }
+  }
+
+  capsule2Clicked() {
+    this.timeCapsule2Src = this.timeCapsuleOpenUrl;
+    this.timeCapsule2Opened = true;
+    $('#capsule2').addClass('timeCapsule2Animation');
+    // $('#capsuleMessage').removeClass("hide");
+    setTimeout(function() {
+      $('#capsuleMessage2Container').addClass('capsuleMessageAnimation');
     }, 1000);
   }
 }
