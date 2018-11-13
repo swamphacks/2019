@@ -751,6 +751,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    /* margin-bottom: 60px; */
     /* justify-content: center; */
 }
 
@@ -918,6 +919,57 @@
     100% {
         transform: scale(1)
     }
+}
+
+/* Landscape classes */
+.bannerLandscape {
+    height: 400px;
+}
+
+.headerContainerLandscape {
+    top: 75%!important;
+}
+
+.aboutTitleLandscape {
+    margin-top: 0;
+}
+
+.scheduleTitleLandscape {
+    margin-left: 0;
+}
+
+.schedule-bot-margin {
+    margin-bottom: 50px;
+}
+
+.applyButtonLandscape {
+    top: 75% !important;
+}
+
+.linkColLandscape {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footerLinksLandscape {
+    padding-right: 0;
+}
+
+.realTruckLogoLandscape {
+    width: 180px;
+    height: 27.33px;
+}
+
+.cohostContainerLandscape {
+    top: 390px;
+}
+
+.lakeGatorLandscape {
+    width: 52vh!important;
+    height: 10vh!important;
+    top: 320px;
+    left: 50px;
+    animation: none;
 }
 
 @media only screen and (max-width: 650px) {

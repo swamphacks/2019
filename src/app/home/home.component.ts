@@ -12,7 +12,7 @@ import * as $ from 'jquery';
 export class HomeComponent implements OnInit {
   show: boolean = false;
 
-  dashboardURL = 'http://dashboard2019.swamphacks.com/makeaccount.html';
+  dashboardURL = 'https://dashboard.swamphacks.com/makeaccount.html';
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
   downArrowUrl = "../../assets/mainpage/downArrow.png";
 
@@ -45,6 +45,10 @@ export class HomeComponent implements OnInit {
   question13ArrowUrl = this.rightArrowUrl;
   question14ArrowUrl = this.rightArrowUrl;
   question15ArrowUrl = this.rightArrowUrl;
+
+  mobileBackgroundUrl = "../../assets/mainpage/mobile/phoneBackgroundPNG.png";
+  mobileBackgroundLandscapeUrl = "../../assets/mainpage/mobile/landscape.jpg";;
+  mobileBackgroundSrc = this.mobileBackgroundUrl;
 
   foregroundMobileUrl = "../../assets/mainpage/mobile/mobile-foreground.png";
   backTreesMobileUrl = "../../assets/mainpage/mobile/mobile-back.png";
@@ -122,6 +126,7 @@ export class HomeComponent implements OnInit {
   checkIfMobile() {
     if (window.screen.width <= 450 || window.innerWidth <= 650 || window.screen.height <= 450) {
       this.isMobile = true;
+      this.mobileBackgroundSrc = this.mobileBackgroundUrl;
       this.backTreesSrc = this.backTreesMobileUrl;
       this.foregroundSrc = this.foregroundMobileUrl;
       // remove fix size class
@@ -130,8 +135,30 @@ export class HomeComponent implements OnInit {
       // give 100% width
       $('#backTree').addClass('mobileBackTrees');
       $('#foregroundId').addClass('mobileForeground');
+      // remove landscape classes
+      $('#headerScene').removeClass('headerContainerLandscape');
+      $('.scheduleTitle').removeClass('scheduleTitleLandscape');
+      $('#applyBtn').removeClass('applyButtonLandscape');
+      $('.aboutTitle').removeClass('aboutTitleLandscape');
+      $('.linkCol').removeClass('linkColLandscape');
+      $('.footerLinks').removeClass('footerLinksLandscape');
+      $('.banner').removeClass('bannerLandscape');
+      $('#realTruckLogo').removeClass('realTruckLogoLandscape');
+      $('.cohostContainer').removeClass('cohostContainerLandscape');
+      $('.lakeGator').removeClass('lakeGatorLandscape');
       if (window.innerWidth >= window.innerHeight) {
         // landscape
+        this.mobileBackgroundSrc = this.mobileBackgroundLandscapeUrl;
+        $('#headerScene').addClass('headerContainerLandscape');
+        $('.scheduleTitle').addClass('scheduleTitleLandscape');
+        $('#applyBtn').addClass('applyButtonLandscape');
+        $('.aboutTitle').addClass('aboutTitleLandscape');
+        $('.linkCol').addClass('linkColLandscape');
+        $('.footerLinks').addClass('footerLinksLandscape');
+        $('.banner').addClass('bannerLandscape');
+        $('#realTruckLogo').addClass('realTruckLogoLandscape');
+        $('.cohostContainer').addClass('cohostContainerLandscape');
+        $('.lakeGator').addClass('lakeGatorLandscape');
       }
     } else {
       const width = window.innerWidth;
@@ -144,6 +171,7 @@ export class HomeComponent implements OnInit {
       } else {
         // site expanded: make foreground max width
         $('#foregroundId').removeClass('fixedForeground');
+        $('.scheduleTitle').removeClass('scheduleTitleLandscape');
       }
       this.prevWidth = width;
       this.isMobile = false;
@@ -154,6 +182,17 @@ export class HomeComponent implements OnInit {
       $('#foregroundId').addClass('foreground');
       // remove 100% width
       $('#backTree').removeClass('mobileBackTrees');
+      // remove landscape classes
+      $('#headerScene').removeClass('headerContainerLandscape');
+      $('.scheduleTitle').removeClass('scheduleTitleLandscape');
+      $('#applyBtn').removeClass('applyButtonLandscape');
+      $('.aboutTitle').removeClass('aboutTitleLandscape');
+      $('.linkCol').removeClass('linkColLandscape');
+      $('.footerLinks').removeClass('footerLinksLandscape');
+      $('.banner').removeClass('bannerLandscape');
+      $('#realTruckLogo').removeClass('realTruckLogoLandscape');
+      $('.cohostContainer').removeClass('cohostContainerLandscape');
+      $('.lakeGator').removeClass('lakeGatorLandscape');
     }
   }
 
@@ -225,7 +264,6 @@ export class HomeComponent implements OnInit {
   }
 
   apply() {
-    console.log('clicked');
     this.document.location.href = this.dashboardURL;
   }
 

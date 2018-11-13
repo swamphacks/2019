@@ -30,14 +30,14 @@
 <div *ngIf="!isMobile" id="animationWindow" class="hide">
         <div class="loader"></div>
 </div>
-<button class="floatingBtn" id="floatBtn" (click)="scrollTop()">
+<button *ngIf="!isMobile" class="floatingBtn" id="floatBtn" (click)="scrollTop()">
         <img src="../../assets/mainpage/icons/umbrella-icon.png"/>
 </button>
 <!-- Main Section -->
 <div class="banner">
-    <img *ngIf="isMobile" src="../../assets/mainpage/mobile/phoneBackgroundPNG.png" width="100%" height="100%"/>
-    <img class="mainPageImg" [src]="backgroundSrc"/>
-    <img class="mainPageImg" [src]="waterSrc"/>
+    <img *ngIf="isMobile" [src]="mobileBackgroundSrc" width="100%" height="100%"/>
+    <img *ngIf="!isMobile" class="mainPageImg" [src]="backgroundSrc"/>
+    <img *ngIf="!isMobile" class="mainPageImg" [src]="waterSrc"/>
     <div id="backTreesScene">
             <div data-depth="0.20" >
                     <img *ngIf="!isMobile" class="backTrees" id="backtree" [src]="backTreesSrc"/>
@@ -45,27 +45,27 @@
     </div>
     <div id="leftIslandScenes">
            <div  data-depth="0.60">
-                <img class="mainPageImg islandLeft" [src]="leftIslandSrc"/>
+                <img *ngIf="!isMobile" class="mainPageImg islandLeft" [src]="leftIslandSrc"/>
            </div>
     </div>
     <div id="rightIslandScenes">
             <div data-depth="0.60" >
-                    <img class="mainPageImg islandRight" [src]="rightIslandSrc"/>
+                    <img *ngIf="!isMobile" class="mainPageImg islandRight" [src]="rightIslandSrc"/>
             </div>
     </div>
     <div id="leftIslandFrontScenes">
         <div  data-depth="0.80">
-                <img class="mainPageImg islandLeftFront" [src]="leftIslandFrontSrc"/>
+                <img *ngIf="!isMobile" class="mainPageImg islandLeftFront" [src]="leftIslandFrontSrc"/>
         </div>
     </div>
     <div id="rightIslandFrontScenes">
         <div data-depth="0.80" >
-                <img class="mainPageImg islandRightFront" [src]="rightIslandFrontSrc"/>
+                <img *ngIf="!isMobile" class="mainPageImg islandRightFront" [src]="rightIslandFrontSrc"/>
         </div>
     </div>
     <div id="sunScene" data-relative-input="true">
            <div  data-depth="0.20" >
-                <img class="mainPageImg sun" [src]="sunSrc"/>
+                <img *ngIf="!isMobile" class="mainPageImg sun" [src]="sunSrc"/>
            </div>
     </div>
     <div id="gatorScene">
@@ -108,7 +108,7 @@
      <!-- <img id="gatorTraveler" src="../../assets/mainpage/greenBlueLogo.png"/> -->
 </div>
 <!-- Apply button -->
-<button class="applyButton" (click)="apply()"><b>Apply</b></button>
+<button class="applyButton" id="applyBtn" (click)="apply()"><b>Apply</b></button>
 <!-- <div class="darkGreen"></div> -->
 <div class="lakeDivider">
         <img class="lakeShore" src="../../assets/mainpage/dividers/greenDivider.png"/>
@@ -121,14 +121,14 @@
         <p class="sectionDescription">
                 From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
-        <div class="messageContainer" id="capsuleMessageContainer">
+        <div *ngIf="!isMobile" class="messageContainer" id="capsuleMessageContainer">
                 <div class="capsuleMessage">"Have fun! build great things! and please don’t kill each other over t-shirts"</div>
                 <div class="capsuleAuthor">
                         <p style="margin-bottom: 5px">- Jeffrey Shao</p>
                         <p>2018 Food Coordinator</p>
                 </div>
         </div>
-        <img class="timeCapsule" id="capsule" [src]="timeCapsuleSrc" width="15%" height="15%" (mouseover)="capsuleHovered($event)" (mouseout)="capsuleHoverOut($event)" (click)="capsuleClicked()"/>
+        <img *ngIf="!isMobile" class="timeCapsule" id="capsule" [src]="timeCapsuleSrc" width="15%" height="15%" (mouseover)="capsuleHovered($event)" (mouseout)="capsuleHoverOut($event)" (click)="capsuleClicked()"/>
         <h1 class="aboutTitle" id="aboutSubTitle">Where is <span class="skyBlue">Swamp</span><span class="lightSkyBlue">Hacks</span><span class="skyBlue">?</span></h1>
         <p class="sectionDescription">
                 SwampHacks will be held in the Collaboration Commons in Marston Science Library at the University of Florida. With both the basement level and first floor, anticipate a large open space for community hacking and the quiet floor for sleep and concentration. The address is 444 Newell Dr, Gainesville, FL 32611     
@@ -136,7 +136,7 @@
 </section>
 <div class="islandDivider">
         <img class="islandDivider" src="../../assets/mainpage/dividers/darkBrownDivider.png"/>
-        <div class="secondMessageContainer" id="capsuleMessage2Container">
+        <div *ngIf="!isMobile" class="secondMessageContainer" id="capsuleMessage2Container">
                 <div class="capsuleMessage">“Treat your self, cause you deserve it. Oh and endorse me on LinkedIn”</div>
                 <div class="capsule2Author">
                         <p style="margin-bottom: 5px">- Jiayang Li</p>
@@ -145,7 +145,7 @@
         </div>
 </div>
 <section class="layers scheduleLayer brown" id="schedule">
-        <h1 class="scheduleTitle">Schedule</h1> <img class="timeCapsule2" id="capsule2" [src]="timeCapsule2Src" width="15%" height="15%" (mouseover)="capsule2Hovered($event)" (mouseout)="capsule2HoverOut($event)" (click)="capsule2Clicked()"/>
+        <h1 class="scheduleTitle">Schedule</h1> <img *ngIf="!isMobile" class="timeCapsule2" id="capsule2" [src]="timeCapsule2Src" width="15%" height="15%" (mouseover)="capsule2Hovered($event)" (mouseout)="capsule2HoverOut($event)" (click)="capsule2Clicked()"/>
         <!-- <div class="indent"> -->
                 <!-- Friday -->
                 <div class="sectionTitle">
@@ -370,7 +370,7 @@
                 </div>
                 <div id="question12Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
-                                We are working to charter buses to pick up students from nearby schools. We will release our bus routes and give an update on travel in late November! 
+                                We will be providing a charter bus from the Georgia Institute of Technology. In addition, we will attempt to provide travel reimbursements for applications that request travel before 11:59PM November 18th, 2018. Additional travel routes may be announced dependent on interest and our budget.
                         </p>
                 </div>
                 <div class="sectionTitle flexCenter">
