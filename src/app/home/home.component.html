@@ -122,10 +122,10 @@
                 From abundant mentors to workshops, SwampHacks will be the platform to start your exploration into development and the community space for hanging out with some of the brightest minds of the South. So come join us, and let’s have an awesome weekend in the swamp.                        
         </p>
         <div *ngIf="!isMobile" class="messageContainer" id="capsuleMessageContainer">
-                <div class="capsuleMessage">"Have fun! build great things! and please don’t kill each other over t-shirts"</div>
+                <div class="capsuleMessage">{{message1Content}}</div>
                 <div class="capsuleAuthor">
-                        <p style="margin-bottom: 5px">- Jeffrey Shao</p>
-                        <p>2018 Food Coordinator</p>
+                        <p style="margin-bottom: 5px">{{messageAuthor1}}</p>
+                        <p>{{messageAuthor1Position}}</p>
                 </div>
         </div>
         <img *ngIf="!isMobile" class="timeCapsule" id="capsule" [src]="timeCapsuleSrc" width="15%" height="15%" (mouseover)="capsuleHovered($event)" (mouseout)="capsuleHoverOut($event)" (click)="capsuleClicked()"/>
@@ -137,10 +137,10 @@
 <div class="islandDivider">
         <img class="islandDivider" src="../../assets/mainpage/dividers/darkBrownDivider.png"/>
         <div *ngIf="!isMobile" class="secondMessageContainer" id="capsuleMessage2Container">
-                <div class="capsuleMessage">“Treat your self, cause you deserve it. Oh and endorse me on LinkedIn”</div>
+                <div class="capsuleMessage">{{message2Content}}</div>
                 <div class="capsule2Author">
-                        <p style="margin-bottom: 5px">- Jiayang Li</p>
-                        <p>2018 Marketing Director</p>
+                        <p style="margin-bottom: 5px">{{messageAuthor2}}</p>
+                        <p>{{messageAuthor2Position}}</p>
                 </div>
         </div>
 </div>
@@ -236,9 +236,17 @@
 </section>
 <div class="islandDivider">
         <img class="islandDivider" src="../../assets/mainpage/dividers/brownDivider.png"/>
+        <div *ngIf="!isMobile" class="thirdMessageContainer" id="capsuleMessage3Container">
+                <div class="capsule3Message">{{message3Content}}</div>
+                <div class="capsule3Author">
+                        <p style="margin-bottom: 5px">{{messageAuthor3}}</p>
+                        <p>{{messageAuthor3Position}}</p>
+                </div>
+        </div>
 </div>
 <!-- FAQ Section -->
 <section class="layers lightBrown faqsLayer" id="faqs">
+        <img *ngIf="!isMobile" class="timeCapsule3" id="capsule3" [src]="timeCapsule3Src" width="15%" height="15%" (mouseover)="capsule3Hovered($event)" (mouseout)="capsule3HoverOut($event)" (click)="capsule3Clicked()"/>
         <h1 class="faqTitle">Frequently Asked Questions</h1>
         <div>
                 <div class="sectionTitle flexCenter">
@@ -403,7 +411,7 @@
                 </div>
                 <div id="question15Section" class="bot-margin hide dropDownSection">
                         <p class="sectionDescription">
-                                Applications will close on December 21th.
+                                Applications will close on December 21st.
                         </p>
                 </div>
         </div>
@@ -428,6 +436,17 @@
         <div class="row" style="margin: 0; margin-top: 50px">
                 <div class="col">
                         <a class="sponsorLogo" href="https://www.americanexpress.com/" target="_blank"><img id="americanExpSponsor" src="../../assets/mainpage/logos/americanExpressWhite.png" width="8%" height="8%"/></a>
+                </div>
+        </div>
+        <!-- Partner area -->
+        <h2 class="sponsorsTitle">Partners</h2>
+        <div class="row" style="margin: 0; margin-top: 50px">
+                <div class="col-sm-12 col-md-6 mlhContainer" align="right">
+                        <a class="sponsorLogo" href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2019-season&amp;utm_content=blue" target="_blank"><img  style="margin-right: 10%" id="mlhPartner" src="../../assets/mainpage/logos/mlhLogo.png" width="40%" height="40%"/></a>
+                        <!-- <a style="display: inline-block; width: auto !important" class="sponsorLogo" href="http://hackp.ac/mlh-stickermule-hackathons" target="_blank"><img id="stickerMulePartner" src="../../assets/mainpage/logos/sticker-mule-logo.png" width="70%" height="70%"/></a> -->
+                </div>
+                <div class="col-sm-12 col-md-4">
+                        <a class="sponsorLogo" href="http://hackp.ac/mlh-stickermule-hackathons" target="_blank"><img id="stickerMulePartner" src="../../assets/mainpage/logos/sticker-mule-logo.png" width="70%" height="70%"/></a>
                 </div>
         </div>
         <!-- clouds -->

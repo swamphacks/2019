@@ -16,15 +16,104 @@ export class HomeComponent implements OnInit {
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
   downArrowUrl = "../../assets/mainpage/downArrow.png";
 
-  timeCapsuleClosedUrl = "../../assets/mainpage/capsules/sealed_in_2018.png";
-  timeCapsuleGlowUrl = "../../assets/mainpage/capsules/sealed_in_2018_glow.png";
-  timeCapsuleOpenUrl = "../../assets/mainpage/capsules/sealed_in_2018_open.png";
+  timeCapsule2018ClosedUrl = "../../assets/mainpage/capsules/sealed_in_2018.png";
+  timeCapsule2018GlowUrl = "../../assets/mainpage/capsules/sealed_in_2018_glow.png";
+  timeCapsule2018OpenUrl = "../../assets/mainpage/capsules/sealed_in_2018_open.png";
 
-  timeCapsuleSrc = this.timeCapsuleClosedUrl;
+  timeCapsule2017ClosedUrl = "../../assets/mainpage/capsules/sealed_in_2017.png";
+  timeCapsule2017GlowUrl = "../../assets/mainpage/capsules/sealed_in_2017_glow.png";
+  timeCapsule2017OpenUrl = "../../assets/mainpage/capsules/sealed_in_2017_open.png";
+
+  timeCapsule2016ClosedUrl = "../../assets/mainpage/capsules/sealed_in_2016.png";
+  timeCapsule2016GlowUrl = "../../assets/mainpage/capsules/sealed_in_2016_glow.png";
+  timeCapsule2016OpenUrl = "../../assets/mainpage/capsules/sealed_in_2016_open.png";
+
+  capsule1Messages = [ 
+    {
+      content: "Have fun! build great things! and please don’t kill each other over t-shirts",
+      author: "- Jeffrey Shao",
+      position: "Food Coordinator 2018"
+    },
+    {
+      content: "Treat your self, cause you deserve it. Oh and endorse me on LinkedIn",
+      author:  "- Jiayang Li",
+      position: "Marketing Director 2018"
+    },
+    {
+      content: "Be proud of what you’ll learn and accomplish and enjoy the process! Also, please don’t hoard the food, I promise you won’t starve",
+      author: "- Hong-Nhi Le",
+      position: "External Coordinator 2018"
+    },
+    {
+      content: "a child again, a new friend, an innovator, and everything in between",
+      author: "- Abel Paguio",
+      position: "Design Director 2018"
+    },
+    {
+      content: "Go wild and make what you want there’s no limitations!",
+      author: "- Gianne Flores",
+      position: "Logistics Director 2018"
+    },
+    {
+      content: "Don’t limit yourself, you can achieve anything you put your mind to :). Be proud of what you have accomplished and look forward to what you will accomplish!",
+      author: "- Andrew Zhang",
+      position: "Co-Organizer 2018"
+    },
+  ];
+  capsule2Messages = [
+    {
+      content: "Try it even if you don’t think you can do it - this is your time to learn and grow :)",
+      author:  "- Killian McCoy",
+      position: "Co-Organizer 2017"
+    },
+    {
+      content: "Hackathons aren’t just for people majoring in computer science or programming wizards - it’s for anyone who wants to dedicate a weekend to learning something new!",
+      author:  "- Samantha Soto",
+      position: "Logistics Director 2017"
+    },
+  ];
+  capsule3Messages = [
+    {
+      content: "The world is diverse, be open and accepting! Or at the very least, don't judge!",
+      author:  "- Josh Kegley",
+      position: "Organizer 2016"
+    },
+    {
+      content: "Take a break, and go for a walk outside. It’s a beautiful day!",
+      author:  "- Joseph Pecoraro",
+      position: "Organizer 2016"
+    },
+    {
+      content: "Dear Future Hackers,\nWe built Swamphacks out of love and passion, and it’s on you to decide how to take advantage of the space we’ve given you. I hope this weekend changes your life as much as it did mine!",
+      author:  "- Bernie Marger",
+      position: "Organizer 2016"
+    },
+  ];
+
+  current2018Msg = 0;
+  current2017Msg = 0;
+  current2016Msg = 0;
+
+  message1Content = this.capsule1Messages[this.current2018Msg].content;
+  messageAuthor1 = this.capsule1Messages[this.current2018Msg].author;
+  messageAuthor1Position = this.capsule1Messages[this.current2018Msg].position;
+
+  message2Content = this.capsule2Messages[this.current2017Msg].content;
+  messageAuthor2 = this.capsule2Messages[this.current2017Msg].author;
+  messageAuthor2Position = this.capsule2Messages[this.current2017Msg].position;
+
+  message3Content = this.capsule3Messages[this.current2016Msg].content;
+  messageAuthor3 = this.capsule3Messages[this.current2016Msg].author;
+  messageAuthor3Position = this.capsule3Messages[this.current2016Msg].position;
+
+  timeCapsuleSrc = this.timeCapsule2018ClosedUrl;
   timeCapsuleOpened = false;
 
-  timeCapsule2Src = this.timeCapsuleClosedUrl;
+  timeCapsule2Src = this.timeCapsule2017ClosedUrl;
   timeCapsule2Opened = false;
+
+  timeCapsule3Src = this.timeCapsule2016ClosedUrl;
+  timeCapsule3Opened = false;
 
   fridayArrowUrl = this.downArrowUrl;
   saturdayArrowUrl = this.downArrowUrl;
@@ -97,6 +186,38 @@ export class HomeComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: any) {
     this.prevWidth = window.innerWidth;
     this.checkIfMobile();
+    // change capsule messages every 5 seconds
+    setInterval(function() {
+      if (this.isMobile) {
+        return;
+      }
+      this.current2018Msg += 1;
+      this.current2017Msg += 1;
+      this.current2016Msg += 1;
+      if (this.current2018Msg >= this.capsule1Messages.length) {
+        this.current2018Msg = 0;
+      }
+      if (this.current2017Msg >= this.capsule2Messages.length) {
+        this.current2017Msg = 0;
+      }
+      if (this.current2016Msg >= this.capsule3Messages.length) {
+        this.current2016Msg = 0;
+      }
+
+      // update the values
+      this.message1Content = this.capsule1Messages[this.current2018Msg].content;
+      this.messageAuthor1 = this.capsule1Messages[this.current2018Msg].author;
+      this.messageAuthor1Position = this.capsule1Messages[this.current2018Msg].position;
+    
+      this.message2Content = this.capsule2Messages[this.current2017Msg].content;
+      this.messageAuthor2 = this.capsule2Messages[this.current2017Msg].author;
+      this.messageAuthor2Position = this.capsule2Messages[this.current2017Msg].position;
+    
+      this.message3Content = this.capsule3Messages[this.current2016Msg].content;
+      this.messageAuthor3 = this.capsule3Messages[this.current2016Msg].author;
+      this.messageAuthor3Position = this.capsule3Messages[this.current2016Msg].position;
+
+    }.bind(this), 5000);
   }
 
   ngOnInit() {
@@ -431,18 +552,18 @@ export class HomeComponent implements OnInit {
   // Capsule Hover
   capsuleHovered(e) {
     if (!this.timeCapsuleOpened) {
-      this.timeCapsuleSrc = this.timeCapsuleGlowUrl;
+      this.timeCapsuleSrc = this.timeCapsule2018GlowUrl;
     }
   }
 
   capsuleHoverOut(e) {
     if (!this.timeCapsuleOpened) {
-      this.timeCapsuleSrc = this.timeCapsuleClosedUrl;
+      this.timeCapsuleSrc = this.timeCapsule2018ClosedUrl;
     }
   }
 
   capsuleClicked() {
-    this.timeCapsuleSrc = this.timeCapsuleOpenUrl;
+    this.timeCapsuleSrc = this.timeCapsule2018OpenUrl;
     this.timeCapsuleOpened = true;
     $('#capsule').addClass('timeCapsuleAnimation');
     // $('#capsuleMessage').removeClass("hide");
@@ -452,23 +573,45 @@ export class HomeComponent implements OnInit {
   }
   capsule2Hovered(e) {
     if (!this.timeCapsule2Opened) {
-      this.timeCapsule2Src = this.timeCapsuleGlowUrl;
+      this.timeCapsule2Src = this.timeCapsule2017GlowUrl;
     }
   }
 
   capsule2HoverOut(e) {
     if (!this.timeCapsule2Opened) {
-      this.timeCapsule2Src = this.timeCapsuleClosedUrl;
+      this.timeCapsule2Src = this.timeCapsule2017ClosedUrl;
     }
   }
 
   capsule2Clicked() {
-    this.timeCapsule2Src = this.timeCapsuleOpenUrl;
+    this.timeCapsule2Src = this.timeCapsule2017OpenUrl;
     this.timeCapsule2Opened = true;
     $('#capsule2').addClass('timeCapsule2Animation');
     // $('#capsuleMessage').removeClass("hide");
     setTimeout(function() {
       $('#capsuleMessage2Container').addClass('capsuleMessageAnimation');
+    }, 1000);
+  }
+
+  capsule3Hovered(e) {
+    if (!this.timeCapsule3Opened) {
+      this.timeCapsule3Src = this.timeCapsule2016GlowUrl;
+    }
+  }
+
+  capsule3HoverOut(e) {
+    if (!this.timeCapsule3Opened) {
+      this.timeCapsule3Src = this.timeCapsule2016ClosedUrl;
+    }
+  }
+
+  capsule3Clicked() {
+    this.timeCapsule3Src = this.timeCapsule2016OpenUrl;
+    this.timeCapsule3Opened = true;
+    $('#capsule3').addClass('timeCapsule3Animation');
+    // $('#capsuleMessage').removeClass("hide");
+    setTimeout(function() {
+      $('#capsuleMessage3Container').addClass('capsuleMessageAnimation');
     }, 1000);
   }
 }

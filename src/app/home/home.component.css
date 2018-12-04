@@ -676,12 +676,65 @@
 
 .secondMessageContainer {
     visibility: hidden;
-    margin-top: 17%;
-    margin-left: 73%;
+    margin-top: 10%;
+    margin-left: 70%;
     width: 25%;
     /* these are for the animation */
     transform: translateX(100%);
     -webkit-transform: translateX(100%);
+    transition: visibility 1s;
+}
+
+.timeCapsule3 {
+    float: left;
+    margin-left: 15%;
+    margin-top: -5%;
+    transform: rotateZ(-25deg);
+    margin-bottom: -50px;
+    transition: transform 1s;
+}
+
+.timeCapsule3Animation {
+    transform: rotateZ(-90deg);
+}
+
+.capsule3Message {
+    background: #e5e5eb;
+    color: black;
+    border-radius: 10px;
+    position: relative;
+    padding: .3em .6em;
+    margin-bottom: .5em;
+    line-height: 1.4;
+    max-width: 85%;
+}
+
+.capsule3Author {
+    text-align: left;
+    color: white;
+}
+
+/* caret */
+.capsule3Message:after {
+    box-sizing: content-box;
+    border-bottom-left-radius: 1em 0.5em;
+    border-left: 0.5em solid #e5e5eb;
+    bottom: 0;
+    content: '';
+    height: 1em;
+    position: absolute;
+    right: -0.5em;
+    width: 0.5em;
+}
+
+.thirdMessageContainer {
+    visibility: hidden;
+    margin-top: 7%;
+    margin-left: 2%;
+    width: 20%;
+    /* these are for the animation */
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
     transition: visibility 1s;
 }
 
@@ -1202,6 +1255,18 @@
     #americanExpSponsor {
         width: 15% !important;
         height: 15% !important;
+    }
+
+    .mlhContainer {
+        text-align: center;
+    }
+
+    #mlhPartner {
+        margin-right: 0 !important;
+    }
+
+    #stickerMulePartner {
+        margin-top: 20px;
     }
 
     #nimbusLeftScene {
