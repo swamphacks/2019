@@ -1,6 +1,47 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    ".read": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2'",
+    ".write": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2'",
+    "ApplicationStatus": {
+      ".read": true
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'|| auth.uid == $uid",
+        ".write": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23' || auth.uid == $uid",
+				".indexOn": "appliedTime"
+      }
+    },
+    "transportationForm": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == $uid",
+        ".write": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == $uid",
+				".indexOn": "appliedTime"
+      }
+    },
+    "events": {
+      ".read": true,
+      ".write": "auth != null && auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'",
+      ".indexOn": "type"
+    },
+    "standbyWaiting": {
+        ".read": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'",
+        ".write": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'",
+			"$uid": {
+        ".indexOn": "appliedTime"
+      }
+    },
+    "standbySize": {
+    	".read": true,
+      ".write": "auth != null && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'"
+  	},
+    "volunteers": {
+      ".read": true,
+      ".write": "auth != null  && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'"
+  	},
+    "teamPoints": {
+      ".read": true,
+      ".write": "auth != null  && auth.uid == 'xzxxTH5ZplWFv5ezUN8AB98rzJo2' || auth.uid == 'XiTmzuM1N8drBuyXT2Pur7qZOi23'"
+    }
   }
 }

@@ -1,5 +1,6 @@
 import {tap} from 'rxjs/operators';
 import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import * as Parallax from 'parallax-js';
 import * as $ from 'jquery';
@@ -12,9 +13,14 @@ import * as $ from 'jquery';
 export class HomeComponent implements OnInit {
   show: boolean = false;
 
-  dashboardURL = 'https://dashboard.swamphacks.com/makeaccount.html';
+  dashboardURL = 'https://dashboard.swamphacks.com/login.html';
   rightArrowUrl = "../../assets/mainpage/rightArrow.png";
   downArrowUrl = "../../assets/mainpage/downArrow.png";
+
+  meetTeamUrl = "../../assets/mainpage/nimbusLeftwithppl.png";
+  meetTeamGlowUrl = "../../assets/mainpage/nimbusLeftwithpplglow.png";
+
+  meetTeamSrc = this.meetTeamUrl;
 
   timeCapsule2018ClosedUrl = "../../assets/mainpage/capsules/sealed_in_2018.png";
   timeCapsule2018GlowUrl = "../../assets/mainpage/capsules/sealed_in_2018_glow.png";
@@ -183,7 +189,7 @@ export class HomeComponent implements OnInit {
 
   prevWidth: any;
 
-  constructor(@Inject(DOCUMENT) private document: any) {
+  constructor(@Inject(DOCUMENT) private document: any, private router: Router) {
     this.prevWidth = window.innerWidth;
     this.checkIfMobile();
     // change capsule messages every 5 seconds
@@ -363,6 +369,9 @@ export class HomeComponent implements OnInit {
   }
 
   showOrHideNavbar() {
+    if (!$('#about')[0]) {
+      return;
+    }
     const aboutOffset = $('#about')[0]['offsetTop'];
     if (window.pageYOffset >= aboutOffset) {
       // show floating button
@@ -613,6 +622,19 @@ export class HomeComponent implements OnInit {
     setTimeout(function() {
       $('#capsuleMessage3Container').addClass('capsuleMessageAnimation');
     }, 1000);
+  }
+
+  // Meet team event handle
+  meetTeamClicked() {
+    this.router.navigate(['/team']);
+  }
+
+  meetTeamHovered(event) {
+    this.meetTeamSrc = this.meetTeamGlowUrl;
+  }
+
+  meetTeamHoverOut(event) {
+    this.meetTeamSrc = this.meetTeamUrl;
   }
 }
 

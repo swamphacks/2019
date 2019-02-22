@@ -1,0 +1,403 @@
+<!-- MLH BADGE -->
+<!-- <a id=“mlh-trust-badge” style=“display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href=“https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white” target=“_blank”><img src=“../../assets/mainpage/mobile/mlh-trust-badge-2019-white.svg” alt=“Major League Hacking 2019 Hackathon Season” style=“width:100%“/></a> -->
+<!-- <a id="mlh-trust-badge" class="mlh-badge" href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2019-season&amp;utm_content=blue" target=“_blank”>
+        <img src="../../assets/mainpage/mlh-trust-badge-2019-white.svg" style=“width:100%“/>
+</a> -->
+<!-- nav bar -->
+<nav class="navbar navbar-light navbar-expand-md fixed-top navbarAnimationIn" id="navbar">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button (click)="toggleCollapse()" class="navbar-toggler" style="border-color: transparent!important;" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu" [class.show]="show">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="home">Home</a>
+            </li>
+          </ul>
+        </div>
+</nav>
+<div class="teamMainContainer">
+  <h1>Meet the Team!</h1>
+
+  <p class="teamDesc">SwampHacks is organized and run completely by students, for students. These are the ones that made it happen in 2019.</p>
+
+  <div class="gallery">
+
+      <div class="row">
+          <div class="col-md-4" align="center">
+            <div class="memberCard">
+              <!-- photo -->
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <!-- front content -->
+                    <img src="../../assets/teamPhotos/anushri.png" class="photoFrame">
+                  </div>
+                  <div class="back">
+                    <!-- back content -->
+                    <img src="../../assets/teamPhotos/anushriSilly.png" class="photoFrame">
+                  </div>
+                </div>
+              </div>
+              <!-- desc -->
+              <p class="memberName">
+                Anushri Marar
+              </p>
+              <p class="memberPosition">
+                Sponsorship
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" align="center">
+              <div class="memberCard">
+                <!-- photo -->
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <!-- front content -->
+                      <img src="../../assets/teamPhotos/ben.png" class="photoFrame">
+                    </div>
+                    <div class="back">
+                      <!-- back content -->
+                      <img src="../../assets/teamPhotos/benSilly.png" class="photoFrame">
+                    </div>
+                  </div>
+                </div>
+                <!-- desc -->
+                <p class="memberName">
+                  Ben Gorman
+                </p>
+                <p class="memberPosition">
+                  Internal Logistics
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4" align="center">
+                <div class="memberCard">
+                  <!-- photo -->
+                  <div class="flip-container">
+                    <div class="flipper">
+                      <div class="front">
+                        <!-- front content -->
+                        <img src="../../assets/teamPhotos/chad.png" class="photoFrame">
+                      </div>
+                      <div class="back">
+                        <!-- back content -->
+                        <img src="../../assets/teamPhotos/chadSilly.png" class="photoFrame">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- desc -->
+                  <p class="memberName">
+                    Chad Wishner
+                  </p>
+                  <p class="memberPosition">
+                    Hospitality
+                  </p>
+                </div>
+              </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4" align="center">
+          <div class="memberCard">
+            <!-- photo -->
+            <div class="flip-container">
+              <div class="flipper">
+                <div class="front">
+                  <!-- front content -->
+                  <img src="../../assets/teamPhotos/chandler.png" class="photoFrame">
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <img src="../../assets/teamPhotos/chandlerSilly.png" class="photoFrame">
+                </div>
+              </div>
+            </div>
+            <!-- desc -->
+            <p class="memberName">
+              Chandler Griffin
+            </p>
+            <p class="memberPosition">
+              Co-Organizer
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4" align="center">
+            <div class="memberCard">
+              <!-- photo -->
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <!-- front content -->
+                    <img src="../../assets/teamPhotos/debrian.png" class="photoFrame">
+                  </div>
+                  <div class="back">
+                    <!-- back content -->
+                    <img src="../../assets/teamPhotos/debrian.png" class="photoFrame">
+                  </div>
+                </div>
+              </div>
+              <!-- desc -->
+              <p class="memberName">
+                Debrian Figueroa
+              </p>
+              <p class="memberPosition">
+                Tech Director
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" align="center">
+              <div class="memberCard">
+                <!-- photo -->
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <!-- front content -->
+                      <img src="../../assets/teamPhotos/eric.png" class="photoFrame">
+                    </div>
+                    <div class="back">
+                      <!-- back content -->
+                      <img src="../../assets/teamPhotos/ericSilly.png" class="photoFrame">
+                    </div>
+                  </div>
+                </div>
+                <!-- desc -->
+                <p class="memberName">
+                  Eric Chen
+                </p>
+                <p class="memberPosition">
+                  External Operations
+                </p>
+              </div>
+            </div>
+        </div>
+
+    <div class="row">
+      <div class="col-md-4" align="center">
+        <div class="memberCard">
+          <!-- photo -->
+          <div class="flip-container">
+            <div class="flipper">
+              <div class="front">
+                <!-- front content -->
+                <img src="../../assets/teamPhotos/erin.png" class="photoFrame">
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <img src="../../assets/teamPhotos/erinSilly.png" class="photoFrame">
+              </div>
+            </div>
+          </div>
+          <!-- desc -->
+          <p class="memberName">
+            Erin Yoo
+          </p>
+          <p class="memberPosition">
+            Logistics
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4" align="center">
+          <div class="memberCard">
+            <!-- photo -->
+            <div class="flip-container">
+              <div class="flipper">
+                <div class="front">
+                  <!-- front content -->
+                  <img src="../../assets/teamPhotos/harsh.png" class="photoFrame">
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <img src="../../assets/teamPhotos/harshSilly.png" class="photoFrame">
+                </div>
+              </div>
+            </div>
+            <!-- desc -->
+            <p class="memberName">
+              Harsh Patel
+            </p>
+            <p class="memberPosition">
+              Co-Organizer
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4" align="center">
+            <div class="memberCard">
+              <!-- photo -->
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <!-- front content -->
+                    <img src="../../assets/teamPhotos/jacob.png" class="photoFrame">
+                  </div>
+                  <div class="back">
+                    <!-- back content -->
+                    <img src="../../assets/teamPhotos/jacobSilly.png" class="photoFrame">
+                  </div>
+                </div>
+              </div>
+              <!-- desc -->
+              <p class="memberName">
+                Jacob Woliver
+              </p>
+              <p class="memberPosition">
+                Sponsorship
+              </p>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4" align="center">
+          <div class="memberCard">
+            <!-- photo -->
+            <div class="flip-container">
+              <div class="flipper">
+                <div class="front">
+                  <!-- front content -->
+                  <img src="../../assets/teamPhotos/kathy.jpg" class="photoFrame">
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <img src="../../assets/teamPhotos/kathySilly.jpg" class="photoFrame">
+                </div>
+              </div>
+            </div>
+            <!-- desc -->
+            <p class="memberName">
+              Kathy Lee
+            </p>
+            <p class="memberPosition">
+              Graphic Design
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4" align="center">
+            <div class="memberCard">
+              <!-- photo -->
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <!-- front content -->
+                    <img src="../../assets/teamPhotos/michele.png" class="photoFrame">
+                  </div>
+                  <div class="back">
+                    <!-- back content -->
+                    <img src="../../assets/teamPhotos/micheleSilly.png" class="photoFrame">
+                  </div>
+                </div>
+              </div>
+              <!-- desc -->
+              <p class="memberName">
+                Michele Wu
+              </p>
+              <p class="memberPosition">
+                Marketing
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" align="center">
+              <div class="memberCard">
+                <!-- photo -->
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <!-- front content -->
+                      <img src="../../assets/teamPhotos/rosmery.png" class="photoFrame">
+                    </div>
+                    <div class="back">
+                      <!-- back content -->
+                      <img src="../../assets/teamPhotos/rosmerySilly.png" class="photoFrame">
+                    </div>
+                  </div>
+                </div>
+                <!-- desc -->
+                <p class="memberName">
+                  Rosmery Izaguirre
+                </p>
+                <p class="memberPosition">
+                  Travel
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6" align="center">
+            <div class="memberCard">
+              <!-- photo -->
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <!-- front content -->
+                    <img src="../../assets/teamPhotos/sahar.png" class="photoFrame">
+                  </div>
+                  <div class="back">
+                    <!-- back content -->
+                    <img src="../../assets/teamPhotos/saharSilly.png" class="photoFrame">
+                  </div>
+                </div>
+              </div>
+              <!-- desc -->
+              <p class="memberName">
+                Sahar Azody
+              </p>
+              <p class="memberPosition">
+                Treasurer
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6" align="center">
+              <div class="memberCard">
+                <!-- photo -->
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <!-- front content -->
+                      <img src="../../assets/teamPhotos/sam.png" class="photoFrame">
+                    </div>
+                    <div class="back">
+                      <!-- back content -->
+                      <img src="../../assets/teamPhotos/samSilly.png" class="photoFrame">
+                    </div>
+                  </div>
+                </div>
+                <!-- desc -->
+                <p class="memberName">
+                  Sam Su
+                </p>
+                <p class="memberPosition">
+                  Internal Logistics
+                </p>
+              </div>
+            </div>
+          </div>
+
+  </div>
+
+  <div class="groupContainer">
+    <div class="flip-container" id="flip-container-large">
+      <div class="flipper">
+        <div class="front" id="largeContainer">
+          <!-- front content -->
+          <img class="groupPhoto" src="../../assets/teamPhotos/group.jpg">
+        </div>
+        <div class="back" id="largeContainer">
+          <!-- back content -->
+          <img class="groupPhoto" src="../../assets/teamPhotos/groupSilly.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

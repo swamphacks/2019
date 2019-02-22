@@ -1,0 +1,192 @@
+.mlh-badge {
+    display:block;
+    max-width:100px;
+    min-width:60px;
+    position:fixed;
+    right:5%;
+    top:0;
+    width:10%;
+    z-index:10000;
+}
+/* Nav bar */
+.navbar {
+    background: transparent;
+    background-image:none;
+    border-color:transparent;
+    box-shadow:none;
+    transition: top 0.3s;
+  }
+  
+.nav-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: white!important;
+    font-weight: bold;
+    margin-left: 30px;
+}
+  
+.nav-link:hover {
+    color: #065144!important;
+}
+
+.nav-link:focus {
+    color: rgba(0,0,0,.5)!important;
+}
+
+.nav-mobileBackground {
+    background-color: darkcyan;
+}
+
+.navbarAnimationOut {
+    animation: navbarFadeOut 0.2s linear forwards;
+}
+
+.navbarAnimationIn {
+    animation: navbarFadeIn 0.2s linear forwards;
+}
+
+@keyframes navbarFadeOut {
+    from { 
+        /* opacity: 1; */
+        top: 0;
+    }
+    to   { 
+        /* opacity: 0;  */
+        top: -50px;
+    }
+}
+
+@keyframes navbarFadeIn {
+    from { 
+        /* opacity: 0; */
+        top: -50px;
+    }
+    to   { 
+        /* opacity: 1; */
+        top: 0;
+    }
+}
+/* End of Nav bar */
+.teamDesc {
+    margin-top: 5%;
+}
+
+.teamMainContainer {
+    padding-top: 50px;
+    background-image: linear-gradient(#6dcff4, #368fcb);
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: gotham, sans-serif;
+    text-align: center;
+}
+
+.gallery {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.memberCard {
+    width: 200px;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.tempImg {
+    width: 200px;
+    height: 200px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+}
+
+.memberName {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+
+.memberPosition {
+    text-align: center;
+}
+
+.photoFrame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.groupContainer {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.groupPhoto {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.815);
+    width: 750px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+/* Flip animation */
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+
+#flip-container-large {
+    perspective: 2000px;
+    width: 1000px!important;
+    height: 500px!important;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 200px;
+	height: 200px;
+}
+
+#largeContainer {
+    width: 1000px!important;
+    height: 500px!important;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    /* backface-visibility: visible; */
+    z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 750px) {
+    .groupContainer {
+        display: none;
+    }
+}

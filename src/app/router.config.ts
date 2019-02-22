@@ -1,5 +1,6 @@
 import {Route} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
+import {TeamComponent} from "./team/team.component";
 import {ComingSoonComponent} from "./coming-soon/coming-soon.component";
 
 export const routerConfig : Route[] = [
@@ -15,6 +16,10 @@ export const routerConfig : Route[] = [
     {
         path:'home',
         component: HomeComponent
+    },
+    {
+        path:'team',
+        component: TeamComponent
     },
     {
         path: '**',

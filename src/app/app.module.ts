@@ -11,6 +11,7 @@ import { AngularFireModule } from "angularfire2";
 import Parallax from 'parallax-js';
 
 import { HomeComponent } from './home/home.component';
+import { TeamComponent } from './team/team.component';
 import {RouterModule} from "@angular/router";
 import {routerConfig} from "./router.config";
 import { TopMenuComponent } from './top-menu/top-menu.component';
@@ -31,6 +32,7 @@ import { MatSnackBarModule } from '@angular/material';
   declarations: [
     AppComponent,
     HomeComponent,
+    TeamComponent,
     TopMenuComponent,
     SafeUrlPipe,
     ComingSoonComponent,

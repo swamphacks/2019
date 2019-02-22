@@ -108,7 +108,8 @@
      <!-- <img id="gatorTraveler" src="../../assets/mainpage/greenBlueLogo.png"/> -->
 </div>
 <!-- Apply button -->
-<button class="applyButton" id="applyBtn" (click)="apply()"><b>Apply</b></button>
+<button class="applyButton" id="applyBtn" (click)="apply()"><b style="padding-left: 1%; padding-right: 1%">Thank You for Coming!</b></button>
+<!-- <a class="applyButton" id="slackBtn" href="https://join.slack.com/t/swamphacks-2019/shared_invite/enQtNTIwNjU2NjIwNDA2LTFkNWY1ZTU1MGIzMmE4OGNmNTA4MTk2NWNiMzA5MzQ2ZGRkMjIzYjE4ZGE1NTllZmUwODljNjc4MmM5MmE2M2U" target="_blank"><b>Slack</b></a> -->
 <!-- <div class="darkGreen"></div> -->
 <div class="lakeDivider">
         <img class="lakeShore" src="../../assets/mainpage/dividers/greenDivider.png"/>
@@ -423,30 +424,69 @@
 <section class="layers sponsorLayer" id="sponsors">
         <h1 class="sponsorsTitle">Our Amazing Sponsors</h1>
         <!-- logo area -->
-        <div class="row" style="margin: 0">
+        <div class="row" style="margin: 0; justify-content: center">
+                <!-- Gator -->
                 <div class="col">
-                        <a class="sponsorLogo" href="https://www.realtruck.com/" target="_blank"><img id="realTruckSponsor" src="../../assets/mainpage/logos/realTruckWhite.png" width="50%" height="50%"/></a>
+                        <a class="sponsorLogo" href="https://www.realtruck.com/" target="_blank"><img id="realTruckSponsor" src="../../assets/mainpage/logos/realTruckWhite.png" width="45%" height="45%"/></a>
                 </div>
         </div>
-        <div class="row" style="margin: 0; margin-top: 50px">
+        <div class="row" style="margin: 0; margin-top: 50px; justify-content: center">
+                <!-- Heron -->
                 <div class="col">
-                        <a class="sponsorLogo" href="https://online.citi.com/US/login.do?locale=en_US" target="_blank"><img id="citiSponsor" src="../../assets/mainpage/logos/citiWhite.png" width="30%" height="30%"/></a>
+                        <a class="sponsorLogo" href="https://online.citi.com/US/login.do?locale=en_US" target="_blank"><img id="citiSponsor" src="../../assets/mainpage/logos/citiWhite.png" width="25%" height="25%"/></a>
                 </div>
         </div>
-        <div class="row" style="margin: 0; margin-top: 50px">
-                <div class="col">
-                        <a class="sponsorLogo" href="https://www.americanexpress.com/" target="_blank"><img id="americanExpSponsor" src="../../assets/mainpage/logos/americanExpressWhite.png" width="8%" height="8%"/></a>
+        <div class="row" style="margin: 0; justify-content: center">
+                <!-- Turtle -->
+                <div class="col-md-2 col-sm-12" style="margin-right: -5%">
+                        <a class="sponsorLogo" href="https://www.americanexpress.com/" target="_blank"><img id="americanExpSponsor" src="../../assets/mainpage/logos/americanExpressWhite.png" width="130%" height="130%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 ">
+                        <a class="sponsorLogo" href="https://www.infiniteenergy.com/" target="_blank"><img id="infiniteEnergySponsor" src="../../assets/mainpage/logos/infiniteWhite.png" width="130%" height="130%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                        <a class="sponsorLogo" href="https://www.jpmorgan.com/country/US/en/jpmorgan" target="_blank"><img id="jpMorganSponsor" src="../../assets/mainpage/logos/JPWhite.png" width="130%" height="130%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                        <a class="sponsorLogo" href="https://www.infotechfl.com/" target="_blank"><img id="infoTechSponsor" src="../../assets/mainpage/logos/infoTech.png" width="130%" height="130%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12" style="margin-left: -5%">
+                        <a class="sponsorLogo" href="https://www.homedepot.com/" target="_blank"><img id="homeDepotSponsor" src="../../assets/mainpage/logos/homeDepotWhite.png" width="130%" height="130%"/></a>
+                </div>
+        </div>
+        <div class="row" style="margin: 0; justify-content: center">
+                <!-- Dragonfly -->
+                <div class="col-md-2 col-sm-12 logoColLeft">
+                        <a class="sponsorLogo" href="https://www.microsoft.com/en-us/" target="_blank"><img id="microsoftSponsor" src="../../assets/mainpage/logos/microsoftWhite.png" width="65%" height="65%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 logoColLeft logoColRight">
+                        <a class="sponsorLogo" href="https://www.google.com/" target="_blank"><img id="googleSponsor" src="../../assets/mainpage/logos/googleWhite.png" width="65%" height="65%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 logoColLeft logoColRight">
+                        <a class="sponsorLogo" href="https://www.facebook.com/" target="_blank"><img id="facebookSponsor" src="../../assets/mainpage/logos/facebookWhite.png" width="65%" height="65%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 logoColLeft logoColRight">
+                        <a class="sponsorLogo" href="https://www.linode.com/" target="_blank"><img id="linodeSponsor" src="../../assets/mainpage/logos/linodeWhite.png" width="65%" height="65%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 logoColLeft logoColRight">
+                        <a class="sponsorLogo" href="https://www.ultimatesoftware.com/" target="_blank"><img id="ultimateSponsor" src="../../assets/mainpage/logos/ultimateWhite.png" width="65%" height="65%"/></a>
+                </div>
+                <div class="col-md-2 col-sm-12 logoColRight">
+                        <a class="sponsorLogo" href="https://www.exxon.com/en/my-account" target="_blank"><img id="exxonSponsor" src="../../assets/mainpage/logos/exxonWhite.png" width="65%" height="65%"/></a>
                 </div>
         </div>
         <!-- Partner area -->
         <h2 class="sponsorsTitle">Partners</h2>
         <div class="row" style="margin: 0; margin-top: 50px">
-                <div class="col-sm-12 col-md-6 mlhContainer" align="right">
+                <div class="col-sm-12 col-md-4 mlhContainer">
                         <a class="sponsorLogo" href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2019-season&amp;utm_content=blue" target="_blank"><img  style="margin-right: 10%" id="mlhPartner" src="../../assets/mainpage/logos/mlhLogo.png" width="40%" height="40%"/></a>
                         <!-- <a style="display: inline-block; width: auto !important" class="sponsorLogo" href="http://hackp.ac/mlh-stickermule-hackathons" target="_blank"><img id="stickerMulePartner" src="../../assets/mainpage/logos/sticker-mule-logo.png" width="70%" height="70%"/></a> -->
                 </div>
                 <div class="col-sm-12 col-md-4">
                         <a class="sponsorLogo" href="http://hackp.ac/mlh-stickermule-hackathons" target="_blank"><img id="stickerMulePartner" src="../../assets/mainpage/logos/sticker-mule-logo.png" width="70%" height="70%"/></a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                        <a class="sponsorLogo" href="https://www.kindsnacks.com" target="_blank"><img id="stickerMulePartner" src="../../assets/mainpage/logos/KINDLogo_Pantone_Neg.jpg" width="70%" height="70%"/></a>
                 </div>
         </div>
         <!-- clouds -->
@@ -457,7 +497,9 @@
         </div>
         <div class="row" style="margin: 0" id="nimbusRightScene">
                 <div class="col">
-                        <img class="rightNimbus" src="../../assets/mainpage/nimbusRight.png"/>
+                        <!-- On Click send to meet the team page -->
+                        <img class="rightNimbus" [src]="meetTeamSrc" (click)="meetTeamClicked()" (mouseover)="meetTeamHovered($event)" (mouseout)="meetTeamHoverOut($event)"/>
+                        <!-- <img class="rightNimbus" src="../../assets/mainpage/nimbusRight.png"/> -->
                 </div>
         </div>
         <div class="row" style="margin: 0">
